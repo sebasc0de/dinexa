@@ -1,6 +1,7 @@
 import { FormEvent, SyntheticEvent, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { v4 as uuid } from "uuid";
 import Toast from "../../../../components/Toast/index";
 
 // Project imports
@@ -14,7 +15,7 @@ function BasicExample({ repository }: { repository: Repository }) {
 
   const { inputValue, onChangeHandler } = useField<MoneyMovement>({
     category: "",
-    id: 3,
+    id: uuid(),
     name: "",
     total: 0,
   });

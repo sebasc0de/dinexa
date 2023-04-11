@@ -1,5 +1,5 @@
 export interface MoneyMovement {
-  id: number;
+  id: string;
   name: string;
   total: number;
   category: string;
