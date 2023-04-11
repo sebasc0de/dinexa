@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, SyntheticEvent, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Toast from "../../../../components/Toast/index";
@@ -6,20 +6,24 @@ import Toast from "../../../../components/Toast/index";
 // Project imports
 import Service from "../Service";
 import { Repository } from "../Repository";
+import { useField } from "../../../../hooks/useField";
+import { MoneyMovement } from "../../../../types";
 
 function BasicExample({ repository }: { repository: Repository }) {
-  const [showToast, setShowToast] = useState(true);
+  const [showToast, setShowToast] = useState(false);
+
+  const { inputValue, onChangeHandler } = useField<MoneyMovement>({
+    category: "",
+    id: 3,
+    name: "",
+    total: 0,
+  });
 
   const service = new Service(repository);
 
-  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmitHandler = (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
-    service.create({
-      category: "Comida",
-      id: 2,
-      name: "Papas fritas",
-      total: 231,
-    });
+    service.create(inputValue);
   };
 
   return (
@@ -33,22 +37,35 @@ function BasicExample({ repository }: { repository: Repository }) {
       {/* Name */}
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name:</Form.Label>
-        <Form.Control type="text" />
+        <Form.Control
+          name="name"
+          onChange={(e) => onChangeHandler(e.target as any)}
+          type="text"
+        />
       </Form.Group>
 
       {/* Amount - total */}
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Total:</Form.Label>
-        <Form.Control type="text" />
+        <Form.Control
+          name="total"
+          onChange={(e) => onChangeHandler(e.target as any)}
+          type="text"
+        />
       </Form.Group>
 
       {/* Category */}
       <Form.Label>Category:</Form.Label>
-      <Form.Select className="mb-3" aria-label="Default select example">
+      <Form.Select
+        onChange={(e) => onChangeHandler(e.target as any)}
+        className="mb-3"
+        name="category"
+        aria-label="Default select example"
+      >
         <option>Select category</option>
-        <option value="1">Food</option>
-        <option value="2">Videogames</option>
-        <option value="3">Streaming</option>
+        <option value="food">Food</option>
+        <option value="videogames">Videogames</option>
+        <option value="streaming">Streaming</option>
       </Form.Select>
 
       <Button variant="primary" type="submit">
