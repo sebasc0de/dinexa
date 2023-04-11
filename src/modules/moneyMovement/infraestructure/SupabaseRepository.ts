@@ -1,4 +1,4 @@
-import { Repository } from "../application/create/Repository";
+import { Repository } from "../application/Repository";
 
 class SupabaseRepository implements Repository {
   create() {}

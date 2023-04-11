@@ -1,10 +1,9 @@
 import { MoneyMovement } from "../../../types";
-import { Repository } from "../application/create/Repository";
+import { Repository } from "../application/Repository";
 
 class JSONRepository implements Repository {
   public data: MoneyMovement[] = [
     { id: 2, name: "Gasto 1", category: "Comida", total: 1325 },
-    { id: 3, name: "Gasto 2", category: "Ocio", total: 321 },
   ];
 
   create(data: MoneyMovement) {

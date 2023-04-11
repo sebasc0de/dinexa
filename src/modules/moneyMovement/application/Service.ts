@@ -1,4 +1,4 @@
-import { MoneyMovement } from "../../../../types";
+import { MoneyMovement } from "../../../types";
 import { Repository } from "./Repository";
 
 class Service implements Repository {
