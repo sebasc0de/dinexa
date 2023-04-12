@@ -1,22 +1,10 @@
-import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 
-// Project imports
-import { MoneyMovement } from "../../../../types";
-import { Repository } from "../Repository";
-import Service from "../Service";
+// Redux
+import { useAppSelector } from "../../../../redux/hooks";
 
-function BasicExample({ repository }: { repository: Repository }) {
-  // Service init
-  const service = new Service(repository);
-
-  // Movements state
-  const [movements, setMovements] = useState<MoneyMovement[]>();
-
-  useEffect(() => {
-    const data = service.getAll();
-    setMovements(data);
-  }, []);
+function BasicExample() {
+  const { data } = useAppSelector((state) => state.moneyMovements);
 
   return (
     <Table responsive striped bordered hover>
@@ -29,7 +17,7 @@ function BasicExample({ repository }: { repository: Repository }) {
         </tr>
       </thead>
       <tbody>
-        {movements?.map((item) => (
+        {data?.map((item) => (
           <tr key={item.id}>
             <td>{item.id}</td>
             <td>{item.name}</td>

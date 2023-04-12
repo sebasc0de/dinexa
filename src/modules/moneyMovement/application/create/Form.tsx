@@ -1,16 +1,18 @@
-import { FormEvent, SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useState } from "react";
+import { v4 as uuid } from "uuid";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { v4 as uuid } from "uuid";
 import Toast from "../../../../components/Toast/index";
 
 // Project imports
-import Service from "../Service";
-import { Repository } from "../Repository";
 import { useField } from "../../../../hooks/useField";
 import { MoneyMovement } from "../../../../types";
 
-function BasicExample({ repository }: { repository: Repository }) {
+// Redux
+import { setMoneyMovement } from "../../../../redux/slices/moneyMovement-slice";
+import { useAppDispatch } from "../../../../redux/hooks";
+
+function BasicExample() {
   const [showToast, setShowToast] = useState(false);
 
   const { inputValue, onChangeHandler } = useField<MoneyMovement>({
@@ -20,11 +22,11 @@ function BasicExample({ repository }: { repository: Repository }) {
     total: 0,
   });
 
-  const service = new Service(repository);
+  const dispatch = useAppDispatch();
 
   const onSubmitHandler = (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
-    service.create(inputValue);
+    dispatch(setMoneyMovement(inputValue));
 
     setShowToast(true);
   };
