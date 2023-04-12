@@ -15,8 +15,8 @@ export const moneyMovementSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    setMoneyMovement(state, action: PayloadAction<MoneyMovement>) {
-      state.data.push(action.payload);
+    setMoneyMovement(state, action: PayloadAction<MoneyMovement[]>) {
+      state.data.push(...action.payload);
     },
   },
 });

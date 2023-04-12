@@ -1,9 +1,9 @@
 import { Repository } from "../application/Repository";
 
 class SupabaseRepository implements Repository {
-  create() {}
+  async create() {}
 
-  getAll() {
+  async getAll() {
     return [];
   }
 }
