@@ -9,8 +9,8 @@ const index = () => {
   return (
     <Container>
       <h4 className="text-center my-5">Money movements</h4>
-      <Table repository={repository} />
-      <Form />
+      <Table />
+      <Form repository={repository} />
     </Container>
   );
 };

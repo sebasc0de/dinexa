@@ -1,25 +1,10 @@
 import Table from "react-bootstrap/Table";
 
-// Project imports
-import Service from "../Service";
-import { Repository } from "../Repository";
-
 // Redux
-import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
-import { setMoneyMovement } from "../../../../redux/slices/moneyMovement-slice";
-import { useEffect } from "react";
+import { useAppSelector } from "../../../../redux/hooks";
 
-function BasicExample({ repository }: { repository: Repository }) {
-  const service = new Service(repository);
-
+function BasicExample() {
   const { data } = useAppSelector((state) => state.moneyMovements);
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    service.getAll().then((data) => {
-      dispatch(setMoneyMovement(data));
-    });
-  }, []);
 
   return (
     <Table responsive striped bordered hover>
