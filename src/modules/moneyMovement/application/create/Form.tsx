@@ -25,13 +25,15 @@ function BasicExample({ repository }: { repository: Repository }) {
   const onSubmitHandler = (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
     service.create(inputValue);
+
+    setShowToast(true);
   };
 
   return (
     <Form onSubmit={(e) => onSubmitHandler(e)}>
       <Toast
-        title="Hello world"
-        text="dsa"
+        title="Data loaded"
+        text="Refresh the page to view new data"
         show={showToast}
         setShow={setShowToast}
       />
