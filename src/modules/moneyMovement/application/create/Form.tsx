@@ -1,7 +1,6 @@
 import { SyntheticEvent, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import Toast from "../../../../components/Toast/index";
 
 // Project imports
 import { v4 as uuid } from "uuid";
@@ -13,10 +12,9 @@ import { create as CreateMoneyMovement } from "../Service";
 import { setMoneyMovement } from "../../../../redux/slices/moneyMovement-slice";
 import { useAppDispatch } from "../../../../redux/hooks";
 import { MoneyMovement } from "../../../../types";
+import { ToastContainer } from "react-toastify";
 
 function BasicExample({ repository }: { repository: Repository }) {
-  const [showToast, setShowToast] = useState(false);
-
   const { inputValue, onChangeHandler } = useField<MoneyMovement>({
     category: "",
     id: uuid(),
@@ -30,20 +28,11 @@ function BasicExample({ repository }: { repository: Repository }) {
     e.preventDefault();
 
     const create = await CreateMoneyMovement(repository, inputValue);
-
     create && dispatch(setMoneyMovement(inputValue));
-
-    setShowToast(true);
   };
 
   return (
     <Form onSubmit={(e) => onSubmitHandler(e)}>
-      <Toast
-        title="Data loaded"
-        text="Refresh the page to view new data"
-        show={showToast}
-        setShow={setShowToast}
-      />
       {/* Name */}
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name:</Form.Label>
