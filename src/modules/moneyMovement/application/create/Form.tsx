@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Toast from "../../../../components/Toast/index";
 
 // Project imports
+import { v4 as uuid } from "uuid";
 import { useField } from "../../../../hooks/useField";
 import { Repository } from "../Repository";
 import Service from "../Service";
@@ -20,7 +21,7 @@ function BasicExample({ repository }: { repository: Repository }) {
 
   const { inputValue, onChangeHandler } = useField<MoneyMovement>({
     category: "",
-    id: "",
+    id: uuid(),
     name: "",
     total: "",
   });
