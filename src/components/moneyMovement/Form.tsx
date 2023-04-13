@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
@@ -12,17 +12,16 @@ import { create as CreateMoneyMovement } from "../../modules/moneyMovement/appli
 import { setMoneyMovement } from "../../redux/slices/moneyMovement-slice";
 import { useAppDispatch } from "../../redux/hooks";
 import { MoneyMovement } from "../../types";
-import { ToastContainer } from "react-toastify";
 
 function BasicExample({ repository }: { repository: Repository }) {
+  const dispatch = useAppDispatch();
+
   const { inputValue, onChangeHandler } = useField<MoneyMovement>({
     category: "",
     id: uuid(),
     name: "",
     total: "",
   });
-
-  const dispatch = useAppDispatch();
 
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
@@ -68,7 +67,7 @@ function BasicExample({ repository }: { repository: Repository }) {
       </Form.Select>
 
       <Button variant="primary" type="submit">
-        Submit
+        Save spend
       </Button>
     </Form>
   );
