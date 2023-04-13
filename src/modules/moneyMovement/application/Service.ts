@@ -1,20 +1,13 @@
 import { MoneyMovement } from "../../../types";
 import { Repository } from "./Repository";
 
-class Service implements Repository {
-  private repository: Repository;
+export const create = async (
+  repository: Repository,
+  moneyMovement: MoneyMovement
+) => {
+  return repository.create(moneyMovement);
+};
 
-  constructor(repository: Repository) {
-    this.repository = repository;
-  }
-
-  create(data: MoneyMovement) {
-    return this.repository.create(data);
-  }
-
-  getAll() {
-    return this.repository.getAll();
-  }
-}
-
-export default Service;
+export const getAll = async (repository: Repository) => {
+  return repository.getAll();
+};

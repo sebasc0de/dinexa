@@ -7,7 +7,7 @@ import Toast from "../../../../components/Toast/index";
 import { v4 as uuid } from "uuid";
 import { useField } from "../../../../hooks/useField";
 import { Repository } from "../Repository";
-import Service from "../Service";
+import { create as CreateMoneyMovement } from "../Service";
 
 // Redux
 import { setMoneyMovement } from "../../../../redux/slices/moneyMovement-slice";
@@ -15,8 +15,6 @@ import { useAppDispatch } from "../../../../redux/hooks";
 import { MoneyMovement } from "../../../../types";
 
 function BasicExample({ repository }: { repository: Repository }) {
-  const service = new Service(repository);
-
   const [showToast, setShowToast] = useState(false);
 
   const { inputValue, onChangeHandler } = useField<MoneyMovement>({
@@ -31,7 +29,7 @@ function BasicExample({ repository }: { repository: Repository }) {
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    const create = await service.create(inputValue);
+    const create = await CreateMoneyMovement(repository, inputValue);
 
     create && dispatch(setMoneyMovement(inputValue));
 

@@ -1,10 +1,10 @@
 import { Container } from "react-bootstrap";
+import { SupabaseRepository } from "../modules/moneyMovement/infraestructure/SupabaseRepository";
 import Form from "../modules/moneyMovement/application/create/Form";
 import Table from "../modules/moneyMovement/application/getAll/Table";
-import SupabaseRepository from "../modules/moneyMovement/infraestructure/SupabaseRepository";
 
 const index = () => {
-  const repository = new SupabaseRepository();
+  const repository = SupabaseRepository();
 
   return (
     <Container>
