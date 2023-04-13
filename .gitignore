@@ -2,6 +2,7 @@
 
 #enviroment variables
 .env
+.env.local
 
 # dependencies
 /node_modules
