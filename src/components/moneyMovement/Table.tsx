@@ -1,7 +1,7 @@
 import Table from "react-bootstrap/Table";
 
 // Redux
-import { useAppSelector } from "../../../../redux/hooks";
+import { useAppSelector } from "../../redux/hooks";
 
 function BasicExample() {
   const { data } = useAppSelector((state) => state.moneyMovements);

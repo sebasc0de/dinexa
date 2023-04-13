@@ -4,14 +4,14 @@ import Form from "react-bootstrap/Form";
 
 // Project imports
 import { v4 as uuid } from "uuid";
-import { useField } from "../../../../hooks/useField";
-import { Repository } from "../Repository";
-import { create as CreateMoneyMovement } from "../Service";
+import { useField } from "../../hooks/useField";
+import { Repository } from "../../modules/moneyMovement/application/Repository";
+import { create as CreateMoneyMovement } from "../../modules/moneyMovement/application/Service";
 
 // Redux
-import { setMoneyMovement } from "../../../../redux/slices/moneyMovement-slice";
-import { useAppDispatch } from "../../../../redux/hooks";
-import { MoneyMovement } from "../../../../types";
+import { setMoneyMovement } from "../../redux/slices/moneyMovement-slice";
+import { useAppDispatch } from "../../redux/hooks";
+import { MoneyMovement } from "../../types";
 import { ToastContainer } from "react-toastify";
 
 function BasicExample({ repository }: { repository: Repository }) {
