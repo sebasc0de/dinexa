@@ -9,7 +9,8 @@ const index = () => {
   return (
     <Public>
       <MegaTitleOne
-        title="Meet tu vieja"
+        title="Meet "
+        gradientText="Leonardo AI copy"
         subtitle="Control and metric your spends"
         desc="Description here"
         Component={Modal}

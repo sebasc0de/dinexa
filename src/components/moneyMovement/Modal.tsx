@@ -21,7 +21,7 @@ function Example() {
         style={{ borderRadius: "50px" }}
         onClick={handleShow}
       >
-        Text
+        Create spend
       </Button>
 
       <Offcanvas
@@ -31,7 +31,7 @@ function Example() {
         onHide={handleClose}
       >
         <Offcanvas.Header className="simple-modal--header">
-          <Offcanvas.Title>Title</Offcanvas.Title>
+          <Offcanvas.Title>Create a custom spend</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="simple-modal--body">
           <Form repository={repository} />
