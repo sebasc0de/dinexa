@@ -12,6 +12,7 @@ import { create as CreateMoneyMovement } from "../../modules/moneyMovement/appli
 import { setMoneyMovement } from "../../redux/slices/moneyMovement-slice";
 import { useAppDispatch } from "../../redux/hooks";
 import { MoneyMovement } from "../../types";
+import { ToastContainer } from "react-toastify";
 
 function BasicExample({ repository }: { repository: Repository }) {
   const dispatch = useAppDispatch();
@@ -32,6 +33,8 @@ function BasicExample({ repository }: { repository: Repository }) {
 
   return (
     <Form className="cofi-form" onSubmit={(e) => onSubmitHandler(e)}>
+      <ToastContainer toastClassName="cofi-toast" position="bottom-left" />
+
       {/* Name */}
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name:</Form.Label>

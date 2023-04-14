@@ -7,7 +7,7 @@ function BasicExample() {
   const { data } = useAppSelector((state) => state.moneyMovements);
 
   return (
-    <Table className="spend-table" responsive striped bordered hover>
+    <Table className="spend-table" responsive bordered>
       <thead>
         <tr>
           <th>#</th>
