@@ -31,12 +31,13 @@ function BasicExample({ repository }: { repository: Repository }) {
   };
 
   return (
-    <Form onSubmit={(e) => onSubmitHandler(e)}>
+    <Form className="cofi-form" onSubmit={(e) => onSubmitHandler(e)}>
       {/* Name */}
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name:</Form.Label>
         <Form.Control
           name="name"
+          autoComplete="off"
           onChange={(e) => onChangeHandler(e.target as any)}
           type="text"
         />
@@ -47,6 +48,7 @@ function BasicExample({ repository }: { repository: Repository }) {
         <Form.Label>Total:</Form.Label>
         <Form.Control
           name="total"
+          autoComplete="off"
           onChange={(e) => onChangeHandler(e.target as any)}
           type="text"
         />
@@ -57,6 +59,7 @@ function BasicExample({ repository }: { repository: Repository }) {
       <Form.Select
         onChange={(e) => onChangeHandler(e.target as any)}
         className="mb-3"
+        autoComplete="off"
         name="category"
         aria-label="Default select example"
       >
@@ -66,7 +69,7 @@ function BasicExample({ repository }: { repository: Repository }) {
         <option value="streaming">Streaming</option>
       </Form.Select>
 
-      <Button variant="primary" type="submit">
+      <Button className="cofi-button" type="submit">
         Save spend
       </Button>
     </Form>

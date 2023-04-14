@@ -1,0 +1,9 @@
+@use "./variables";
+
+* {
+  color: $leonardo-ai-colors-white;
+}
+
+body {
+  background: $leonardo-ai-colors-black;
+}
