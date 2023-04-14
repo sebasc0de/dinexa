@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+import Modal from "./Modal";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 
@@ -8,7 +8,7 @@ function BasicExample() {
       <Container>
         <Navbar className="justify-content-between" expand="lg">
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-          <Button className="cofi-button">Create</Button>
+          <Modal buttonText="Create spend" modalTitle="Create new spend" />
         </Navbar>
       </Container>
     </header>

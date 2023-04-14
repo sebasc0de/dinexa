@@ -72,7 +72,7 @@ function BasicExample({ repository }: { repository: Repository }) {
         <option value="streaming">Streaming</option>
       </Form.Select>
 
-      <Button className="cofi-button" type="submit">
+      <Button className="gradient-button" type="submit">
         Save spend
       </Button>
     </Form>
