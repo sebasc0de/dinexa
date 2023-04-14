@@ -6,7 +6,7 @@ import Form from "./Form";
 // Project imports
 import { SupabaseRepository } from "../../modules/moneyMovement/infraestructure/SupabaseRepository";
 
-function Example({ modalTitle, buttonText }: Props) {
+function Example() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -21,7 +21,7 @@ function Example({ modalTitle, buttonText }: Props) {
         style={{ borderRadius: "50px" }}
         onClick={handleShow}
       >
-        {buttonText}
+        Text
       </Button>
 
       <Offcanvas
@@ -31,7 +31,7 @@ function Example({ modalTitle, buttonText }: Props) {
         onHide={handleClose}
       >
         <Offcanvas.Header className="simple-modal--header">
-          <Offcanvas.Title>{modalTitle}</Offcanvas.Title>
+          <Offcanvas.Title>Title</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="simple-modal--body">
           <Form repository={repository} />
@@ -39,11 +39,6 @@ function Example({ modalTitle, buttonText }: Props) {
       </Offcanvas>
     </>
   );
-}
-
-interface Props {
-  modalTitle: string;
-  buttonText: string;
 }
 
 export default Example;

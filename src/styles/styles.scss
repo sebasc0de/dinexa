@@ -8,12 +8,14 @@
 @import "./main";
 
 // Components
-@import "./forms";
-@import "./tables";
-@import "./toast";
-@import "./headers";
-@import "./buttons";
-@import "./modals";
+@import "./components/forms";
+@import "./components/tables";
+@import "./components/toast";
+@import "./components/headers";
+@import "./components/buttons";
+@import "./components/modals";
+
+@import "./components/MegaTitles";
 
 // Aditional styles
 @import "./effects";
