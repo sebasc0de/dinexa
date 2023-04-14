@@ -72,7 +72,11 @@ function BasicExample({ repository }: { repository: Repository }) {
         <option value="streaming">Streaming</option>
       </Form.Select>
 
-      <Button className="gradient-button" type="submit">
+      <Button
+        style={{ borderRadius: "50px" }}
+        className="gradient-button"
+        type="submit"
+      >
         Save spend
       </Button>
     </Form>

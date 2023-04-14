@@ -1,5 +1,5 @@
-import Modal from "./Modal";
 import Container from "react-bootstrap/Container";
+import Modal from "../moneyMovement/Modal";
 import Navbar from "react-bootstrap/Navbar";
 
 function BasicExample() {
