@@ -1,0 +1,12 @@
+@use "./variables";
+
+.spend-table {
+  color: white;
+  background: rgb(19, 19, 19);
+
+  tr,
+  td,
+  th {
+    border: none;
+  }
+}

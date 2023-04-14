@@ -1,13 +1,13 @@
 @use "./variables";
 
 .cofi-form {
-  input,
-  select {
+  select,
+  input {
     color: rgb(151, 151, 151);
     background: rgb(19, 19, 19);
     border: none;
 
-    &:focus-visible {
+    &:focus {
       color: rgb(151, 151, 151);
       background: rgb(19, 19, 19);
     }
