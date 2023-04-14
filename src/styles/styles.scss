@@ -1,9 +1,18 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+// Variables
 @import "./variables";
+
+// Main config
 @import "./main";
+
+// Components
 @import "./buttons";
 @import "./forms";
 @import "./tables";
 @import "./toast";
+@import "./headers";
+
+// Aditional styles
+@import "./effects";
