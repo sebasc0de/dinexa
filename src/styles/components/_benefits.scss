@@ -1,0 +1,21 @@
+@use "../variables";
+.benefitsOne {
+  &__card {
+    &--iconbox {
+      margin-bottom: 25px;
+      background: $action-color;
+      color: white;
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: inline-block;
+    }
+
+    &--title {
+      font-weight: 700;
+    }
+
+    &--desc {
+      color: $text-secondary-color;
+    }
+  }
+}

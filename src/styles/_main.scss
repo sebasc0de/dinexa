@@ -1,15 +1,15 @@
 @use "./variables";
 
 * {
-  color: $text-color;
   font-family: "Nunito Sans", sans-serif;
 }
 
 body {
   background: $background-color;
+  color: $text-color;
 }
 
 .logo {
   color: $action-color;
-  font-weight: 800;
+  font-weight: 900;
 }
