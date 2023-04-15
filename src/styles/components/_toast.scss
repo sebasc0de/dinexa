@@ -1,5 +1,6 @@
+@use "../variables";
 .cofi-toast {
-  color: rgb(151, 151, 151);
-  background: rgb(19, 19, 19);
+  color: $text-color;
+  background: white;
   font-size: 0.8rem;
 }

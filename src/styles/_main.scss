@@ -2,8 +2,14 @@
 
 * {
   color: $text-color;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 body {
   background: $background-color;
+}
+
+.logo {
+  color: $action-color;
+  font-weight: 800;
 }

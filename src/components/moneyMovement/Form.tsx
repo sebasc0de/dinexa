@@ -74,7 +74,7 @@ function BasicExample({ repository }: { repository: Repository }) {
 
       <Button
         style={{ borderRadius: "50px" }}
-        className="gradient-button"
+        className="cofi-button"
         type="submit"
       >
         Save spend
