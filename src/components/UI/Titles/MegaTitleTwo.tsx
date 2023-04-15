@@ -3,7 +3,7 @@ export const MegaTitleTwo = ({
   desc,
   title,
   gradientText,
-}: Props) => {
+}: MegaTitleTwoProps) => {
   return (
     <div className="megaTitleTwo">
       <h2 className="megaTitleTwo--title">
@@ -17,10 +17,9 @@ export const MegaTitleTwo = ({
   );
 };
 
-interface Props {
+export interface MegaTitleTwoProps {
   title: string;
   gradientText: string;
-  subtitle: string;
   desc: string;
   Component?: React.FC;
 }

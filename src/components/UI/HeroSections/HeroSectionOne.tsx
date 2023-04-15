@@ -1,17 +1,16 @@
-import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { MegaTitleTwo } from "../Titles/MegaTitleTwo";
+import { MegaTitleTwo, MegaTitleTwoProps } from "../Titles/MegaTitleTwo";
 
-export const HeroSectionOne = () => {
+export const HeroSectionOne = ({ data }: { data: HeroSectionOneProps }) => {
   return (
     <Container>
       <Row>
-        <Col lg={7}>
+        <Col lg={7} className="p-5">
           <MegaTitleTwo
-            title="Discover Digital Artworks & Collect Best"
-            gradientText=" NFTs"
-            subtitle="world"
-            desc="sda"
+            title={data.title}
+            gradientText={data.gradientText}
+            desc={data.desc}
+            Component={data.Component}
           />
         </Col>
         <Col lg={5}>b</Col>
@@ -19,3 +18,5 @@ export const HeroSectionOne = () => {
     </Container>
   );
 };
+
+interface HeroSectionOneProps extends MegaTitleTwoProps {}
