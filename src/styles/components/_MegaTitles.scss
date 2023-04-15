@@ -1,3 +1,6 @@
+@use "../variables";
+
+// Mega title one - Component
 .megaTitleOne {
   padding: 1rem;
   min-height: 200px;
@@ -27,5 +30,40 @@
     );
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+}
+
+// Mega title two - Component
+.megaTitleTwo {
+  justify-content: center;
+  gap: 0.225rem;
+  text-align: center;
+
+  &--title {
+    font-weight: 800;
+  }
+
+  &--desc {
+    margin: 1.5rem 0 1.5rem 0;
+    font-size: 1.225rem;
+    display: block;
+    color: $text-color--2;
+  }
+
+  &--gradient {
+    background: linear-gradient(
+      80deg,
+      rgb(250, 85, 96) -23.47%,
+      rgb(177, 75, 244) 45.52%,
+      rgb(77, 145, 255) 114.8%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .megaTitleTwo {
+    text-align: left;
   }
 }

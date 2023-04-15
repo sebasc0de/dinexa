@@ -3,18 +3,12 @@ import Modal from "../components/moneyMovement/Modal";
 
 // Project imports
 import { Public } from "../components/layouts/Public";
-import { MegaTitleOne } from "../components/UI/Titles/MegaTitleOne";
+import { HeroSectionOne } from "../components/UI/HeroSections/HeroSectionOne";
 
 const index = () => {
   return (
     <Public>
-      <MegaTitleOne
-        title="Meet "
-        gradientText="Leonardo AI copy"
-        subtitle="Control and metric your spends"
-        desc="Description here"
-        Component={Modal}
-      />
+      <HeroSectionOne />
       <Table />
     </Public>
   );
