@@ -17,7 +17,7 @@ function Example() {
   return (
     <>
       <Button
-        className="gradient-button"
+        className="cofi-button"
         style={{ borderRadius: "50px" }}
         onClick={handleShow}
       >

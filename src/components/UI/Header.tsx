@@ -8,7 +8,7 @@ function BasicExample() {
       <Container>
         <Navbar className="justify-content-between" expand="lg">
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-          <Modal buttonText="Create spend" modalTitle="Create new spend" />
+          <Modal />
         </Navbar>
       </Container>
     </header>

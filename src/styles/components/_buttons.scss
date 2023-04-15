@@ -1,3 +1,13 @@
+@use "../variables";
+
+.cofi-button {
+  color: white;
+  &:hover {
+    color: white;
+    background: $action-color;
+  }
+}
+
 .gradient-button {
   border: none;
   background: linear-gradient(
