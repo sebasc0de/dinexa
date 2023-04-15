@@ -1,8 +1,14 @@
 @use "../variables";
 
 .cofi-form {
+  label {
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
   select,
   input {
     border: none;
+    background: $background-color;
   }
 }
