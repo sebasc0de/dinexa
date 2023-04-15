@@ -13,7 +13,7 @@ export const HeroSectionOne = ({ data }: { data: HeroSectionOneProps }) => {
             Component={data.Component}
           />
         </Col>
-        <Col lg={5}>
+        <Col className="mt-5 mt-md-0" lg={5}>
           <ImagesCollectionCarrousel />
         </Col>
       </Row>
