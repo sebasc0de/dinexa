@@ -1,6 +1,16 @@
 @use "../variables";
 .benefitsOne {
+  h2 {
+    font-weight: 900;
+  }
+
+  p {
+    color: $text-secondary-color;
+  }
+
   &__card {
+    margin-top: 6%;
+
     &--iconbox {
       margin-bottom: 25px;
       background: $action-color;
@@ -8,6 +18,10 @@
       border-radius: 10px;
       padding: 1.25rem;
       display: inline-block;
+
+      svg {
+        transform: scale(200%);
+      }
     }
 
     &--title {

@@ -12,7 +12,11 @@ const index = () => {
   return (
     <Public>
       <HeroSectionOne data={heroSectionOneData} />
-      <BenefitsOne />
+      <BenefitsOne
+        title="Create and sell your NFTs"
+        subtitle="Here are a few reasons why you should choose Neftify"
+        data={BenefitsOneData}
+      />
       <Table />
     </Public>
   );
