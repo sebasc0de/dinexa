@@ -31,7 +31,9 @@ function Example() {
         onHide={handleClose}
       >
         <Offcanvas.Header className="simple-modal--header">
-          <Offcanvas.Title>Create a custom spend</Offcanvas.Title>
+          <Offcanvas.Title className="title--2">
+            Create a custom spend
+          </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="simple-modal--body">
           <Form repository={repository} />
