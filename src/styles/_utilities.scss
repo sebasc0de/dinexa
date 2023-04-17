@@ -1,5 +1,19 @@
 @use "./variables";
 
+.title {
+  &--1 {
+    font-weight: 900;
+  }
+
+  &--2 {
+    font-weight: 800;
+  }
+
+  &--3 {
+    font-weight: 700;
+  }
+}
+
 .subtitle {
   font-weight: 700;
   color: #152c5b;

@@ -9,10 +9,16 @@ import PostCard from "./Card";
 export default () => {
   return (
     <Container>
-      <Row>
-        <h2>Posts</h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h2 className="title--2">Posts</h2>
         <span>butons here</span>
-      </Row>
+      </div>
       <Row>
         <Swiper
           spaceBetween={150}
