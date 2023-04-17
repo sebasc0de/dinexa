@@ -1,0 +1,10 @@
+@use "./variables";
+
+.subtitle {
+  font-weight: 700;
+  color: #152c5b;
+}
+
+.desc {
+  color: $text-secondary-color;
+}

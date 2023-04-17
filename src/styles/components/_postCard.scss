@@ -1,0 +1,13 @@
+.postCardOne {
+  border: none;
+
+  img {
+    max-height: 250px;
+    object-fit: cover;
+  }
+
+  &__body {
+    border: 1px solid rgba(gray, 0.1);
+    background: white;
+  }
+}
