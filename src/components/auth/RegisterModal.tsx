@@ -23,7 +23,9 @@ function registerModal() {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
+          <Modal.Title className="title--2" id="contained-modal-title-vcenter">
+            Create account
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Row className="p-3">
