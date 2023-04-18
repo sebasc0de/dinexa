@@ -1,9 +1,22 @@
 @use "../variables";
 
 .spend-table {
+  border-collapse: separate;
+  border-spacing: 0 20px;
+
   tr,
   td,
   th {
     border: none;
+  }
+
+  tr {
+    margin-top: 20px;
+  }
+
+  td {
+    background: white;
+    padding: 1.225rem 0.825rem;
+    border-radius: 10px;
   }
 }

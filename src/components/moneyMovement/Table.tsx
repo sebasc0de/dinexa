@@ -10,22 +10,22 @@ function BasicExample() {
     <Table className="spend-table" responsive bordered>
       <thead>
         <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Total</th>
-          <th>Category</th>
-          <th>Type</th>
+          <th className="subtitle">#</th>
+          <th className="subtitle">Name</th>
+          <th className="subtitle">Total</th>
+          <th className="subtitle">Category</th>
+          <th className="subtitle">Type</th>
         </tr>
       </thead>
       <tbody>
         {data.map((item) => {
           return (
             <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.total}</td>
-              <td>{item.category}</td>
-              <td>Spended money</td>
+              <td className="subtitle">{item.id}</td>
+              <td className="desc">{item.name}</td>
+              <td className="desc">{item.total}</td>
+              <td className="desc">{item.category}</td>
+              <td className="">Spended money</td>
             </tr>
           );
         })}
