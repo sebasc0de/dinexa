@@ -18,3 +18,11 @@
     rgb(77, 145, 255) 114.8%
   );
 }
+
+.rounded-button {
+  display: block;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border-radius: 50%;
+}

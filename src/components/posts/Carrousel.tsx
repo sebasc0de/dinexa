@@ -1,9 +1,10 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 // Import Swiper styles
 import "swiper/css";
-import { Row, Container, Col } from "react-bootstrap";
+import { Row, Container, Col, Button } from "react-bootstrap";
 import PostCard from "./Card";
 
 export default () => {
@@ -13,8 +14,16 @@ export default () => {
         <Col xs={6}>
           <h2 className="title--2">Posts</h2>
         </Col>
-        <Col className="d-flex align-items-center justify-content-end" xs={6}>
-          <span>butons here</span>
+        <Col
+          className="d-flex gap-1 align-items-center justify-content-end"
+          xs={6}
+        >
+          <Button className="rounded-button text-white">
+            <BiChevronLeft size={25} />
+          </Button>
+          <Button className="rounded-button text-white">
+            <BiChevronRight size={25} />
+          </Button>
         </Col>
       </Row>
       <Row>
