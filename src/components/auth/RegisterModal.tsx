@@ -17,7 +17,7 @@ function registerModal() {
 
       <Modal
         show={modalShow}
-        size="xl"
+        size="lg"
         onHide={() => setModalShow(false)}
         aria-labelledby="contained-modal-title-vcenter"
         centered
