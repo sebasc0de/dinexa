@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Modal from "../moneyMovement/Modal";
 import Navbar from "react-bootstrap/Navbar";
 import { Logo } from "./Logo";
+import LoginModal from "../auth/LoginModal";
 
 function BasicExample() {
   return (
@@ -11,7 +12,7 @@ function BasicExample() {
           <Navbar.Brand href="#home">
             <Logo />
           </Navbar.Brand>
-          <Modal />
+          <LoginModal />
         </Navbar>
       </Container>
     </header>

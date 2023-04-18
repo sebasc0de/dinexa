@@ -19,7 +19,6 @@ const index = () => {
         data={BenefitsOneData}
       />
       <PostCarrousel />
-      <Table />
     </Public>
   );
 };
