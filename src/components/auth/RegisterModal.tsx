@@ -26,11 +26,11 @@ function registerModal() {
           <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Row>
-            <Col className="d-none  p-3 d-lg-block" lg={6}>
+          <Row className="p-3">
+            <Col className="d-none d-lg-block" lg={6}>
               <List data={data} listTitle={listTitle} />
             </Col>
-            <Col className="p-3" lg={6}>
+            <Col lg={6}>
               <RegisterForm />
             </Col>
           </Row>

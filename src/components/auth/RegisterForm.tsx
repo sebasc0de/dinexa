@@ -1,5 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { HaveAccountButton } from "./HaveAccountButton";
 
 export function RegisterForm() {
   return (
@@ -22,6 +23,8 @@ export function RegisterForm() {
       <Button className="cofi-button w-100" type="submit">
         Create account
       </Button>
+
+      <HaveAccountButton />
     </Form>
   );
 }

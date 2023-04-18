@@ -9,6 +9,10 @@ body {
   color: $text-color;
 }
 
+a {
+  text-decoration: none;
+}
+
 .logo {
   color: $action-color;
   font-weight: 900;
