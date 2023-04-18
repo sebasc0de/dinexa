@@ -1,12 +1,12 @@
 import { Col, Row } from "react-bootstrap";
 import { List } from "../UI/List";
-import { LoginForm } from "./LoginForm";
-import { useState } from "react";
 import { listTitle, data } from "../../data/loginModal.json";
+import { RegisterForm } from "./RegisterForm";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-function LoginModal() {
+function registerModal() {
   const [modalShow, setModalShow] = useState(false);
 
   return (
@@ -17,7 +17,7 @@ function LoginModal() {
 
       <Modal
         show={modalShow}
-        size="lg"
+        size="xl"
         onHide={() => setModalShow(false)}
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -27,11 +27,11 @@ function LoginModal() {
         </Modal.Header>
         <Modal.Body>
           <Row>
-            <Col className="d-none d-lg-block" lg={6}>
+            <Col className="d-none  p-3 d-lg-block" lg={6}>
               <List data={data} listTitle={listTitle} />
             </Col>
-            <Col lg={6}>
-              <LoginForm />
+            <Col className="p-3" lg={6}>
+              <RegisterForm />
             </Col>
           </Row>
         </Modal.Body>
@@ -40,4 +40,4 @@ function LoginModal() {
   );
 }
 
-export default LoginModal;
+export default registerModal;

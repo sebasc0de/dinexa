@@ -2,12 +2,13 @@
 
 .cofi-form {
   label {
-    font-weight: 600;
-    font-size: 0.8rem;
+    font-weight: 700;
+    font-size: 0.875rem;
   }
 
   select,
   input {
+    font-size: 0.875rem;
     border: none;
     background: $background-color;
   }

@@ -1,8 +1,7 @@
-import Container from "react-bootstrap/Container";
-import Modal from "../moneyMovement/Modal";
-import Navbar from "react-bootstrap/Navbar";
 import { Logo } from "./Logo";
-import LoginModal from "../auth/LoginModal";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import RegisterModal from "../auth/RegisterModal";
 
 function BasicExample() {
   return (
@@ -12,7 +11,7 @@ function BasicExample() {
           <Navbar.Brand href="#home">
             <Logo />
           </Navbar.Brand>
-          <LoginModal />
+          <RegisterModal />
         </Navbar>
       </Container>
     </header>

@@ -26,12 +26,13 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.225rem;
   list-style: none;
 
   li {
     color: $text-secondary-color;
     font-weight: 600;
     font-size: 0.825rem;
+    width: 80%;
   }
 }
