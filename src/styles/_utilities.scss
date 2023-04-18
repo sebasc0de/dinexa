@@ -36,3 +36,15 @@
     width: 80%;
   }
 }
+
+.money {
+  font-weight: 600;
+}
+
+.money.gain {
+  color: #4a934a;
+}
+
+.money.spend {
+  color: red;
+}

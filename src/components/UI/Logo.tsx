@@ -1,3 +1,3 @@
 export const Logo = () => {
-  return <span className="logo">Financio</span>;
+  return <span className="logo">Dinexa</span>;
 };
