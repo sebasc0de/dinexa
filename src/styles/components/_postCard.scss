@@ -11,3 +11,9 @@
     background: white;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .postCardOne {
+    width: 18rem;
+  }
+}

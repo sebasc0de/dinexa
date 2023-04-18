@@ -2,7 +2,7 @@ import Card from "react-bootstrap/Card";
 
 function PostCard() {
   return (
-    <Card className="postCardOne" style={{ width: "18rem" }}>
+    <Card className="postCardOne">
       <Card.Img variant="top" src="/images/books.jpg" />
       <Card.Body className="postCardOne__body">
         <Card.Title className="subtitle">Card Title</Card.Title>
