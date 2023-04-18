@@ -14,17 +14,21 @@ function BasicExample() {
           <th>Name</th>
           <th>Total</th>
           <th>Category</th>
+          <th>Type</th>
         </tr>
       </thead>
       <tbody>
-        {data?.map((item) => (
-          <tr key={item.id}>
-            <td>{item.id}</td>
-            <td>{item.name}</td>
-            <td>{item.total}</td>
-            <td>{item.category}</td>
-          </tr>
-        ))}
+        {data.map((item) => {
+          return (
+            <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.name}</td>
+              <td>{item.total}</td>
+              <td>{item.category}</td>
+              <td>Spended money</td>
+            </tr>
+          );
+        })}
       </tbody>
     </Table>
   );

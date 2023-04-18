@@ -27,8 +27,10 @@ function BasicExample({ repository }: { repository: Repository }) {
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    const create = await CreateMoneyMovement(repository, inputValue);
-    create && dispatch(setMoneyMovement(inputValue));
+    // Repository implementation
+    // const create = await CreateMoneyMovement(repository, inputValue);
+
+    dispatch(setMoneyMovement(inputValue));
   };
 
   return (
