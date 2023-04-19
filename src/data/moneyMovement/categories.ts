@@ -2,27 +2,27 @@ import { MoneyMovementCategory } from "../../types";
 
 const categories: MoneyMovementCategory[] = [
   {
-    title: "Technology",
+    title: "House",
     img: "images/controller.jpg",
   },
   {
-    title: "Fashion",
+    title: "Transportation",
     img: "images/sun_glasses.jpg",
   },
   {
-    title: "Education",
+    title: "Healthcare",
     img: "/images/books.jpg",
   },
   {
-    title: "Technology",
+    title: "Food",
     img: "images/controller.jpg",
   },
   {
-    title: "Fashion",
+    title: "Entertainment",
     img: "images/sun_glasses.jpg",
   },
   {
-    title: "Education",
+    title: "Saving",
     img: "/images/books.jpg",
   },
 ];

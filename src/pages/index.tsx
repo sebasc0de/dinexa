@@ -21,8 +21,8 @@ const index = () => {
       />
       <CategoriesGrid
         categories={MoneyCategories}
-        sectionTitle="Save your money in categories"
-        sectionDesc=""
+        sectionTitle="Categorize your expenses"
+        sectionDesc="Your expenses sorted by categories"
       />
       <PostCarrousel data={Posts} />
     </Public>

@@ -2,37 +2,37 @@ import { Post } from "../../types";
 
 const data: Post[] = [
   {
-    id: "",
+    id: "1",
     title: "Save your money",
     desc: "",
     img: "",
   },
   {
-    id: "",
+    id: "2",
     title: "You know this app?",
     desc: "",
     img: "",
   },
   {
-    id: "",
+    id: "3",
     title: "Other title",
     desc: "",
     img: "",
   },
   {
-    id: "",
+    id: "4",
     title: "Other title 2",
     desc: "",
     img: "",
   },
   {
-    id: "",
+    id: "5",
     title: "Other title 3",
     desc: "",
     img: "",
   },
   {
-    id: "",
+    id: "6",
     title: "Other title 3",
     desc: "",
     img: "",

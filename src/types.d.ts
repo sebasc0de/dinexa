@@ -8,6 +8,7 @@ export interface MoneyMovement {
 export interface MoneyMovementCategory {
   title: string;
   img: string;
+  desc?: string;
 }
 
 export interface Post {

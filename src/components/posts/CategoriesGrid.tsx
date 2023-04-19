@@ -14,7 +14,7 @@ const CategoriesGrid = ({ sectionTitle, sectionDesc, categories }: Props) => {
           categories.map((item, i) => {
             return (
               <Col key={i} lg={3}>
-                <PostCard img={item.img} title={item.title} />
+                <PostCard img={item.img} title={item.title} desc={item.desc} />
               </Col>
             );
           })}
