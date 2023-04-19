@@ -4,12 +4,12 @@ import PostCard from "./Card";
 
 const CategoriesGrid = ({ sectionTitle, sectionDesc, categories }: Props) => {
   return (
-    <Container className="p-5 my-5">
+    <Container className="my-5">
       <Row className="mb-5">
         <h2 className="subtitle text-center">{sectionTitle}</h2>
         <p className="desc text-center">{sectionDesc}</p>
       </Row>
-      <Row style={{ gap: "5rem" }}>
+      <Row className="gap-3 gap-lg-5 justify-content-center">
         {categories &&
           categories.map((item, i) => {
             return (

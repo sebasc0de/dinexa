@@ -1,7 +1,7 @@
 // Project imports
 import { heroSectionOneData } from "../data/homepage/HeroSectionOneData";
 import { BenefitsOneData } from "../data/homepage/BenefitsOneData";
-import PostCategories from "../data/posts/categories";
+import MoneyCategories from "../data/moneyMovement/categories";
 
 import { BenefitsOne } from "../components/UI/Benefits/BenefitsOne";
 import { HeroSectionOne } from "../components/UI/HeroSections/HeroSectionOne";
@@ -19,7 +19,7 @@ const index = () => {
         data={BenefitsOneData}
       />
       <CategoriesGrid
-        categories={PostCategories}
+        categories={MoneyCategories}
         sectionTitle="Save your money in categories"
         sectionDesc=""
       />
