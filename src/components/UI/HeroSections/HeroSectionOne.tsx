@@ -1,20 +1,21 @@
 import { Carousel, Col, Container, Row } from "react-bootstrap";
 import { MegaTitleTwo, MegaTitleTwoProps } from "../Titles/MegaTitleTwo";
-import { useTranslation } from "react-i18next";
 
-export const HeroSectionOne = ({ data }: { data: HeroSectionOneProps }) => {
-  const { t, i18n } = useTranslation(["welcome"]);
-
+export const HeroSectionOne = ({
+  title,
+  gradientText,
+  desc,
+  Component,
+}: MegaTitleTwoProps) => {
   return (
     <Container className="heroSectionOne">
-      <p>{t("name")}</p>
       <Row>
         <Col lg={7}>
           <MegaTitleTwo
-            title={data.title}
-            gradientText={data.gradientText}
-            desc={data.desc}
-            Component={data.Component}
+            title={title}
+            gradientText={gradientText}
+            desc={desc}
+            Component={Component}
           />
         </Col>
         <Col className="mt-5 mt-md-0" lg={5}>
@@ -59,5 +60,3 @@ function ImagesCollectionCarrousel() {
     </Carousel>
   );
 }
-
-interface HeroSectionOneProps extends MegaTitleTwoProps {}
