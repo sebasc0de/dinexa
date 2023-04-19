@@ -1,10 +1,10 @@
 import { Col, Row } from "react-bootstrap";
 import { List } from "../UI/List";
 import { listTitle, data } from "../../data/loginModal.json";
-import { RegisterForm } from "./RegisterForm";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import RegisterForm from "./RegisterForm";
 
 function registerModal() {
   const [modalShow, setModalShow] = useState(false);

@@ -10,6 +10,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import store, { persistor } from "../store";
 
+// React imports
 import type { AppProps } from "next/app";
 import { Suspense } from "react";
 
