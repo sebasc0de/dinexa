@@ -10,9 +10,17 @@ import CategoriesGrid from "../components/posts/CategoriesGrid";
 
 // Translations
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
+import { supabase } from "../lib/supabase";
 
 const index = () => {
   const { t } = useTranslation(["homepage"]);
+
+  useEffect(() => {
+    supabase.auth.getSession().then((data) => {
+      console.log(data);
+    });
+  }, []);
 
   return (
     <Public>
