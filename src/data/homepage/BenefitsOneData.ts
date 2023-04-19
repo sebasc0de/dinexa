@@ -3,23 +3,23 @@ import { BiCategoryAlt, BiPieChartAlt2, BiParty } from "react-icons/bi";
 
 export const BenefitsOneData = [
   {
-    title: "Registro de ingresos y gastos diarios",
-    desc: "dasdsa",
+    title: "DailySpendLogTitle",
+    desc: "DailySpendLogDesc",
     Icon: BsShieldCheck,
   },
   {
-    title: "Categorización de ingresos y gastos",
-    desc: "dasdsa",
+    title: "SpendCategorizationTitle",
+    desc: "SpendCategorizationDesc",
     Icon: BiCategoryAlt,
   },
   {
-    title: "Consejos diarios de ahorro",
-    desc: "dasdsa",
+    title: "DailySavingTipsTitle",
+    desc: "DailySavingTipsDesc",
     Icon: BiParty,
   },
   {
-    title: "Metricas de tus gastos",
-    desc: "dasdsa",
+    title: "SpendMetricsTitle",
+    desc: "SpendMetricsDesc",
     Icon: BiPieChartAlt2,
   },
 ];

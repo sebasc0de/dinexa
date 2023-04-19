@@ -6,7 +6,20 @@
   },
 
   "benefitsOne": {
-    "title": "Create and sell your NFTs",
-    "subTitle": "Here are a few reasons why you should choose Neftify"
+    "title": "Track, Analyze, and Boost Your Wealth",
+    "subTitle": "Track expenses, customize categories, and grow your wealth with ease.",
+    "data": {
+      "DailySpendLogTitle": "Basic expense tracking",
+      "DailySpendLogDesc": "With our free plan, you can easily track your daily expenses and categorize them for better organization.",
+
+      "SpendCategorizationTitle": "Customizable categories",
+      "SpendCategorizationDesc": "You can create and customize categories for your expenses, allowing you to easily see where your money is going",
+
+      "DailySavingTipsTitle": "Daily saving tips",
+      "DailySavingTipsDesc": "Save your money with the best saving tips",
+
+      "SpendMetricsTitle": "Grow your finances with metrics",
+      "SpendMetricsDesc": "Track and analyze financial metrics to boost wealth and achieve financial goals."
+    }
   }
 }

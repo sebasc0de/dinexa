@@ -1,6 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 export const BenefitsOne = ({ data, title, subtitle }: Props) => {
+  const { t } = useTranslation(["homepage"]);
+
   return (
     <Container className="benefitsOne p-0 p-lg-5">
       <Row className="text-center">
@@ -17,8 +20,12 @@ export const BenefitsOne = ({ data, title, subtitle }: Props) => {
                 <Icon />
               </div>
 
-              <h5 className="benefitsOne__card--title">{title}</h5>
-              <p className="benefitsOne__card--desc">{desc}</p>
+              <h5 className="benefitsOne__card--title">
+                {t(`benefitsOne.data.${title}`)}
+              </h5>
+              <p className="benefitsOne__card--desc">
+                {t(`benefitsOne.data.${desc}`)}
+              </p>
             </Col>
           );
         })}
