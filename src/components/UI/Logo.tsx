@@ -1,3 +1,9 @@
+import Link from "next/link";
+
 export const Logo = () => {
-  return <span className="logo">Dinexa</span>;
+  return (
+    <Link href="/">
+      <span className="logo">Dinexa</span>
+    </Link>
+  );
 };

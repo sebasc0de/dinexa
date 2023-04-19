@@ -21,5 +21,18 @@
       "SpendMetricsTitle": "Grow your finances with metrics",
       "SpendMetricsDesc": "Track and analyze financial metrics to boost wealth and achieve financial goals."
     }
+  },
+
+  "moneyCategories": {
+    "title": "",
+    "subTitle": "",
+    "data": {
+      "house": "House",
+      "transportation": "Transportation",
+      "healthcare": "Healthcare",
+      "food": "Food",
+      "entertainment": "Entertainment",
+      "saving": "Saving"
+    }
   }
 }

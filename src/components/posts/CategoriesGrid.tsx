@@ -2,7 +2,12 @@ import { Col, Container, Row } from "react-bootstrap";
 import { MoneyMovementCategory } from "../../types";
 import PostCard from "./Card";
 
+// Translation
+import { useTranslation } from "react-i18next";
+
 const CategoriesGrid = ({ sectionTitle, sectionDesc, categories }: Props) => {
+  const { t } = useTranslation(["homepage"]);
+
   return (
     <Container className="my-5">
       <Row className="mb-5">
@@ -12,9 +17,11 @@ const CategoriesGrid = ({ sectionTitle, sectionDesc, categories }: Props) => {
       <Row className="gap-3 gap-lg-5 justify-content-center">
         {categories &&
           categories.map((item, i) => {
+            const titleKey = t(`moneyCategories.data.${item.title}`);
+
             return (
               <Col key={i} lg={3}>
-                <PostCard img={item.img} title={item.title} desc={item.desc} />
+                <PostCard img={item.img} title={titleKey} desc={item.desc} />
               </Col>
             );
           })}
