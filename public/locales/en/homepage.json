@@ -3,5 +3,10 @@
     "title": "Take control of your",
     "highlight": "finances",
     "desc": "Our app is designed to help millennials manage their money, create budgets and achieve financial goals."
+  },
+
+  "benefitsOne": {
+    "title": "Create and sell your NFTs",
+    "subTitle": "Here are a few reasons why you should choose Neftify"
   }
 }

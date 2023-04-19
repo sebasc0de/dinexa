@@ -22,8 +22,8 @@ const index = () => {
         gradientText={t("heroSectionOne.highlight")}
       />
       <BenefitsOne
-        title="Create and sell your NFTs"
-        subtitle="Here are a few reasons why you should choose Neftify"
+        title={t("benefitsOne.title")}
+        subtitle={t("benefitsOne.subTitle")}
         data={BenefitsOneData}
       />
       <CategoriesGrid
