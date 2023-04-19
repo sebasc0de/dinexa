@@ -4,8 +4,8 @@ export const BenefitsOne = ({ data, title, subtitle }: Props) => {
   return (
     <Container className="benefitsOne p-0 p-lg-5">
       <Row className="text-center">
-        <h2>{title}</h2>
-        <p>{subtitle}</p>
+        <h2 className="subtitle">{title}</h2>
+        <p className="desc">{subtitle}</p>
       </Row>
       <Row>
         {data.map((item, i) => {

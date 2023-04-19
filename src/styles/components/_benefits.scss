@@ -1,13 +1,5 @@
 @use "../variables";
 .benefitsOne {
-  h2 {
-    font-weight: 900;
-  }
-
-  p {
-    color: $text-secondary-color;
-  }
-
   &__card {
     margin-top: 6%;
 

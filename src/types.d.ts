@@ -4,3 +4,8 @@ export interface MoneyMovement {
   total: number;
   category: string;
 }
+
+export interface PostCategory {
+  title: string;
+  img: string;
+}

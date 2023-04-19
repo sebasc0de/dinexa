@@ -25,7 +25,7 @@ export default () => {
     <Container>
       <Row>
         <Col xs={6}>
-          <h2 className="title--3">Posts</h2>
+          <h2 className="subtitle">Posts</h2>
         </Col>
         <Col
           className="d-flex gap-1 align-items-center justify-content-end"
