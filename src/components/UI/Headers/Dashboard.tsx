@@ -12,7 +12,9 @@ function BasicExample() {
           <Navbar.Brand href="#home">
             <Logo />
           </Navbar.Brand>
-          <WalletMoney />
+          <div>
+            <WalletMoney />
+          </div>
         </Navbar>
       </Container>
     </header>

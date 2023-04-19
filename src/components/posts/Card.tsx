@@ -1,18 +1,22 @@
 import Card from "react-bootstrap/Card";
 
-function PostCard() {
+function PostCard({ title, desc }: Props) {
+  const TITLE_STLYES = desc ? "" : "text-center";
+
   return (
     <Card className="postCardOne">
       <Card.Img variant="top" src="/images/books.jpg" />
       <Card.Body className="postCardOne__body">
-        <Card.Title className="subtitle">Card Title</Card.Title>
-        <Card.Text className="desc">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title className={`subtitle ${TITLE_STLYES}`}>{title}</Card.Title>
+        <Card.Text className="desc">{desc}</Card.Text>
       </Card.Body>
     </Card>
   );
+}
+
+interface Props {
+  title: string;
+  desc?: string;
 }
 
 export default PostCard;
