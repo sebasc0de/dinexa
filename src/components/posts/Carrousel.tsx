@@ -4,15 +4,16 @@ import "swiper/scss/pagination";
 import "swiper/scss/navigation";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+import { Post } from "../../types";
 import { Row, Container, Col, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import PostCard from "./Card";
 
-export default () => {
+export default ({ data }: Props) => {
   const [inMobile, setInMobile] = useState(false);
 
   useEffect(() => {
@@ -51,23 +52,24 @@ export default () => {
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          <SwiperSlide>
-            <PostCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PostCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PostCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PostCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PostCard />
-          </SwiperSlide>
+          {data &&
+            data.map((item) => {
+              return (
+                <SwiperSlide key={item.id}>
+                  <PostCard
+                    title={item.title}
+                    img={item.img}
+                    desc={item.desc}
+                  />
+                </SwiperSlide>
+              );
+            })}
         </Swiper>
       </Row>
     </Container>
   );
 };
+
+interface Props {
+  data: Post[];
+}

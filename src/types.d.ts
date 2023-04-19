@@ -5,7 +5,14 @@ export interface MoneyMovement {
   category: string;
 }
 
-export interface PostCategory {
+export interface MoneyMovementCategory {
   title: string;
+  img: string;
+}
+
+export interface Post {
+  id: string;
+  title: string;
+  desc: string;
   img: string;
 }

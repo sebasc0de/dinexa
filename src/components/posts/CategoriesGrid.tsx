@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { PostCategory } from "../../types";
+import { MoneyMovementCategory } from "../../types";
 import PostCard from "./Card";
 
 const CategoriesGrid = ({ sectionTitle, sectionDesc, categories }: Props) => {
@@ -26,7 +26,7 @@ const CategoriesGrid = ({ sectionTitle, sectionDesc, categories }: Props) => {
 interface Props {
   sectionTitle: string;
   sectionDesc: string;
-  categories: PostCategory[];
+  categories: MoneyMovementCategory[];
 }
 
 export default CategoriesGrid;

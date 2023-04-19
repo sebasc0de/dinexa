@@ -2,6 +2,7 @@
 import { heroSectionOneData } from "../data/homepage/HeroSectionOneData";
 import { BenefitsOneData } from "../data/homepage/BenefitsOneData";
 import MoneyCategories from "../data/moneyMovement/categories";
+import Posts from "../data/posts/data";
 
 import { BenefitsOne } from "../components/UI/Benefits/BenefitsOne";
 import { HeroSectionOne } from "../components/UI/HeroSections/HeroSectionOne";
@@ -23,7 +24,7 @@ const index = () => {
         sectionTitle="Save your money in categories"
         sectionDesc=""
       />
-      <PostCarrousel />
+      <PostCarrousel data={Posts} />
     </Public>
   );
 };

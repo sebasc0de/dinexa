@@ -1,6 +1,6 @@
-import { PostCategory } from "../../types";
+import { MoneyMovementCategory } from "../../types";
 
-const categories: PostCategory[] = [
+const categories: MoneyMovementCategory[] = [
   {
     title: "Technology",
     img: "images/controller.jpg",
