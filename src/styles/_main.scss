@@ -17,3 +17,26 @@ a {
   color: $action-color;
   font-weight: 900;
 }
+
+.money-wallet {
+  background: $action-color;
+  color: white;
+  align-items: center;
+  padding: 0.225rem 0.625rem;
+  border-radius: 0.425rem;
+  border-color: transparent;
+  font-size: 0.875rem;
+  display: flex;
+  gap: 0.8rem;
+  font-weight: 700;
+
+  &:hover {
+    background: $action-color;
+    color: white;
+    border-color: transparent;
+  }
+
+  svg {
+    transform: scale(130%);
+  }
+}

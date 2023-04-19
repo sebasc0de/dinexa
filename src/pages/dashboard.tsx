@@ -4,7 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 const dashboard = () => {
   return (
     <Layout>
-      <Container className="p-5">
+      <Container className="p-lg-5">
         <Row>
           <Col>
             <Table />

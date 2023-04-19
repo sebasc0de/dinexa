@@ -1,18 +1,20 @@
+import { Logo } from "../Logo";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
-import { Logo } from "../Logo";
+import WalletMoney from "../../wallet/WalletMoney";
 
 function BasicExample() {
   return (
     <header className="cofi-header">
-      <Navbar expand="lg">
-        <Container fluid className="mx-3">
+      <Container>
+        <Navbar expand="justify-content-between lg">
           {/* Brand logo */}
           <Navbar.Brand href="#home">
             <Logo />
           </Navbar.Brand>
-        </Container>
-      </Navbar>
+          <WalletMoney />
+        </Navbar>
+      </Container>
     </header>
   );
 }
