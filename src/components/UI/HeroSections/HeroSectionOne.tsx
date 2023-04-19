@@ -1,9 +1,13 @@
 import { Carousel, Col, Container, Row } from "react-bootstrap";
 import { MegaTitleTwo, MegaTitleTwoProps } from "../Titles/MegaTitleTwo";
+import { useTranslation } from "react-i18next";
 
 export const HeroSectionOne = ({ data }: { data: HeroSectionOneProps }) => {
+  const { t, i18n } = useTranslation(["welcome"]);
+
   return (
     <Container className="heroSectionOne">
+      <p>{t("name")}</p>
       <Row>
         <Col lg={7}>
           <MegaTitleTwo
