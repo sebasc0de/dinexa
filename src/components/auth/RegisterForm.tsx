@@ -2,8 +2,12 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 function RegisterForm() {
+  const submitHandler = (e: any) => {
+    e.preventDefault();
+  };
+
   return (
-    <Form className="cofi-form">
+    <Form onSubmit={submitHandler} className="cofi-form">
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" />
@@ -20,7 +24,7 @@ function RegisterForm() {
       </Form.Group>
 
       <Button className="cofi-button" type="submit">
-        Submit
+        Create account
       </Button>
     </Form>
   );

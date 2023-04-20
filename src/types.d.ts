@@ -17,3 +17,15 @@ export interface Post {
   desc: string;
   img: string;
 }
+
+// Auth interfaces
+export interface AuthRegisterData {
+  email: string;
+  password: string;
+  confirmPassword?: string;
+}
+
+export interface AuthLoginData {
+  email: string;
+  password: string;
+}
