@@ -1,6 +1,6 @@
-import { supabase } from "../../../lib/supabase";
-import { AuthLoginData, AuthRegisterData } from "../../../types";
+import { AuthLoginData, AuthRegisterData, User } from "../../../types";
 import { Repository } from "../application/Repository";
+import { supabase } from "../../../lib/supabase";
 
 export const SupabaseRepository = (): Repository => {
   return {
@@ -14,8 +14,6 @@ const loginUser = async (user: AuthLoginData) => {
     email: "",
     password: "",
   });
-
-  return data;
 };
 
 const createUser = async (user: AuthRegisterData) => {
@@ -24,5 +22,7 @@ const createUser = async (user: AuthRegisterData) => {
     password: user.password,
   });
 
-  return data;
+  console.log(data, error);
+
+  if (!error) return data.user;
 };

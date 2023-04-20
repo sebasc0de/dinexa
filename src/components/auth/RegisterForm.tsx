@@ -22,25 +22,35 @@ function RegisterForm() {
     e.preventDefault();
 
     const createUser = await create(repository, values);
-
-    console.log(createUser);
   };
 
   return (
     <Form onSubmit={submitHandler} className="cofi-form">
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control onChange={onChangeHandler as any} type="email" />
+        <Form.Control
+          name="email"
+          onChange={onChangeHandler as any}
+          type="email"
+        />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control onChange={onChangeHandler as any} type="password" />
+        <Form.Control
+          name="password"
+          onChange={onChangeHandler as any}
+          type="password"
+        />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Confirm password:</Form.Label>
-        <Form.Control onChange={onChangeHandler as any} type="password" />
+        <Form.Control
+          name="confirmPassword"
+          onChange={onChangeHandler as any}
+          type="password"
+        />
       </Form.Group>
 
       <Button className="cofi-button" type="submit">
