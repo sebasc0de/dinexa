@@ -1,27 +1,29 @@
-import { Auth } from "@supabase/auth-ui-react";
-import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { supabase } from "../../lib/supabase";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
-const RegisterForm = () => {
+function RegisterForm() {
   return (
-    <Auth
-      socialLayout="horizontal"
-      view="sign_up"
-      supabaseClient={supabase}
-      providers={["google", "facebook", "twitter"]}
-      appearance={{
-        theme: ThemeSupa,
-        variables: {
-          default: {
-            colors: {
-              brandAccent: "#007aff",
-              brand: "#007aff",
-            },
-          },
-        },
-      }}
-    />
+    <Form className="cofi-form">
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Confirm password:</Form.Label>
+        <Form.Control type="password" />
+      </Form.Group>
+
+      <Button className="cofi-button" type="submit">
+        Submit
+      </Button>
+    </Form>
   );
-};
+}
 
 export default RegisterForm;
