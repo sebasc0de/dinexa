@@ -28,18 +28,14 @@ function RegisterForm() {
     <Form onSubmit={submitHandler} className="cofi-form">
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control
-          name="email"
-          onChange={onChangeHandler as any}
-          type="email"
-        />
+        <Form.Control name="email" onChange={onChangeHandler} type="email" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control
           name="password"
-          onChange={onChangeHandler as any}
+          onChange={onChangeHandler}
           type="password"
         />
       </Form.Group>
@@ -48,7 +44,7 @@ function RegisterForm() {
         <Form.Label>Confirm password:</Form.Label>
         <Form.Control
           name="confirmPassword"
-          onChange={onChangeHandler as any}
+          onChange={onChangeHandler}
           type="password"
         />
       </Form.Group>
