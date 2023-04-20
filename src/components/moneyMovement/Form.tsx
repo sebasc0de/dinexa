@@ -6,7 +6,6 @@ import Form from "react-bootstrap/Form";
 import { v4 as uuid } from "uuid";
 import { useField } from "../../hooks/useField";
 import { Repository } from "../../modules/moneyMovement/application/Repository";
-import { create as CreateMoneyMovement } from "../../modules/moneyMovement/application/Service";
 
 // Redux
 import { setMoneyMovement } from "../../redux/slices/moneyMovement-slice";
@@ -21,7 +20,7 @@ function BasicExample({ repository }: { repository: Repository }) {
     category: "",
     id: uuid(),
     name: "",
-    total: "",
+    total: 0,
   });
 
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
@@ -43,7 +42,7 @@ function BasicExample({ repository }: { repository: Repository }) {
         <Form.Control
           name="name"
           autoComplete="off"
-          onChange={(e) => onChangeHandler(e.target as any)}
+          onChange={onChangeHandler}
           type="text"
         />
       </Form.Group>
@@ -54,7 +53,7 @@ function BasicExample({ repository }: { repository: Repository }) {
         <Form.Control
           name="total"
           autoComplete="off"
-          onChange={(e) => onChangeHandler(e.target as any)}
+          onChange={onChangeHandler}
           type="text"
         />
       </Form.Group>
@@ -62,7 +61,7 @@ function BasicExample({ repository }: { repository: Repository }) {
       {/* Category */}
       <Form.Label>Category:</Form.Label>
       <Form.Select
-        onChange={(e) => onChangeHandler(e.target as any)}
+        onChange={onChangeHandler}
         className="mb-3"
         autoComplete="off"
         name="category"
