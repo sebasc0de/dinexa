@@ -1,4 +1,5 @@
 import { supabase } from "../../../lib/supabase";
+import { AuthLoginData, AuthRegisterData } from "../../../types";
 import { Repository } from "../application/Repository";
 
 export const SupabaseRepository = (): Repository => {
@@ -8,7 +9,7 @@ export const SupabaseRepository = (): Repository => {
   };
 };
 
-const loginUser = async () => {
+const loginUser = async (user: AuthLoginData) => {
   const { data, error } = await supabase.auth.signInWithPassword({
     email: "",
     password: "",
@@ -17,10 +18,10 @@ const loginUser = async () => {
   return data;
 };
 
-const createUser = async () => {
+const createUser = async (user: AuthRegisterData) => {
   const { data, error } = await supabase.auth.signUp({
-    email: "",
-    password: "",
+    email: user.email,
+    password: user.password,
   });
 
   return data;

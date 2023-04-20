@@ -1,16 +1,14 @@
 import { useState } from "react";
 
-export function useField<T>(initialState = {}) {
-  const [inputValue, setInputValue] = useState<T>(initialState as T);
+export function useField<T>(initialState: T) {
+  const [inputValue, setInputValue] = useState<T>(initialState);
 
-  const onChangeHandler = (target: HTMLInputElement) => {
+  const onChangeHandler = ({ target }: { target: HTMLInputElement }) => {
     setInputValue((prev) => ({
       ...prev,
       [target.name]: target.value,
     }));
-
-    console.log(inputValue);
   };
 
-  return { inputValue, onChangeHandler };
+  return { values: inputValue, onChangeHandler };
 }

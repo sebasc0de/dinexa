@@ -17,7 +17,7 @@ import { ToastContainer } from "react-toastify";
 function BasicExample({ repository }: { repository: Repository }) {
   const dispatch = useAppDispatch();
 
-  const { inputValue, onChangeHandler } = useField<MoneyMovement>({
+  const { values, onChangeHandler } = useField<MoneyMovement>({
     category: "",
     id: uuid(),
     name: "",
@@ -30,7 +30,7 @@ function BasicExample({ repository }: { repository: Repository }) {
     // Repository implementation
     // const create = await CreateMoneyMovement(repository, inputValue);
 
-    dispatch(setMoneyMovement(inputValue));
+    dispatch(setMoneyMovement(values));
   };
 
   return (
