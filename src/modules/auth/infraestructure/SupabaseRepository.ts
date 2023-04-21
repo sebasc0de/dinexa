@@ -1,6 +1,7 @@
 import { AuthLoginData, AuthRegisterData, User } from "../../../types";
 import { Repository } from "../application/Repository";
 import { supabase } from "../../../lib/supabase";
+import { toast } from "react-toastify";
 
 export const SupabaseRepository = (): Repository => {
   return {
@@ -14,6 +15,8 @@ const loginUser = async (user: AuthLoginData) => {
     email: user.email,
     password: user.password,
   });
+
+  error && toast("Invalid user or password. Try again");
 
   if (!error) return data.user;
 };
