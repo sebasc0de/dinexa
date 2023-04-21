@@ -11,9 +11,11 @@ export const SupabaseRepository = (): Repository => {
 
 const loginUser = async (user: AuthLoginData) => {
   const { data, error } = await supabase.auth.signInWithPassword({
-    email: "",
-    password: "",
+    email: user.email,
+    password: user.password,
   });
+
+  return data.user;
 };
 
 const createUser = async (user: AuthRegisterData) => {

@@ -3,15 +3,14 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 // Auth imports
-import { AuthRegisterData } from "../../types";
-import { create } from "../../modules/auth/application/Service";
+import { AuthLoginData } from "../../types";
+import { login } from "../../modules/auth/application/Service";
 import { SupabaseRepository } from "../../modules/auth/infraestructure/SupabaseRepository";
 import { useField } from "../../hooks/useField";
 
 // Redux
 import { useAppDispatch } from "../../redux/hooks";
 import { setUserSession } from "../../redux/slices/auth-slice";
-import { HaveAccountButton } from "./HaveAccountButton";
 
 // Supabase repository
 const repository = SupabaseRepository();
@@ -19,17 +18,16 @@ const repository = SupabaseRepository();
 function LoginForm() {
   const dispatch = useAppDispatch();
 
-  const { values, onChangeHandler } = useField<AuthRegisterData>({
+  const { values, onChangeHandler } = useField<AuthLoginData>({
     email: "",
     password: "",
-    confirmPassword: "",
   });
 
   const submitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    const createUser = await create(repository, values);
-    dispatch(setUserSession(createUser));
+    const loginUser = await login(repository, values);
+    loginUser && dispatch(setUserSession(loginUser));
   };
 
   return (
