@@ -8,10 +8,16 @@ import { create } from "../../modules/auth/application/Service";
 import { SupabaseRepository } from "../../modules/auth/infraestructure/SupabaseRepository";
 import { useField } from "../../hooks/useField";
 
+// Redux
+import { useAppDispatch } from "../../redux/hooks";
+import { setUserSession } from "../../redux/slices/auth-slice";
+
 // Supabase repository
 const repository = SupabaseRepository();
 
 function RegisterForm() {
+  const dispatch = useAppDispatch();
+
   const { values, onChangeHandler } = useField<AuthRegisterData>({
     email: "",
     password: "",
@@ -22,6 +28,7 @@ function RegisterForm() {
     e.preventDefault();
 
     const createUser = await create(repository, values);
+    dispatch(setUserSession(createUser));
   };
 
   return (
