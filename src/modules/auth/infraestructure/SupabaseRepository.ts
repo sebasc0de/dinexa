@@ -15,7 +15,7 @@ const loginUser = async (user: AuthLoginData) => {
     password: user.password,
   });
 
-  return data.user;
+  if (!error) return data.user;
 };
 
 const createUser = async (user: AuthRegisterData) => {
