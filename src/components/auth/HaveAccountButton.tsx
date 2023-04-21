@@ -5,7 +5,7 @@ export const HaveAccountButton = () => {
     <small className="d-block text-center mt-3 desc">
       Already have an account?{" "}
       <span>
-        <Link href="/dashboard">Login</Link>
+        <Link href="/login">Login</Link>
       </span>
     </small>
   );

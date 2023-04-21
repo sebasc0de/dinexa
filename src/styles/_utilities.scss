@@ -1,5 +1,20 @@
 @use "./variables";
 
+// Font size
+.text-lg {
+  font-size: 1.225rem;
+}
+
+.text-xl {
+  font-size: 1.425rem;
+}
+
+.text-xl2 {
+  font-size: 1.725rem;
+}
+
+// Titles and descriptions
+
 .title {
   &--1 {
     font-weight: 900;
@@ -22,6 +37,8 @@
 .desc {
   color: $text-secondary-color;
 }
+
+// List
 
 .list {
   display: flex;

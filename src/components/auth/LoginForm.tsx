@@ -16,7 +16,7 @@ import { HaveAccountButton } from "./HaveAccountButton";
 // Supabase repository
 const repository = SupabaseRepository();
 
-function RegisterForm() {
+function LoginForm() {
   const dispatch = useAppDispatch();
 
   const { values, onChangeHandler } = useField<AuthRegisterData>({
@@ -48,21 +48,11 @@ function RegisterForm() {
         />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Confirm password:</Form.Label>
-        <Form.Control
-          name="confirmPassword"
-          onChange={onChangeHandler}
-          type="password"
-        />
-      </Form.Group>
-
       <Button className="cofi-button w-100" type="submit">
-        Create account
+        Login
       </Button>
-      <HaveAccountButton />
     </Form>
   );
 }
 
-export default RegisterForm;
+export default LoginForm;
