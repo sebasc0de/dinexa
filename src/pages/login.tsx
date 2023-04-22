@@ -1,9 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
+import { SupabaseRepository } from "../modules/auth/infraestructure/SupabaseRepository";
+import { ToastContainer } from "react-toastify";
 import LoginForm from "../components/auth/LoginForm";
 import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
-import { ToastContainer } from "react-toastify";
 
 const login = () => {
+  const repository = SupabaseRepository();
+
   return (
     <Container className="p-3 p-lg-5">
       <Row className="justify-content-center">
@@ -21,7 +24,7 @@ const login = () => {
             title="Login with your account"
             desc="Description here"
           />
-          <LoginForm />
+          <LoginForm repository={repository} />
         </Col>
       </Row>
     </Container>

@@ -5,18 +5,20 @@ import Form from "react-bootstrap/Form";
 // Auth imports
 import { AuthLoginData } from "../../types";
 import { login } from "../../modules/auth/application/Service";
-import { SupabaseRepository } from "../../modules/auth/infraestructure/SupabaseRepository";
 import { useField } from "../../hooks/useField";
 
 // Redux
-import { useAppDispatch } from "../../redux/hooks";
+import { Repository } from "../../modules/auth/application/Repository";
 import { setUserSession } from "../../redux/slices/auth-slice";
+import { useAppDispatch } from "../../redux/hooks";
+import { useRouter } from "next/router";
 
-// Supabase repository
-const repository = SupabaseRepository();
-
-function LoginForm() {
+function LoginForm({ repository }: { repository: Repository }) {
+  // Redux dispatch
   const dispatch = useAppDispatch();
+
+  // Next router
+  const router = useRouter();
 
   const { values, onChangeHandler } = useField<AuthLoginData>({
     email: "",
@@ -26,8 +28,16 @@ function LoginForm() {
   const submitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    const loginUser = await login(repository, values);
-    loginUser && dispatch(setUserSession(loginUser));
+    try {
+      const loginUser = await login(repository, values);
+
+      if (loginUser) {
+        dispatch(setUserSession(loginUser));
+        router.push("dashboard");
+      }
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
