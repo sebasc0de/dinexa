@@ -19,7 +19,11 @@ export const HeroSectionOne = ({
           />
         </Col>
         <Col className="mt-5 mt-md-0" lg={5}>
-          <ImagesCollectionCarrousel />
+          <img
+            className="d-block w-100"
+            src="/images/control_your_spends.gif"
+            alt="First slide"
+          />
         </Col>
       </Row>
     </Container>
@@ -36,13 +40,7 @@ function ImagesCollectionCarrousel() {
       className="carrousel"
       variant="dark"
     >
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="/images/books.jpg"
-          alt="First slide"
-        />
-      </Carousel.Item>
+      <Carousel.Item></Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
