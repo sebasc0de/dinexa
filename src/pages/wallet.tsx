@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Layout from "../components/layouts/Dashboard";
+import InitialConfigModal from "../components/wallet/InitialConfigModal";
 
 const Wallet = () => {
-  return <Layout>dass</Layout>;
+  const [configured, setConfigured] = useState(false);
+
+  return <Layout>{!configured && <InitialConfigModal />}</Layout>;
 };
 
 export default Wallet;

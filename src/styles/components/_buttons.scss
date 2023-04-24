@@ -3,6 +3,9 @@
 .cofi-button {
   color: white;
   font-weight: 700;
+
+  width: fit-content;
+
   &:hover {
     color: white;
     background: $action-color;
