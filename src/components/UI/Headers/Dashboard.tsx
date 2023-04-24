@@ -6,7 +6,7 @@ import WalletMoney from "../../wallet/WalletMoney";
 function BasicExample() {
   return (
     <header className="cofi-header">
-      <Container>
+      <Container fluid className="mx-3">
         <Navbar expand="justify-content-between lg">
           {/* Brand logo */}
           <Navbar.Brand href="#home">
