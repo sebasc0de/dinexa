@@ -1,0 +1,8 @@
+{
+  "dashboard": {
+    "dashboard": "Dashboard",
+    "wallet": "Wallet",
+    "settings": "Settings",
+    "logout": "Logout"
+  }
+}

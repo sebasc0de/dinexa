@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { Nav } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 const SidebarOne = ({ navData }: Props) => {
+  const { t } = useTranslation(["sidebars"]);
+
   return (
     <div className="sidebarOne">
       <Nav defaultActiveKey="/dashboard" className="flex-column gap-5 p-4">
@@ -11,7 +14,7 @@ const SidebarOne = ({ navData }: Props) => {
           return (
             <Nav.Link className="nav-link">
               <Icon />
-              <Link href={item.route}>{item.text}</Link>
+              <Link href={item.route}>{t(`dashboard.${item.text}`)}</Link>
             </Nav.Link>
           );
         })}

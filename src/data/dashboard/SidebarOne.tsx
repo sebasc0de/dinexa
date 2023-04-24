@@ -7,22 +7,22 @@ import { NavLink } from "../../components/UI/Sidebars/SidebarOne";
 export const data: NavLink[] = [
   {
     Icon: AiFillWindows,
-    route: "",
-    text: "Dashboard",
+    route: "/dashboard",
+    text: "dashboard",
   },
   {
     Icon: RiWalletLine,
-    route: "",
-    text: "Wallet",
+    route: "/wallet",
+    text: "wallet",
   },
   {
     Icon: IoSettingsOutline,
-    route: "",
-    text: "Settings",
+    route: "/settings",
+    text: "settings",
   },
   {
     Icon: IoIosLogOut,
-    route: "",
-    text: "Cerrar sesion",
+    route: "/logout",
+    text: "logout",
   },
 ];
