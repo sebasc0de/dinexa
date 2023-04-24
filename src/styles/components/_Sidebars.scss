@@ -19,6 +19,10 @@
     align-items: center;
     color: $text-secondary-color;
 
+    &:hover {
+      color: $action-color;
+    }
+
     svg {
       transform: scale(125%);
     }

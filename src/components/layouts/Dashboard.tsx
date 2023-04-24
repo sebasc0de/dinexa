@@ -3,6 +3,9 @@ import { ReactNode } from "react";
 import Header from "../UI/Headers/Dashboard";
 import SidebarOne from "../UI/Sidebars/SidebarOne";
 
+// Data imports
+import { data } from "../../data/dashboard/SidebarOne";
+
 const Private = ({ children }: Props) => {
   return (
     <main>
@@ -10,7 +13,7 @@ const Private = ({ children }: Props) => {
       <Container fluid>
         <Row>
           <Col md={3}>
-            <SidebarOne />
+            <SidebarOne navData={data} />
           </Col>
           <Col className="p-4" md={9}>
             {children}
