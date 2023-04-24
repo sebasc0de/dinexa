@@ -1,0 +1,35 @@
+@use "../variables";
+.sidebarOne {
+  height: 100%;
+  width: 22.5%;
+  position: fixed;
+  top: 10;
+  left: 0;
+  background: white;
+
+  .wrapper {
+    height: 500px;
+    overflow-y: scroll;
+  }
+
+  .nav-link {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.125rem;
+    align-items: center;
+    color: $text-secondary-color;
+
+    svg {
+      transform: scale(125%);
+    }
+
+    a {
+      font-weight: 700;
+      color: inherit;
+    }
+  }
+
+  .nav-link.active {
+    color: $action-color;
+  }
+}

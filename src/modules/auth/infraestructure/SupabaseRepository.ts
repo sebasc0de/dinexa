@@ -1,4 +1,4 @@
-import { AuthLoginData, AuthRegisterData, User } from "../../../types";
+import { AuthLoginData, AuthRegisterData } from "../../../types";
 import { Repository } from "../application/Repository";
 import { supabase } from "../../../lib/supabase";
 import { toast } from "react-toastify";
@@ -26,8 +26,6 @@ const createUser = async (user: AuthRegisterData) => {
     email: user.email,
     password: user.password,
   });
-
-  console.log(data, error);
 
   if (!error) return data.user;
 };
