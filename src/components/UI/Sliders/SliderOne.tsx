@@ -25,19 +25,34 @@ export default function SliderOne() {
         onSlideChange={() => console.log("slide change")}
         className="sliderOne"
       >
-        <SwiperSlide>
-          <h3 className="text-white title--2">Hello world</h3>
-          <p className="text-white">Hello world text</p>
+        <SwiperSlide className="py-5 px-3">
+          <h4 className="text-white title--3">
+            Track your daily expenses and categorize them
+          </h4>
+          <p className="text-white">
+            Effortlessly track your daily expenses and categorize them for
+            better organization.
+          </p>
         </SwiperSlide>
 
-        <SwiperSlide>
-          <h3 className="text-white title--2">Hello world</h3>
-          <p className="text-white">Hello world text</p>
+        <SwiperSlide className="py-5 px-3">
+          <h4 className="text-white title--3">
+            Track your daily expenses and categorize them
+          </h4>
+          <p className="text-white">
+            Effortlessly track your daily expenses and categorize them for
+            better organization.
+          </p>
         </SwiperSlide>
 
-        <SwiperSlide>
-          <h3 className="text-white title--2">Hello world</h3>
-          <p className="text-white">Hello world text</p>
+        <SwiperSlide className="py-5 px-3">
+          <h4 className="text-white title--3">
+            Track your daily expenses and categorize them
+          </h4>
+          <p className="text-white">
+            Effortlessly track your daily expenses and categorize them for
+            better organization.
+          </p>
         </SwiperSlide>
       </Swiper>
     </div>
