@@ -11,7 +11,7 @@ function registerModal() {
 
   return (
     <>
-      <Button className="cofi-button" onClick={() => setModalShow(true)}>
+      <Button className="dinexa-button" onClick={() => setModalShow(true)}>
         Start now
       </Button>
 

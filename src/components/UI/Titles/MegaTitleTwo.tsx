@@ -17,7 +17,7 @@ export const MegaTitleTwo = ({
 
       <span className="megaTitleTwo--desc">{desc}</span>
       <Link href={buttonUrl}>
-        <Button className="cofi-button">{buttonText}</Button>
+        <Button className="dinexa-button">{buttonText}</Button>
       </Link>
     </div>
   );

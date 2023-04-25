@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
 import RegisterForm from "../components/auth/RegisterForm";
 import SliderOne from "../components/UI/Sliders/SliderOne";
+import BackArrow from "../components/UI/BackArrow";
 
 const CreateAccount = () => {
   return (
@@ -17,8 +18,10 @@ const CreateAccount = () => {
       />
 
       <Row style={{ minHeight: "100vh" }}>
+        <BackArrow />
+
         <Col
-          className="bg-white d-flex flex-column justify-content-center p-3 p-md-5"
+          className="bg-white d-flex flex-column justify-content-center my-5 p-3 p-md-5"
           lg={5}
         >
           <SimpleTitleOne

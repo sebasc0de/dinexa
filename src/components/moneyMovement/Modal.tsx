@@ -17,7 +17,7 @@ function Example() {
   return (
     <>
       <Button
-        className="cofi-button"
+        className="dinexa-button"
         style={{ borderRadius: "50px" }}
         onClick={handleShow}
       >

@@ -13,7 +13,7 @@ const MessageOne = ({
         <Image src={imgUrl} style={{ maxWidth: "500px" }} alt="" />
         <h3 className="text-center title--2">{title}</h3>
         <p className="desc text-center text-lg">{subtitle}</p>
-        <Button onClick={buttonAction} className="cofi-button mt-3">
+        <Button onClick={buttonAction} className="dinexa-button mt-3">
           {buttonText}
         </Button>
       </Row>

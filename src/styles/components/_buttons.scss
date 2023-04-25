@@ -1,6 +1,6 @@
 @use "../variables";
 
-.cofi-button {
+.dinexa-button {
   color: white;
   font-weight: 700;
 
@@ -21,6 +21,22 @@
   &:hover {
     background: none;
     color: $text-secondary-color;
+  }
+}
+
+.icon-button {
+  padding: 0.425rem;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  svg {
+    transform: scale(125%);
+    color: $text-color;
+  }
+
+  &:hover {
+    background: transparent;
   }
 }
 

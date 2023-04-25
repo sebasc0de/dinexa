@@ -57,7 +57,7 @@ function RegisterForm() {
         />
       </Form.Group>
 
-      <Button className="cofi-button w-100" type="submit">
+      <Button className="dinexa-button w-100" type="submit">
         Create account
       </Button>
       <HaveAccountButton />

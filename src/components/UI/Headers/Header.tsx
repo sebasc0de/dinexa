@@ -20,7 +20,7 @@ function BasicExample() {
               Login
             </Link>
             <Link href="/create-account">
-              <Button className="cofi-button">Start now</Button>
+              <Button className="dinexa-button">Start now</Button>
             </Link>
           </div>
         </Navbar>

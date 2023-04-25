@@ -75,7 +75,7 @@ function BasicExample({ repository }: { repository: Repository }) {
 
       <Button
         style={{ borderRadius: "50px" }}
-        className="cofi-button"
+        className="dinexa-button"
         type="submit"
       >
         Save spend

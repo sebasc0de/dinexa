@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import LoginForm from "../components/auth/LoginForm";
 import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
 import SliderTwo from "../components/UI/Sliders/SliderTwo";
+import BackArrow from "../components/UI/BackArrow";
 
 const login = () => {
   const repository = SupabaseRepository();
@@ -20,8 +21,10 @@ const login = () => {
       />
 
       <Row style={{ minHeight: "100vh" }}>
+        <BackArrow />
+
         <Col
-          className="bg-white d-flex flex-column justify-content-center p-3 p-md-5"
+          className="bg-white my-5 d-flex flex-column justify-content-center p-3 p-md-5"
           lg={5}
         >
           <SimpleTitleOne
