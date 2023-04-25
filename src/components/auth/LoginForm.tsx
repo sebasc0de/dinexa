@@ -12,6 +12,7 @@ import { setUserSession } from "../../redux/slices/auth-slice";
 import { useAppDispatch } from "../../redux/hooks";
 import { useRouter } from "next/router";
 import ButtonWithLoader from "../UI/Buttons/ButtonWithLoader";
+import CreateAccountButton from "./CreateAccountButton";
 
 function LoginForm({ repository }: { repository: Repository }) {
   // Button loading state
@@ -65,6 +66,8 @@ function LoginForm({ repository }: { repository: Repository }) {
       <ButtonWithLoader className="w-100" loading={loading}>
         Login
       </ButtonWithLoader>
+
+      <CreateAccountButton />
     </Form>
   );
 }
