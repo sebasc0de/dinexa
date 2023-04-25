@@ -33,7 +33,7 @@ function BasicExample({ repository }: { repository: Repository }) {
   };
 
   return (
-    <Form className="cofi-form" onSubmit={(e) => onSubmitHandler(e)}>
+    <Form className="dinexa-form" onSubmit={(e) => onSubmitHandler(e)}>
       <ToastContainer toastClassName="cofi-toast" position="bottom-left" />
 
       {/* Name */}

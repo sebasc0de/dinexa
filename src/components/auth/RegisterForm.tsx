@@ -49,7 +49,7 @@ function RegisterForm() {
   };
 
   return (
-    <Form onSubmit={submitHandler} className="cofi-form">
+    <Form onSubmit={submitHandler} className="dinexa-form">
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control name="email" onChange={onChangeHandler} type="email" />
