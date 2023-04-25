@@ -1,8 +1,12 @@
+import Link from "next/link";
+import { Button } from "react-bootstrap";
+
 export const MegaTitleTwo = ({
-  Component,
   desc,
   title,
   gradientText,
+  buttonUrl,
+  buttonText,
 }: MegaTitleTwoProps) => {
   return (
     <div className="megaTitleTwo">
@@ -12,7 +16,9 @@ export const MegaTitleTwo = ({
       </h2>
 
       <span className="megaTitleTwo--desc">{desc}</span>
-      {Component && <Component />}
+      <Link href={buttonUrl}>
+        <Button className="cofi-button">{buttonText}</Button>
+      </Link>
     </div>
   );
 };
@@ -21,5 +27,6 @@ export interface MegaTitleTwoProps {
   title: string;
   gradientText: string;
   desc: string;
-  Component?: React.FC;
+  buttonText: string;
+  buttonUrl: string;
 }

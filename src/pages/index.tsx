@@ -7,7 +7,6 @@ import { BenefitsOne } from "../components/UI/Benefits/BenefitsOne";
 import { HeroSectionOne } from "../components/UI/HeroSections/HeroSectionOne";
 import { Public } from "../components/layouts/Public";
 import CategoriesGrid from "../components/posts/CategoriesGrid";
-import RegisterModal from "../components/auth/RegisterModal";
 
 // Translations
 import { useTranslation } from "react-i18next";
@@ -21,7 +20,8 @@ const index = () => {
         title={t("heroSectionOne.title")}
         desc={t("heroSectionOne.desc")}
         gradientText={t("heroSectionOne.highlight")}
-        Component={RegisterModal}
+        buttonText="Start now"
+        buttonUrl="/create-account"
       />
       <BenefitsOne
         title={t("benefitsOne.title")}

@@ -5,7 +5,8 @@ export const HeroSectionOne = ({
   title,
   gradientText,
   desc,
-  Component,
+  buttonText,
+  buttonUrl,
 }: MegaTitleTwoProps) => {
   return (
     <Container className="heroSectionOne">
@@ -15,7 +16,8 @@ export const HeroSectionOne = ({
             title={title}
             gradientText={gradientText}
             desc={desc}
-            Component={Component}
+            buttonText={buttonText}
+            buttonUrl={buttonUrl}
           />
         </Col>
         <Col className="mt-5 mt-md-0" lg={5}>

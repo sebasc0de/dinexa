@@ -1,8 +1,8 @@
+import { Button } from "react-bootstrap";
 import { Logo } from "../Logo";
 import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import RegisterModal from "../../auth/RegisterModal";
 import Link from "next/link";
+import Navbar from "react-bootstrap/Navbar";
 
 function BasicExample() {
   return (
@@ -19,7 +19,9 @@ function BasicExample() {
             >
               Login
             </Link>
-            <RegisterModal />
+            <Link href="/create-account">
+              <Button className="cofi-button">Start now</Button>
+            </Link>
           </div>
         </Navbar>
       </Container>
