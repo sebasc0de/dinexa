@@ -18,7 +18,7 @@ const CreateAccount = () => {
 
       <Row style={{ minHeight: "100vh" }}>
         <Col
-          className="bg-white d-flex flex-column justify-content-center p-5"
+          className="bg-white d-flex flex-column justify-content-center p-3 p-md-5"
           lg={5}
         >
           <SimpleTitleOne
@@ -28,7 +28,7 @@ const CreateAccount = () => {
           <RegisterForm />
         </Col>
         <Col
-          className="d-flex flex-column justify-content-end p-5 bg-primary"
+          className="d-flex flex-column justify-content-end py-3 p-md-5 bg-primary"
           lg={7}
         >
           <SliderOne />
