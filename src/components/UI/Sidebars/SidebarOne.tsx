@@ -15,10 +15,10 @@ const SidebarOne = ({ navData }: Props) => {
           const Icon = item.Icon;
 
           return (
-            <Nav.Link className={`nav-link ${NAV_ACTIVE}`}>
+            <Link className={`nav-link ${NAV_ACTIVE}`} href={item.route}>
               <Icon />
-              <Link href={item.route}>{t(`dashboard.${item.text}`)}</Link>
-            </Nav.Link>
+              {t(`dashboard.${item.text}`)}
+            </Link>
           );
         })}
       </Nav>

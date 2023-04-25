@@ -18,6 +18,7 @@
     font-size: 1.125rem;
     align-items: center;
     color: $text-secondary-color;
+    font-weight: 700;
 
     &:hover {
       color: $action-color;
@@ -25,11 +26,6 @@
 
     svg {
       transform: scale(125%);
-    }
-
-    a {
-      font-weight: 700;
-      color: inherit;
     }
   }
 
