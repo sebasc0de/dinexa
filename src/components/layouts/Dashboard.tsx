@@ -15,7 +15,7 @@ const Private = ({ children }: Props) => {
           <Col md={3}>
             <SidebarOne navData={data} />
           </Col>
-          <Col className="p-4" md={9}>
+          <Col className="p-md-4" md={9}>
             {children}
           </Col>
         </Row>

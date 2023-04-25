@@ -1,5 +1,4 @@
-import { SyntheticEvent } from "react";
-import Button from "react-bootstrap/Button";
+import { SyntheticEvent, useState } from "react";
 import Form from "react-bootstrap/Form";
 
 // Auth imports
@@ -12,8 +11,12 @@ import { Repository } from "../../modules/auth/application/Repository";
 import { setUserSession } from "../../redux/slices/auth-slice";
 import { useAppDispatch } from "../../redux/hooks";
 import { useRouter } from "next/router";
+import ButtonWithLoader from "../UI/Buttons/ButtonWithLoader";
 
 function LoginForm({ repository }: { repository: Repository }) {
+  // Button loading state
+  const [loading, setLoading] = useState(false);
+
   // Redux dispatch
   const dispatch = useAppDispatch();
 
@@ -27,6 +30,7 @@ function LoginForm({ repository }: { repository: Repository }) {
 
   const submitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const loginUser = await login(repository, values);
@@ -37,6 +41,8 @@ function LoginForm({ repository }: { repository: Repository }) {
       }
     } catch (e) {
       console.log(e);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -56,9 +62,9 @@ function LoginForm({ repository }: { repository: Repository }) {
         />
       </Form.Group>
 
-      <Button className="dinexa-button w-100" type="submit">
+      <ButtonWithLoader className="w-100" loading={loading}>
         Login
-      </Button>
+      </ButtonWithLoader>
     </Form>
   );
 }

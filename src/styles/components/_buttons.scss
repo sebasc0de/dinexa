@@ -1,5 +1,6 @@
 @use "../variables";
 
+// Primary button
 .dinexa-button {
   color: white;
   font-weight: 700;
@@ -12,6 +13,7 @@
   }
 }
 
+// Secondary button - Without background and border
 .secondary-button {
   color: $text-secondary-color;
   font-weight: 600;
@@ -24,6 +26,7 @@
   }
 }
 
+// Buttons with only icon
 .icon-button {
   padding: 0.425rem;
   width: 50px;
@@ -40,6 +43,15 @@
   }
 }
 
+// Button with loader
+.loader-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+}
+
+// Gradient button
 .gradient-button {
   border: none;
   background: linear-gradient(
@@ -50,6 +62,7 @@
   );
 }
 
+// Circular button
 .rounded-button {
   display: block;
   width: 35px;
@@ -58,6 +71,7 @@
   border-radius: 50%;
 }
 
+// Facebook button
 .facebook-button {
   background: rgb(24, 119, 242);
   color: white;
@@ -72,6 +86,7 @@
   }
 }
 
+// Google button
 .google-button {
   background: white;
   border: none;

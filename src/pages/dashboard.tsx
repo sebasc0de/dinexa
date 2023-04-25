@@ -7,7 +7,7 @@ import Table from "../components/moneyMovement/Table";
 const dashboard = () => {
   return (
     <Layout>
-      <SimpleTitleTwo Component={Modal} title="Money movements" />
+      <SimpleTitleTwo Component={Modal} title="Movements" />
       <Table />
     </Layout>
   );

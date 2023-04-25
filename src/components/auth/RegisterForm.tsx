@@ -1,5 +1,4 @@
-import { SyntheticEvent } from "react";
-import Button from "react-bootstrap/Button";
+import { SyntheticEvent, useState } from "react";
 import Form from "react-bootstrap/Form";
 
 // Auth imports
@@ -12,13 +11,19 @@ import { useField } from "../../hooks/useField";
 import { useAppDispatch } from "../../redux/hooks";
 import { setUserSession } from "../../redux/slices/auth-slice";
 import { HaveAccountButton } from "./HaveAccountButton";
+import ButtonWithLoader from "../UI/Buttons/ButtonWithLoader";
 
 // Supabase repository
 const repository = SupabaseRepository();
 
 function RegisterForm() {
+  // Button loading state
+  const [loading, setLoading] = useState(false);
+
+  // Redux dispatch
   const dispatch = useAppDispatch();
 
+  // Form hook
   const { values, onChangeHandler } = useField<AuthRegisterData>({
     email: "",
     password: "",
@@ -27,9 +32,20 @@ function RegisterForm() {
 
   const submitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
+    setLoading(true);
 
-    const createUser = await create(repository, values);
-    dispatch(setUserSession(createUser));
+    try {
+      const createUser = await create(repository, values);
+
+      if (createUser) {
+        setLoading(false);
+        dispatch(setUserSession(createUser));
+      }
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -57,9 +73,10 @@ function RegisterForm() {
         />
       </Form.Group>
 
-      <Button className="dinexa-button w-100" type="submit">
+      <ButtonWithLoader loading={loading} className="w-100" type="submit">
         Create account
-      </Button>
+      </ButtonWithLoader>
+
       <HaveAccountButton />
     </Form>
   );

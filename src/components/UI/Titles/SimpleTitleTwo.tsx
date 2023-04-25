@@ -5,7 +5,7 @@ const SimpleTitleTwo = ({ title, Component }: Props) => {
     <Container>
       <Row className="align-items-center my-3">
         <Col>
-          <h4 className="subtitle">{title}</h4>
+          <h4 className="subtitle m-0">{title}</h4>
         </Col>
         <Col className="d-flex justify-content-end">
           <Component />

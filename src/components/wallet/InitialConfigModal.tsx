@@ -36,7 +36,7 @@ function InitialConfigModal() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
+          <Button className="dinexa-button">Understood</Button>
         </Modal.Footer>
       </Modal>
     </>
