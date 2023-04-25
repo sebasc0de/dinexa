@@ -1,0 +1,16 @@
+@use "./variables";
+
+.gradient-one {
+  background: #00c6ff;
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+}
+
+.pattern {
+  background-size: contain;
+  background-repeat: repeat;
+}
+
+.pattern.blue {
+  background-image: url("../../public/patterns/blue_pattern.jpg");
+}

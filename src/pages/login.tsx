@@ -3,7 +3,7 @@ import { SupabaseRepository } from "../modules/auth/infraestructure/SupabaseRepo
 import { ToastContainer } from "react-toastify";
 import LoginForm from "../components/auth/LoginForm";
 import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
-import SliderOne from "../components/UI/Sliders/SliderOne";
+import SliderTwo from "../components/UI/Sliders/SliderTwo";
 
 const login = () => {
   const repository = SupabaseRepository();
@@ -20,7 +20,10 @@ const login = () => {
       />
 
       <Row style={{ minHeight: "100vh" }}>
-        <Col className="d-flex flex-column justify-content-center p-5" lg={5}>
+        <Col
+          className="bg-white d-flex flex-column justify-content-center p-5"
+          lg={5}
+        >
           <SimpleTitleOne
             title="Login"
             desc="Login into Dinexa with your account"
@@ -28,10 +31,10 @@ const login = () => {
           <LoginForm repository={repository} />
         </Col>
         <Col
-          className="d-flex bg-primary flex-column justify-content-end p-5"
+          className="d-flex flex-column justify-content-end p-5 bg-primary"
           lg={7}
         >
-          <SliderOne />
+          <SliderTwo />
         </Col>
       </Row>
     </Container>
