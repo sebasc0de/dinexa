@@ -12,14 +12,14 @@ export const walletSlice = createSlice({
   initialState,
   reducers: {
     setSavingPercentage(state, action) {
-      state.savingPercentage = action.payload;
+      state.savingPercentage = Number(action.payload);
     },
 
     setWalletForm(state, action: PayloadAction<WalletForm>) {
       const { minMoneyAlert, secureMonthlyIncome } = action.payload;
 
-      state.minMoneyAlert = minMoneyAlert;
-      state.secureMonthlyIncome = secureMonthlyIncome;
+      state.minMoneyAlert = Number(minMoneyAlert);
+      state.secureMonthlyIncome = Number(secureMonthlyIncome);
     },
   },
 });
