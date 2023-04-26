@@ -13,3 +13,24 @@
     background: $background-color;
   }
 }
+
+.wallet-form {
+  padding: 0.425rem;
+
+  .row {
+    display: flex;
+    align-items: center;
+
+    label {
+      color: $text-secondary-color;
+      font-weight: 600;
+      width: 60%;
+    }
+
+    input {
+      width: 40%;
+      font-size: 0.8rem;
+      border-radius: 0;
+    }
+  }
+}

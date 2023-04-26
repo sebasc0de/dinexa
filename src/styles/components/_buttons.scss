@@ -34,13 +34,21 @@
   background: transparent;
   border: none;
   svg {
-    transform: scale(125%);
     color: $text-color;
   }
 
   &:hover {
     background: transparent;
   }
+}
+
+.icon-button.small {
+  background: none;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+  margin-left: 5px;
+  transform: translateY(-1px);
 }
 
 // Button with loader

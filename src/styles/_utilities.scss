@@ -1,6 +1,18 @@
 @use "./variables";
 
 // Font size
+.text-xs2 {
+  font-size: 0.675rem;
+}
+
+.text-xs {
+  font-size: 0.8rem;
+}
+
+.text-sm {
+  font-size: 1rem;
+}
+
 .text-lg {
   font-size: 1.225rem;
 }
