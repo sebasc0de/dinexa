@@ -21,7 +21,7 @@ const login = () => {
       />
 
       <Row style={{ minHeight: "100vh" }}>
-        <BackArrow />
+        <BackArrow iconSize={25} />
 
         <Col
           className="bg-white my-5 d-flex flex-column justify-content-center p-3 p-md-5"

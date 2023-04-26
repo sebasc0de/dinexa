@@ -73,8 +73,3 @@ export interface Wallet {
   secureMonthlyIncome: number;
   savingPercentage: number;
 }
-
-export interface WalletForm {
-  secureMonthlyIncome: number;
-  minMoneyAlert: number;
-}

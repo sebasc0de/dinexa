@@ -1,13 +1,12 @@
+import { Button } from "react-bootstrap";
 import MessageOne from "../UI/Messages/MessageOne";
 import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
-import WalletForm from "./Form";
-import SavingStylesSelector from "./SavingStylesSelector";
 import SavingStylesResume from "./SavingStylesResume";
-import { Button } from "react-bootstrap";
+import WalletForm from "./Form";
 
 function InitialConfigModal() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -29,10 +28,9 @@ function InitialConfigModal() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Configuration</Modal.Title>
+          <Modal.Title className="title--2">Configuration</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <SavingStylesSelector />
           <SavingStylesResume />
           <WalletForm />
         </Modal.Body>

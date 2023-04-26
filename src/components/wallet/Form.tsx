@@ -6,16 +6,17 @@ import InformativeToolTip from "../UI/Tooltips/Informative";
 import { useAppDispatch } from "../../redux/hooks";
 import { setWalletForm } from "../../redux/slices/wallet-slice";
 import { useField } from "../../hooks/useField";
-import { WalletForm } from "../../types";
+import { Wallet } from "../../types";
 
 function BasicExample() {
   // Redux
   const dispatch = useAppDispatch();
 
   // Form hook
-  const { values, onChangeHandler } = useField<WalletForm>({
+  const { values, onChangeHandler } = useField<Wallet>({
     minMoneyAlert: 0,
     secureMonthlyIncome: 0,
+    savingPercentage: 0,
   });
 
   useEffect(() => {
@@ -24,6 +25,25 @@ function BasicExample() {
 
   return (
     <Form className="wallet-form">
+      {/* Money saving preset */}
+      <Form.Group className="row mb-3">
+        <Form.Label>
+          Saving percentage
+          <InformativeToolTip text="Text here" />
+        </Form.Label>
+        <Form.Select
+          onChange={onChangeHandler}
+          name="savingPercentage"
+          aria-label="Default select example"
+        >
+          <option>Select an option</option>
+          <option value="5">5%</option>
+          <option value="10">10%</option>
+          <option value="20">20%</option>
+        </Form.Select>
+      </Form.Group>
+
+      {/* Monthly income */}
       <Form.Group className="row mb-3">
         <Form.Label>
           Monthly income
@@ -37,7 +57,8 @@ function BasicExample() {
         />
       </Form.Group>
 
-      <Form.Group className="row ">
+      {/* Monthly alert */}
+      <Form.Group className="row">
         <Form.Label>
           Money alert
           <InformativeToolTip text="Text here" />

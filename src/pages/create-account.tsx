@@ -18,7 +18,7 @@ const CreateAccount = () => {
       />
 
       <Row style={{ minHeight: "100vh" }}>
-        <BackArrow />
+        <BackArrow iconSize={25} />
 
         <Col
           className="bg-white d-flex flex-column justify-content-center my-5 p-3 p-md-5"
