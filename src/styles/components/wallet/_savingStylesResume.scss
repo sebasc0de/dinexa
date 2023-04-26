@@ -1,0 +1,16 @@
+@use "../../variables";
+
+.savingStylesResume {
+  padding: 0.625rem;
+}
+
+.savingResumeItem {
+  &--title {
+    display: block;
+    color: $text-secondary-color;
+  }
+
+  &--total {
+    font-weight: 700;
+  }
+}

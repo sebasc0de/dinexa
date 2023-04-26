@@ -33,6 +33,7 @@ function InitialConfigModal() {
         </Modal.Header>
         <Modal.Body>
           <SavingStylesSelector />
+          <SavingStylesResume />
           <WalletForm />
         </Modal.Body>
         <Modal.Footer>

@@ -8,6 +8,7 @@
 // Main config
 @import "./main";
 @import "./fonts";
+@import "./animations";
 
 // Components
 @import "./components/forms";
@@ -25,6 +26,7 @@
 @import "./components/loaders";
 
 @import "./components/wallet/savingStylesSelector";
+@import "./components/wallet/savingStylesResume";
 
 // Aditional styles
 @import "./effects";
