@@ -31,7 +31,6 @@ export interface AuthLoginData {
 }
 
 // User
-
 export interface User {
   id: string;
   aud: string;
@@ -67,3 +66,15 @@ export interface IdentityData {
 }
 
 export interface UserMetadata {}
+
+// Wallet
+export interface Wallet {
+  minMoneyAlert: number;
+  secureMonthlyIncome: number;
+  savingPercentage: number;
+}
+
+export interface WalletForm {
+  secureMonthlyIncome: number;
+  minMoneyAlert: number;
+}
