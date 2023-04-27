@@ -13,7 +13,7 @@ import { IoWalletOutline } from "react-icons/io5";
 const Wallet = () => {
   return (
     <Layout>
-      <Row className="gap-3">
+      <Row className="flex-column flex-md-row gap-1 ">
         <Col className="box-1">
           <EarningCardOne Icon={TbMoneybag} earning={2} title="Total savings" />
         </Col>
@@ -24,7 +24,7 @@ const Wallet = () => {
           <EarningCardOne Icon={TbPigMoney} earning={2} title="Spended today" />
         </Col>
       </Row>
-      <Row className="mt-3 gap-3">
+      <Row className="flex-column flex-md-row gap-3 mt-3">
         <Col className="box-1 p-4">
           <Form />
         </Col>
