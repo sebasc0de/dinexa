@@ -7,9 +7,9 @@ import Tooltip from "react-bootstrap/Tooltip";
 function InformativeToolTip({ text }: Props) {
   return (
     <OverlayTrigger
-      placement="right"
+      placement="top"
       overlay={
-        <Tooltip style={{ fontSize: "0.725rem" }} id={`tooltip-right`}>
+        <Tooltip style={{ fontSize: "0.725rem" }} id={`tooltip-top`}>
           {text}
         </Tooltip>
       }

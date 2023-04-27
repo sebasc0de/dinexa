@@ -59,14 +59,14 @@ function SettingsForm() {
         />
       </Form.Group>
 
-      {/* MAC */}
+      {/* Cost living average */}
       <Form.Group className="row mb-3">
         <Form.Label>
           Cost living average
           <InformativeToolTip text="The live cost of your country, this metric helps Dinexa to make recomendations about your money" />
         </Form.Label>
         <Form.Control
-          name="secureMonthlyIncome"
+          name="costLivingAverage"
           onChange={onChangeHandler}
           type="number"
           min={0}
