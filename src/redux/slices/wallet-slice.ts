@@ -2,6 +2,8 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Wallet, WalletSettings } from "../../types";
 
 const initialState: Wallet = {
+  money: 0,
+  totalSavings: 0,
   settings: {
     costLivingAverage: 0,
     minMoneyAlert: 0,

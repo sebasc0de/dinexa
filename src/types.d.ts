@@ -70,6 +70,8 @@ export interface UserMetadata {}
 // Wallet
 
 export interface Wallet {
+  totalSavings: number;
+  money: number;
   settings: WalletSettings;
 }
 
