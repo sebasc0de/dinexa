@@ -32,7 +32,7 @@ function BasicExample() {
       <Form.Group className="row mb-3">
         <Form.Label>
           Saving percentage
-          <InformativeToolTip text="Text here" />
+          <InformativeToolTip text="The saving percentage configuration for your wallet. Dinexa saves the choosed percentage" />
         </Form.Label>
         <Form.Select
           onChange={onChangeHandler}
@@ -49,7 +49,7 @@ function BasicExample() {
       <Form.Group className="row mb-3">
         <Form.Label>
           Monthly income
-          <InformativeToolTip text="Text here" />
+          <InformativeToolTip text="Your monthly gains per month. This number helps Dinexa to save your money" />
         </Form.Label>
         <Form.Control
           name="secureMonthlyIncome"
@@ -63,7 +63,7 @@ function BasicExample() {
       <Form.Group className="row mb-3">
         <Form.Label>
           Cost living average
-          <InformativeToolTip text="Text here" />
+          <InformativeToolTip text="The live cost of your country, this metric helps Dinexa to make recomendations about your money" />
         </Form.Label>
         <Form.Control
           name="secureMonthlyIncome"
@@ -77,7 +77,7 @@ function BasicExample() {
       <Form.Group className="row">
         <Form.Label>
           Money alert
-          <InformativeToolTip text="Text here" />
+          <InformativeToolTip text="Receive notifications when your wallet reach this amount" />
         </Form.Label>
         <Form.Control
           onChange={onChangeHandler}

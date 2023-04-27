@@ -36,8 +36,9 @@
     color: $text-color;
   }
 
-  &:hover {
-    background: transparent;
+  &:hover,
+  &:active {
+    background: transparent !important;
   }
 }
 

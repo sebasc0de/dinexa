@@ -8,7 +8,11 @@ function InformativeToolTip({ text }: Props) {
   return (
     <OverlayTrigger
       placement="right"
-      overlay={<Tooltip id={`tooltip-right`}>{text}</Tooltip>}
+      overlay={
+        <Tooltip style={{ fontSize: "0.725rem" }} id={`tooltip-right`}>
+          {text}
+        </Tooltip>
+      }
     >
       <Button className="icon-button small">
         <BiInfoCircle />
