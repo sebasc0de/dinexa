@@ -4,23 +4,24 @@ import InformativeToolTip from "../UI/Tooltips/Informative";
 
 // Redux
 import { useAppDispatch } from "../../redux/hooks";
-import { setWalletForm } from "../../redux/slices/wallet-slice";
+import { setSettings } from "../../redux/slices/wallet-slice";
 import { useField } from "../../hooks/useField";
-import { Wallet } from "../../types";
+import { WalletSettings } from "../../types";
 
 function BasicExample() {
   // Redux
   const dispatch = useAppDispatch();
 
   // Form hook
-  const { values, onChangeHandler } = useField<Wallet>({
+  const { values, onChangeHandler } = useField<WalletSettings>({
     minMoneyAlert: 0,
     secureMonthlyIncome: 0,
     savingPercentage: 5,
+    costLivingAverage: 0,
   });
 
   useEffect(() => {
-    dispatch(setWalletForm(values));
+    dispatch(setSettings(values));
   }, [values]);
 
   return (
@@ -48,6 +49,20 @@ function BasicExample() {
       <Form.Group className="row mb-3">
         <Form.Label>
           Monthly income
+          <InformativeToolTip text="Text here" />
+        </Form.Label>
+        <Form.Control
+          name="secureMonthlyIncome"
+          onChange={onChangeHandler}
+          type="number"
+          min={0}
+        />
+      </Form.Group>
+
+      {/* MAC */}
+      <Form.Group className="row mb-3">
+        <Form.Label>
+          Cost living average
           <InformativeToolTip text="Text here" />
         </Form.Label>
         <Form.Control

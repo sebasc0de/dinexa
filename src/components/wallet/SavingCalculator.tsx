@@ -13,13 +13,13 @@ const SavingCalculator = () => {
   const wallet = useAppSelector((state) => state.wallet);
 
   const monthlySavings = monthlySavingCalculator(
-    wallet.savingPercentage,
-    wallet.secureMonthlyIncome
+    wallet.settings.savingPercentage,
+    wallet.settings.secureMonthlyIncome
   );
 
   const yearSavings = yearSavingCalculator(
-    wallet.savingPercentage,
-    wallet.secureMonthlyIncome
+    wallet.settings.savingPercentage,
+    wallet.settings.secureMonthlyIncome
   );
 
   return (

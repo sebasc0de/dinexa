@@ -68,8 +68,14 @@ export interface IdentityData {
 export interface UserMetadata {}
 
 // Wallet
+
 export interface Wallet {
+  settings: WalletSettings;
+}
+
+export interface WalletSettings {
   minMoneyAlert: number;
   secureMonthlyIncome: number;
   savingPercentage: number;
+  costLivingAverage: number;
 }
