@@ -2,7 +2,7 @@ import { Col, Row } from "react-bootstrap";
 import Layout from "../components/layouts/Dashboard";
 
 import Form from "../components/wallet/Form";
-import Calculator from "../components/wallet/SavingStylesResume";
+import Calculator from "../components/wallet/SavingCalculator";
 import EarningCardOne from "../components/UI/Cards/EarningCardOne";
 
 const Wallet = () => {
