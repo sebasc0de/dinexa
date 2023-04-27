@@ -26,16 +26,23 @@
 .earningCardOne {
   padding: 1rem;
   display: flex;
-  gap: 0.625rem;
+  gap: 0.825rem;
+  align-items: center;
 
   .pre-title {
     color: $text-color;
     font-weight: 700;
     display: block;
     margin-bottom: 0.225rem;
+    font-size: 0.825rem;
   }
 
   .earning {
     font-weight: 800;
+  }
+
+  svg {
+    transform: translateY(2px);
+    color: $action-color;
   }
 }
