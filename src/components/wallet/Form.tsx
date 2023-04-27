@@ -16,7 +16,7 @@ function BasicExample() {
   const { values, onChangeHandler } = useField<Wallet>({
     minMoneyAlert: 0,
     secureMonthlyIncome: 0,
-    savingPercentage: 0,
+    savingPercentage: 5,
   });
 
   useEffect(() => {
@@ -36,7 +36,6 @@ function BasicExample() {
           name="savingPercentage"
           aria-label="Default select example"
         >
-          <option>Select an option</option>
           <option value="5">5%</option>
           <option value="10">10%</option>
           <option value="20">20%</option>

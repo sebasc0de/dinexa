@@ -8,19 +8,20 @@ import { data } from "../../data/dashboard/SidebarOne";
 
 const Private = ({ children }: Props) => {
   return (
-    <main>
+    <>
       <Header />
+
       <Container fluid>
         <Row>
-          <Col md={3}>
+          <Col md={2}>
             <SidebarOne navData={data} />
           </Col>
-          <Col className="p-md-4" md={9}>
+          <Col className="p-md-5" md={10}>
             {children}
           </Col>
         </Row>
       </Container>
-    </main>
+    </>
   );
 };
 

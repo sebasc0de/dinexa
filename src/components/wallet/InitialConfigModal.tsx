@@ -6,7 +6,7 @@ import SavingStylesResume from "./SavingStylesResume";
 import WalletForm from "./Form";
 
 function InitialConfigModal() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Offcanvas from "react-bootstrap/Offcanvas";
 import Form from "./Form";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 // Project imports
 import { SupabaseRepository } from "../../modules/moneyMovement/infraestructure/SupabaseRepository";
@@ -16,12 +16,8 @@ function Example() {
 
   return (
     <>
-      <Button
-        className="dinexa-button"
-        style={{ borderRadius: "50px" }}
-        onClick={handleShow}
-      >
-        Create spend
+      <Button className="dinexa-button" onClick={handleShow}>
+        New spend
       </Button>
 
       <Offcanvas
@@ -30,7 +26,7 @@ function Example() {
         show={show}
         onHide={handleClose}
       >
-        <Offcanvas.Header className="simple-modal--header">
+        <Offcanvas.Header closeButton className="simple-modal--header">
           <Offcanvas.Title className="title--2">
             Create a custom spend
           </Offcanvas.Title>

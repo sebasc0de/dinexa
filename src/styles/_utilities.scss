@@ -69,11 +69,12 @@
 // Money movements
 
 .money {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .money.gain {
-  color: #4a934a;
+  color: #659483;
+  border-radius: 5px;
 }
 
 .money.spend {

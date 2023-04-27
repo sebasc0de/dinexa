@@ -1,13 +1,14 @@
 // Component imports
+import { Col, Row } from "react-bootstrap";
 import Layout from "../components/layouts/Dashboard";
 import Modal from "../components/moneyMovement/Modal";
-import SimpleTitleTwo from "../components/UI/Titles/SimpleTitleTwo";
 import Table from "../components/moneyMovement/Table";
+import SimpleTitleTwo from "../components/UI/Titles/SimpleTitleTwo";
 
 const dashboard = () => {
   return (
     <Layout>
-      <SimpleTitleTwo Component={Modal} title="Movements" />
+      <SimpleTitleTwo title="Money spends" Component={Modal} />
       <Table />
     </Layout>
   );

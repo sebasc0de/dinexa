@@ -3,7 +3,6 @@ import { Col, Row } from "react-bootstrap";
 
 // Redux
 import { useAppSelector } from "../../redux/hooks";
-import { ensureWalletIsConfigured } from "../../modules/wallet/domain/ensureWalletIsConfigured";
 import {
   monthlySavingCalculator,
   yearSavingCalculator,
@@ -11,8 +10,6 @@ import {
 
 const SavingStylesResume = () => {
   const wallet = useAppSelector((state) => state.wallet);
-
-  const walletExists = ensureWalletIsConfigured(wallet);
 
   const monthlySavings = monthlySavingCalculator(
     wallet.savingPercentage,
@@ -24,17 +21,22 @@ const SavingStylesResume = () => {
     wallet.secureMonthlyIncome
   );
 
-  if (!walletExists) return null;
   return (
     <Row className="savingStylesResume fade-in-top mb-3">
       <h6 className="subtitle mb-3">Saving resume</h6>
       <Col cols={8} className="savingResumeItem">
-        <small className="savingResumeItem--title">Spected per month</small>
+        <span className="savingResumeItem--title">Spected per month</span>
         <span className="savingResumeItem--total">${monthlySavings}</span>
+        <small className="savingResumeItem--small">
+          You are saving
+          <span className="money gain"> {wallet.savingPercentage}% </span>
+          per month
+        </small>
       </Col>
       <Col className="savingResumeItem" cols={4}>
-        <small className="savingResumeItem--title">Spected per year</small>
+        <span className="savingResumeItem--title">Spected per year</span>
         <span className="savingResumeItem--total">${yearSavings}</span>
+        <small className="savingResumeItem--small">Desc</small>
       </Col>
     </Row>
   );

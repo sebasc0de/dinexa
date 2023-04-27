@@ -5,12 +5,28 @@
 }
 
 .savingResumeItem {
+  position: relative;
+
+  svg {
+    position: absolute;
+    color: $action-color;
+  }
+
   &--title {
     display: block;
+    font-weight: 600;
     color: $text-secondary-color;
   }
 
   &--total {
+    font-size: 1.2rem;
     font-weight: 700;
+  }
+
+  &--small {
+    display: block;
+    color: $text-secondary-color;
+    font-size: 0.785rem;
+    margin-top: 0.225rem;
   }
 }
