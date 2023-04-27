@@ -29,20 +29,22 @@
   gap: 0.825rem;
   align-items: center;
 
+  svg {
+    transform: translateY(2px);
+    color: $action-color;
+  }
+
   .pre-title {
     color: $text-color;
-    font-weight: 700;
+    font-weight: 800;
     display: block;
     margin-bottom: 0.225rem;
-    font-size: 0.825rem;
+    font-size: 0.625rem;
+    text-transform: uppercase;
   }
 
   .earning {
     font-weight: 800;
-  }
-
-  svg {
-    transform: translateY(2px);
-    color: $action-color;
+    position: relative;
   }
 }
