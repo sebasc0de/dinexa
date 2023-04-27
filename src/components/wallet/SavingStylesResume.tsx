@@ -23,7 +23,7 @@ const SavingStylesResume = () => {
 
   return (
     <Row className="savingStylesResume fade-in-top mb-3">
-      <h6 className="subtitle mb-3">Saving resume</h6>
+      <h5 className="subtitle mb-3">Saving resume</h5>
       <Col cols={8} className="savingResumeItem">
         <span className="savingResumeItem--title">Spected per month</span>
         <span className="savingResumeItem--total">${monthlySavings}</span>

@@ -25,6 +25,8 @@ function BasicExample() {
 
   return (
     <Form className="wallet-form">
+      <h5 className="subtitle mb-3">Wallet settings</h5>
+
       {/* Money saving preset */}
       <Form.Group className="row mb-3">
         <Form.Label>
