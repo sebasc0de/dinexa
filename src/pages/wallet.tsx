@@ -1,7 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 
 // Components
-import Form from "../components/wallet/Form";
+import Form from "../components/wallet/SettingsForm";
 import Calculator from "../components/wallet/SavingCalculator";
 import EarningCardOne from "../components/UI/Cards/EarningCardOne";
 import Layout from "../components/layouts/Dashboard";

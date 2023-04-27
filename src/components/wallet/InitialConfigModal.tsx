@@ -3,7 +3,7 @@ import MessageOne from "../UI/Messages/MessageOne";
 import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
 import SavingCalculator from "./SavingCalculator";
-import WalletForm from "./Form";
+import WalletForm from "./SettingsForm";
 
 function InitialConfigModal() {
   const [show, setShow] = useState(false);

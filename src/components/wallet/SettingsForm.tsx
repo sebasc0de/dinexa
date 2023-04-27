@@ -8,7 +8,7 @@ import { setSettings } from "../../redux/slices/wallet-slice";
 import { useField } from "../../hooks/useField";
 import { WalletSettings } from "../../types";
 
-function BasicExample() {
+function SettingsForm() {
   // Redux
   const dispatch = useAppDispatch();
 
@@ -90,4 +90,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default SettingsForm;
