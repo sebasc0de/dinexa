@@ -66,6 +66,15 @@
   }
 }
 
+// Box with shadow
+.box {
+  &-1 {
+    background: white;
+    box-shadow: 1px 5px 10px 1px rgba(black, 0.1);
+    border-radius: 10px;
+  }
+}
+
 // Money movements
 
 .money {
