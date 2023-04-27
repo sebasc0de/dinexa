@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import MessageOne from "../UI/Messages/MessageOne";
 import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
-import SavingStylesResume from "./SavingStylesResume";
+import SavingStylesCalculator from "./SavingStylesResume";
 import WalletForm from "./Form";
 
 function InitialConfigModal() {
@@ -31,7 +31,7 @@ function InitialConfigModal() {
           <Modal.Title className="title--2">Configuration</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <SavingStylesResume />
+          <SavingStylesCalculator />
           <WalletForm />
         </Modal.Body>
         <Modal.Footer>

@@ -21,3 +21,21 @@
     width: 100%;
   }
 }
+
+// Earning cards
+.earningCardOne {
+  padding: 1rem;
+  display: flex;
+  gap: 0.625rem;
+
+  .pre-title {
+    color: $text-color;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.225rem;
+  }
+
+  .earning {
+    font-weight: 800;
+  }
+}

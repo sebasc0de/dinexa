@@ -8,7 +8,7 @@ import {
   yearSavingCalculator,
 } from "../../modules/wallet/domain/savingAmountCalculators";
 
-const SavingStylesResume = () => {
+const SavingStylesCalculator = () => {
   const wallet = useAppSelector((state) => state.wallet);
 
   const monthlySavings = monthlySavingCalculator(
@@ -23,7 +23,7 @@ const SavingStylesResume = () => {
 
   return (
     <Row className="savingStylesResume fade-in-top mb-3">
-      <h5 className="subtitle mb-3">Saving resume</h5>
+      <h5 className="subtitle mb-3">Saving calculator</h5>
       <Col cols={8} className="savingResumeItem">
         <span className="savingResumeItem--title">Spected per month</span>
         <span className="savingResumeItem--total">${monthlySavings}</span>
@@ -42,4 +42,4 @@ const SavingStylesResume = () => {
   );
 };
 
-export default SavingStylesResume;
+export default SavingStylesCalculator;

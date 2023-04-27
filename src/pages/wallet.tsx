@@ -2,22 +2,29 @@ import { Col, Row } from "react-bootstrap";
 import Layout from "../components/layouts/Dashboard";
 
 import Form from "../components/wallet/Form";
-import Resume from "../components/wallet/SavingStylesResume";
+import Calculator from "../components/wallet/SavingStylesResume";
+import EarningCardOne from "../components/UI/Cards/EarningCardOne";
 
 const Wallet = () => {
   return (
     <Layout>
-      <Row>
-        <Col>a</Col>
-        <Col>b</Col>
-        <Col>c</Col>
-      </Row>
-      <Row className="mt-5 gap-3">
-        <Col className="box-1 p-4">
-          <Resume />
+      <Row className="gap-3">
+        <Col className="box-1">
+          <EarningCardOne earning={2} title="Total savings" />
         </Col>
-        <Col md={5} className="box-1 p-4">
+        <Col className="box-1">
+          <EarningCardOne earning={2} title="Wallet" />
+        </Col>
+        <Col className="box-1">
+          <EarningCardOne earning={2} title="Spended today" />
+        </Col>
+      </Row>
+      <Row className="mt-3 gap-3">
+        <Col className="box-1 p-4">
           <Form />
+        </Col>
+        <Col className="box-1 p-4">
+          <Calculator />
         </Col>
       </Row>
     </Layout>
