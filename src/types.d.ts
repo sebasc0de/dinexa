@@ -69,10 +69,13 @@ export interface UserMetadata {}
 
 // Wallet
 
-export interface Wallet {
+export interface Wallet extends WalletData {
+  settings: WalletSettings;
+}
+
+export interface WalletData {
   totalSavings: number;
   money: number;
-  settings: WalletSettings;
 }
 
 export interface WalletSettings {

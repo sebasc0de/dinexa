@@ -23,7 +23,7 @@ const GetStarted = () => {
   return (
     <Layout>
       {/* Initial wallet config */}
-      {!initialized && <InitialConfigModal />}
+      <InitialConfigModal walletInitialized={initialized} />
 
       <SimpleTitleOne
         title="Get started"

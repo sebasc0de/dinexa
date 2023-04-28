@@ -1,20 +1,20 @@
-import { useState } from "react";
 import MessageOne from "../UI/Messages/MessageOne";
 
-const WalletInitialMessage = () => {
-  const [show, setShow] = useState(true);
-
-  if (!show) return null;
+const WalletInitialMessage = ({ onStepComplete }: Props) => {
   return (
     <MessageOne
-      title="Do yo have money?"
+      title="Before start..."
       subtitle="Set up your wallet with your money and total savings before start."
       imgUrl="gifs/Configuration.gif"
       imgSize={300}
       buttonText="Start now"
-      buttonAction={() => setShow(false)}
+      buttonAction={onStepComplete}
     />
   );
 };
+
+interface Props {
+  onStepComplete: () => void;
+}
 
 export default WalletInitialMessage;

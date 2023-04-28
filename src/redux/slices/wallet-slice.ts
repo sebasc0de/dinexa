@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { Wallet, WalletSettings } from "../../types";
+import { Wallet, WalletData, WalletSettings } from "../../types";
 
 const initialState: Wallet = {
   money: 0,
@@ -24,9 +24,14 @@ export const walletSlice = createSlice({
       state.settings.secureMonthlyIncome = Number(secureMonthlyIncome);
       state.settings.savingPercentage = Number(savingPercentage);
     },
+
+    setWalletData(state, action: PayloadAction<WalletData>) {
+      state.money = Number(action.payload.money);
+      state.totalSavings = Number(action.payload.totalSavings);
+    },
   },
 });
 
-export const { setSettings } = walletSlice.actions;
+export const { setSettings, setWalletData } = walletSlice.actions;
 
 export default walletSlice.reducer;
