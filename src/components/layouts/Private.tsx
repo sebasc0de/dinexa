@@ -2,13 +2,30 @@ import { Col, Container, Row } from "react-bootstrap";
 import { ReactNode } from "react";
 import Header from "../UI/Headers/Dashboard";
 import SidebarOne from "../UI/Sidebars/SidebarOne";
+import InitialConfigModal from "../wallet/InitialConfigModal";
 
 // Data imports
 import { data } from "../../data/dashboard/SidebarOne";
 
+// Validators
+import { ensureWalletIsInitialized } from "../../modules/wallet/domain/ensureWalletIsConfigured";
+
+// Redux
+import { useAppSelector } from "../../redux/hooks";
+
 const Private = ({ children }: Props) => {
+  const wallet = useAppSelector((state) => state.wallet);
+
+  const initialized = ensureWalletIsInitialized(
+    wallet.money,
+    wallet.totalSavings
+  );
+
   return (
     <>
+      {/* Initial wallet config */}
+      <InitialConfigModal walletInitialized={initialized} />
+
       <Header />
 
       <Container fluid>

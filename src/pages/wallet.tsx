@@ -4,7 +4,7 @@ import { Col, Row } from "react-bootstrap";
 import Form from "../components/wallet/SettingsForm";
 import Calculator from "../components/wallet/SavingCalculator";
 import EarningCardOne from "../components/UI/Cards/EarningCardOne";
-import Layout from "../components/layouts/Dashboard";
+import Layout from "../components/layouts/Private";
 
 // Icons
 import { TbMoneybag, TbPigMoney } from "react-icons/tb";
