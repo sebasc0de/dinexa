@@ -1,4 +1,4 @@
-import Modal from "../../components/moneyMovement/Modal";
+import Modal from "../../components/spend/Modal";
 
 export const heroSectionOneData = {
   title: "Take control of your ",

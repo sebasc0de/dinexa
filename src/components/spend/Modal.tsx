@@ -4,7 +4,7 @@ import Form from "./Form";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 // Project imports
-import { SupabaseRepository } from "../../modules/moneyMovement/infraestructure/SupabaseRepository";
+import { SupabaseRepository } from "../../modules/spend/infraestructure/SupabaseRepository";
 
 function Example() {
   const [show, setShow] = useState(false);

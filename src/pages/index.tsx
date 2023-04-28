@@ -1,6 +1,6 @@
 // data imports
 import { BenefitsOneData } from "../data/homepage/BenefitsOneData";
-import MoneyCategories from "../data/moneyMovement/categories";
+import SpendCategories from "../data/spend/categories";
 
 // Components
 import { BenefitsOne } from "../components/UI/Benefits/BenefitsOne";
@@ -29,7 +29,7 @@ const index = () => {
         data={BenefitsOneData}
       />
       <CategoriesGrid
-        categories={MoneyCategories}
+        categories={SpendCategories}
         sectionTitle="Categorize your expenses"
         sectionDesc="Your expenses sorted by categories"
       />

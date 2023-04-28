@@ -5,18 +5,18 @@ import Form from "react-bootstrap/Form";
 // Project imports
 import { v4 as uuid } from "uuid";
 import { useField } from "../../hooks/useField";
-import { Repository } from "../../modules/moneyMovement/application/Repository";
+import { Repository } from "../../modules/spend/application/Repository";
 
 // Redux
-import { setMoneyMovement } from "../../redux/slices/moneyMovement-slice";
+import { createSpend } from "../../redux/slices/spend-slice";
 import { useAppDispatch } from "../../redux/hooks";
-import { MoneyMovement } from "../../types";
+import { Spend } from "../../types";
 import { ToastContainer } from "react-toastify";
 
 function BasicExample({ repository }: { repository: Repository }) {
   const dispatch = useAppDispatch();
 
-  const { values, onChangeHandler } = useField<MoneyMovement>({
+  const { values, onChangeHandler } = useField<Spend>({
     category: "",
     id: uuid(),
     name: "",
@@ -29,7 +29,7 @@ function BasicExample({ repository }: { repository: Repository }) {
     // Repository implementation
     // const create = await CreateMoneyMovement(repository, inputValue);
 
-    dispatch(setMoneyMovement(values));
+    dispatch(createSpend(values));
   };
 
   return (

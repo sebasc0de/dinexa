@@ -1,6 +1,6 @@
-import { MoneyMovementCategory } from "../../types";
+import { SpendCategory } from "../../types";
 
-const categories: MoneyMovementCategory[] = [
+const categories: SpendCategory[] = [
   {
     title: "house",
     img: "money_categories/house.jpg",

@@ -1,8 +1,8 @@
 // Component imports
 import { Col, Row } from "react-bootstrap";
 import Layout from "../components/layouts/Dashboard";
-import Modal from "../components/moneyMovement/Modal";
-import Table from "../components/moneyMovement/Table";
+import Modal from "../components/spend/Modal";
+import Table from "../components/spend/Table";
 import SimpleTitleTwo from "../components/UI/Titles/SimpleTitleTwo";
 
 const Spends = () => {

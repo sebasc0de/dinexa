@@ -1,11 +1,11 @@
-export interface MoneyMovement {
+export interface Spend {
   id?: string;
   name: string;
   total: number;
   category: string;
 }
 
-export interface MoneyMovementCategory {
+export interface SpendCategory {
   title: string;
   img: string;
   desc?: string;

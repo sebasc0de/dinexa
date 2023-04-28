@@ -1,10 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import moneyReducer from "../redux/slices/moneyMovement-slice";
+import spendReducer from "../redux/slices/spend-slice";
 import authReducer from "../redux/slices/auth-slice";
 import walletReducer from "../redux/slices/wallet-slice";
 
 export const rootReducer = combineReducers({
-  moneyMovements: moneyReducer,
+  spends: spendReducer,
   auth: authReducer,
   wallet: walletReducer,
 });
