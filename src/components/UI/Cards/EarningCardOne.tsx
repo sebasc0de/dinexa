@@ -6,7 +6,7 @@ const EarningCardOne = ({ title, earning, Icon }: Props) => {
       {Icon && <Icon size={40} />}
       <div>
         <span className="pre-title">{title}</span>
-        <h4 className="earning">${earning.toFixed(2)}</h4>
+        <h4 className="earning">{earning}</h4>
       </div>
     </div>
   );
@@ -14,7 +14,7 @@ const EarningCardOne = ({ title, earning, Icon }: Props) => {
 
 interface Props {
   title: string;
-  earning: number;
+  earning: string;
   Icon?: React.FC<IconBaseProps>;
 }
 

@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import { useAppSelector } from "../../redux/hooks";
+import { priceParser } from "../../utils/priceParser";
 
 const popover = (
   <Popover id="popover-basic">
@@ -16,9 +17,11 @@ const popover = (
 const MoneyWallet = () => {
   const money = useAppSelector((state) => state.wallet.money);
 
+  const moneyWallet = priceParser(money);
+
   return (
     <OverlayTrigger trigger="click" placement="bottom" overlay={<p>das</p>}>
-      <Button className="money-wallet">Your wallet ${money.toFixed(2)}</Button>
+      <Button className="money-wallet">Your wallet {moneyWallet}</Button>
     </OverlayTrigger>
   );
 };

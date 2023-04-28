@@ -10,9 +10,13 @@ import Layout from "../components/layouts/Dashboard";
 import { TbMoneybag, TbPigMoney } from "react-icons/tb";
 import { IoWalletOutline } from "react-icons/io5";
 import { useAppSelector } from "../redux/hooks";
+import { priceParser } from "../utils/priceParser";
 
 const Wallet = () => {
   const wallet = useAppSelector((state) => state.wallet);
+
+  const totalSavings = priceParser(wallet.totalSavings);
+  const money = priceParser(wallet.money);
 
   return (
     <Layout>
@@ -20,19 +24,23 @@ const Wallet = () => {
         <Col className="box-1">
           <EarningCardOne
             Icon={TbMoneybag}
-            earning={wallet.totalSavings}
+            earning={totalSavings}
             title="Total savings"
           />
         </Col>
         <Col className="box-1">
           <EarningCardOne
             Icon={IoWalletOutline}
-            earning={wallet.money}
+            earning={money}
             title="Wallet"
           />
         </Col>
         <Col className="box-1">
-          <EarningCardOne Icon={TbPigMoney} earning={2} title="Spended today" />
+          <EarningCardOne
+            Icon={TbPigMoney}
+            earning={money}
+            title="Spended today"
+          />
         </Col>
       </Row>
       <Row className="flex-column flex-md-row gap-3 mt-3">
