@@ -1,7 +1,9 @@
+import { IconBaseProps } from "react-icons";
+
 const EarningCardOne = ({ title, earning, Icon }: Props) => {
   return (
     <div className="earningCardOne">
-      <Icon size={40} />
+      {Icon && <Icon size={40} />}
       <div>
         <span className="pre-title">{title}</span>
         <h4 className="earning">${earning.toFixed(2)}</h4>
@@ -13,11 +15,7 @@ const EarningCardOne = ({ title, earning, Icon }: Props) => {
 interface Props {
   title: string;
   earning: number;
-  Icon: React.FC<Icon>;
-}
-
-interface Icon {
-  size: number;
+  Icon?: React.FC<IconBaseProps>;
 }
 
 export default EarningCardOne;

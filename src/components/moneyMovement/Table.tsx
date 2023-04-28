@@ -3,10 +3,21 @@ import Table from "react-bootstrap/Table";
 // Redux
 import { useAppSelector } from "../../redux/hooks";
 import TotalTableItem from "./TotalTableItem";
+import MessageNotFoundOne from "../UI/Messages/MessageNotFoundOne";
+
+// Icons
+import { HiOutlineInformationCircle } from "react-icons/hi";
 
 function BasicExample() {
   const { data } = useAppSelector((state) => state.moneyMovements);
 
+  if (data.length < 1)
+    return (
+      <MessageNotFoundOne
+        Icon={HiOutlineInformationCircle}
+        text="Not money movements yet"
+      />
+    );
   return (
     <Table className="spend-table" responsive bordered>
       <thead>
