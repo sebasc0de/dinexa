@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
 import { Nav } from "react-bootstrap";
+import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 const SidebarOne = ({ navData }: Props) => {
   const route = useRouter().route;
@@ -15,7 +15,11 @@ const SidebarOne = ({ navData }: Props) => {
           const Icon = item.Icon;
 
           return (
-            <Link className={`nav-link ${NAV_ACTIVE}`} href={item.route}>
+            <Link
+              key={item.text}
+              className={`nav-link ${NAV_ACTIVE}`}
+              href={item.route}
+            >
               <Icon />
               {t(`dashboard.${item.text}`)}
             </Link>

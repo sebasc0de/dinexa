@@ -27,7 +27,7 @@ const GetStarted = () => {
           title="Manage your money movements"
           desc="Add, remove and categorize your daily spends for take control of your finances."
           navText="New spend"
-          navLink="/dashboard"
+          navLink="/spends"
           imageUrl="images/money-spends.svg"
           imageSize={225}
         />

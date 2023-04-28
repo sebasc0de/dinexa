@@ -11,7 +11,7 @@ import { WalletData } from "../../types";
 import { useAppDispatch } from "../../redux/hooks";
 import { setWalletData } from "../../redux/slices/wallet-slice";
 
-function InitialConfigForm() {
+function InitialConfigForm({ onStepComplete }: Props) {
   // Redux
   const dispatch = useAppDispatch();
 
@@ -25,6 +25,7 @@ function InitialConfigForm() {
     e.preventDefault();
 
     dispatch(setWalletData(values));
+    onStepComplete();
   };
 
   return (
@@ -64,6 +65,10 @@ function InitialConfigForm() {
       </Button>
     </Form>
   );
+}
+
+interface Props {
+  onStepComplete: () => void;
 }
 
 export default InitialConfigForm;

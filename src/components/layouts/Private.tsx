@@ -24,7 +24,7 @@ const Private = ({ children }: Props) => {
   return (
     <>
       {/* Initial wallet config */}
-      <InitialConfigModal walletInitialized={initialized} />
+      {!initialized && <InitialConfigModal />}
 
       <Header />
 
