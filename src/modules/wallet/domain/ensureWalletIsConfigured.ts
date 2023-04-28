@@ -1,9 +1,10 @@
-import { WalletSettings } from "../../../types";
+export const ensureWalletIsInitialized = (
+  money: number,
+  totalSavings: number
+) => {
+  if (money === 0) return false;
 
-export const ensureWalletIsConfigured = (wallet: WalletSettings) => {
-  if (wallet.savingPercentage === 0) return false;
-
-  if (wallet.secureMonthlyIncome <= 0) return false;
+  if (money === 0 && totalSavings === 0) return false;
 
   return true;
 };
