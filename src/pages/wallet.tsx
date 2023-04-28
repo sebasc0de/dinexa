@@ -9,16 +9,27 @@ import Layout from "../components/layouts/Dashboard";
 // Icons
 import { TbMoneybag, TbPigMoney } from "react-icons/tb";
 import { IoWalletOutline } from "react-icons/io5";
+import { useAppSelector } from "../redux/hooks";
 
 const Wallet = () => {
+  const wallet = useAppSelector((state) => state.wallet);
+
   return (
     <Layout>
       <Row className="flex-column flex-md-row gap-1 ">
         <Col className="box-1">
-          <EarningCardOne Icon={TbMoneybag} earning={2} title="Total savings" />
+          <EarningCardOne
+            Icon={TbMoneybag}
+            earning={wallet.totalSavings}
+            title="Total savings"
+          />
         </Col>
         <Col className="box-1">
-          <EarningCardOne Icon={IoWalletOutline} earning={2} title="Wallet" />
+          <EarningCardOne
+            Icon={IoWalletOutline}
+            earning={wallet.money}
+            title="Wallet"
+          />
         </Col>
         <Col className="box-1">
           <EarningCardOne Icon={TbPigMoney} earning={2} title="Spended today" />

@@ -8,7 +8,7 @@ const persistConfig = {
   version: 1,
   storage,
   blacklist: [""],
-  whitelist: ["moneyMovements", "auth"],
+  whitelist: ["moneyMovements", "auth", "wallet"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
