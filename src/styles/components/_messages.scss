@@ -1,5 +1,12 @@
 @use "../variables";
 
+// Message One
+.messageOne {
+  img {
+    object-fit: contain;
+  }
+}
+
 // Message TWo
 .messageTwo {
   a {

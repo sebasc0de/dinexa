@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
+import WalletInitialMessage from "./WalletInitialMessage";
 
 function InitialConfigModal() {
   const [show, setShow] = useState(true);
@@ -10,8 +11,10 @@ function InitialConfigModal() {
   return (
     <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
       <Modal.Body>
-        I will not close if you click outside me. Don't even try to press escape
-        key.
+        {/* Initial message */}
+        <WalletInitialMessage />
+
+        {/* Wallet form */}
       </Modal.Body>
     </Modal>
   );
