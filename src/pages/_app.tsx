@@ -17,7 +17,7 @@ import { Suspense } from "react";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <PersistGate loading={<p>Loading...</p>} persistor={persistor}>
+      <PersistGate persistor={persistor}>
         <Suspense fallback="Loading translate">
           <Component {...pageProps} />
         </Suspense>

@@ -5,7 +5,7 @@ import Modal from "../components/moneyMovement/Modal";
 import Table from "../components/moneyMovement/Table";
 import SimpleTitleTwo from "../components/UI/Titles/SimpleTitleTwo";
 
-const dashboard = () => {
+const Spends = () => {
   return (
     <Layout>
       <SimpleTitleTwo title="Money spends" Component={Modal} />
@@ -14,4 +14,4 @@ const dashboard = () => {
   );
 };
 
-export default dashboard;
+export default Spends;
