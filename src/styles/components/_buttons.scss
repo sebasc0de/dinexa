@@ -1,5 +1,11 @@
 @use "../variables";
 
+button {
+  &:active {
+    color: white !important;
+  }
+}
+
 // Primary button
 .dinexa-button {
   color: white;
