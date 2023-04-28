@@ -1,10 +1,16 @@
 import { Col, Image, Row } from "react-bootstrap";
 
-const MessageTwo = ({ title, desc, imageUrl, Component }: Props) => {
+const MessageTwo = ({
+  title,
+  desc,
+  imageUrl,
+  imageSize = 125,
+  Component,
+}: Props) => {
   return (
     <Row className="align-items-center">
       <Col md={3}>
-        <Image src={imageUrl} width={125} height={125} />
+        <Image src={imageUrl} width={imageSize} height={imageSize} />
       </Col>
       <Col>
         <h5 className="subtitle">{title}</h5>
@@ -19,6 +25,7 @@ interface Props {
   title: string;
   desc: string;
   imageUrl: string;
+  imageSize?: number;
   Component?: React.FC;
 }
 

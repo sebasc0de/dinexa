@@ -38,7 +38,7 @@ function LoginForm({ repository }: { repository: Repository }) {
 
       if (loginUser) {
         dispatch(setUserSession(loginUser));
-        router.push("wallet");
+        router.push("get-started");
       }
     } catch (e) {
       console.log(e);

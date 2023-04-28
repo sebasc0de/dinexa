@@ -1,6 +1,7 @@
 {
   "dashboard": {
     "dashboard": "Dashboard",
+    "start": "Get started",
     "wallet": "Wallet",
     "settings": "Settings",
     "logout": "Logout"
