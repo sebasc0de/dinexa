@@ -12,6 +12,7 @@ import { useAppDispatch } from "../../redux/hooks";
 import { setUserSession } from "../../redux/slices/auth-slice";
 import { HaveAccountButton } from "./HaveAccountButton";
 import ButtonWithLoader from "../UI/Buttons/ButtonWithLoader";
+import { useRouter } from "next/router";
 
 // Supabase repository
 const repository = SupabaseRepository();
@@ -22,6 +23,9 @@ function RegisterForm() {
 
   // Redux dispatch
   const dispatch = useAppDispatch();
+
+  // Router
+  const router = useRouter();
 
   // Form hook
   const { values, onChangeHandler } = useField<AuthRegisterData>({
@@ -40,6 +44,7 @@ function RegisterForm() {
       if (createUser) {
         setLoading(false);
         dispatch(setUserSession(createUser));
+        router.push("account-created");
       }
     } catch (e) {
       console.log(e);

@@ -35,7 +35,7 @@ function InitialConfigForm() {
       <Form.Group className="row mb-3">
         <Form.Label>
           Total savings
-          <InformativeToolTip text="Your monthly gains per month. This number helps Dinexa to save your money" />
+          <InformativeToolTip text="Total savings before use Dinexa app" />
         </Form.Label>
         <Form.Control
           name="totalSavings"
@@ -49,7 +49,7 @@ function InitialConfigForm() {
       <Form.Group className="row mb-3">
         <Form.Label>
           Money in wallet
-          <InformativeToolTip text="The live cost of your country, this metric helps Dinexa to make recomendations about your money" />
+          <InformativeToolTip text="Total money on your wallet before use Dinexa app" />
         </Form.Label>
         <Form.Control
           name="money"

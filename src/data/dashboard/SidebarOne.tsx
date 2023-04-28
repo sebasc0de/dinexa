@@ -21,11 +21,11 @@ export const data: NavLink[] = [
     route: "/wallet",
     text: "wallet",
   },
-  {
-    Icon: IoSettingsOutline,
-    route: "/settings",
-    text: "settings",
-  },
+  // {
+  //   Icon: IoSettingsOutline,
+  //   route: "/settings",
+  //   text: "settings",
+  // },
   {
     Icon: IoIosLogOut,
     route: "/logout",
