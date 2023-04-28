@@ -47,7 +47,7 @@ const Wallet = () => {
         <Col className="box-1 p-4">
           <Form />
         </Col>
-        <Col className="box-1 p-4" style={{ height: "fit-content" }}>
+        <Col className="d-flex flex-column justify-content-between box-1 p-4">
           <Calculator />
         </Col>
       </Row>

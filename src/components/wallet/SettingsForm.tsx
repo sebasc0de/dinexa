@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { SyntheticEvent, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import InformativeToolTip from "../UI/Tooltips/Informative";
 
@@ -7,6 +7,7 @@ import { useAppDispatch } from "../../redux/hooks";
 import { setSettings } from "../../redux/slices/wallet-slice";
 import { useField } from "../../hooks/useField";
 import { WalletSettings } from "../../types";
+import { Button } from "react-bootstrap";
 
 function SettingsForm() {
   // Redux
@@ -20,12 +21,18 @@ function SettingsForm() {
     costLivingAverage: 0,
   });
 
+  const onSubmitHandler = (e: SyntheticEvent<EventTarget>) => {
+    e.preventDefault();
+
+    console.log("my values", values);
+  };
+
   useEffect(() => {
     dispatch(setSettings(values));
   }, [values]);
 
   return (
-    <Form className="wallet-form">
+    <Form onSubmit={onSubmitHandler} className="wallet-form">
       <h5 className="subtitle mb-3">Wallet settings</h5>
 
       {/* Money saving preset */}
@@ -86,6 +93,10 @@ function SettingsForm() {
           min={0}
         />
       </Form.Group>
+
+      <Button type="submit" className="mt-4 dinexa-button w-100">
+        Save changes
+      </Button>
     </Form>
   );
 }
