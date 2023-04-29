@@ -44,7 +44,7 @@ function RegisterForm() {
       if (createUser) {
         setLoading(false);
         dispatch(setUserSession(createUser));
-        router.push("account-created");
+        router.push("/get-started");
       }
     } catch (e) {
       console.log(e);

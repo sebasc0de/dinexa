@@ -12,6 +12,7 @@ import { ensureWalletIsInitialized } from "../../modules/wallet/domain/ensureWal
 
 // Redux
 import { useAppSelector } from "../../redux/hooks";
+import Auth from "./Auth";
 
 const Private = ({ children }: Props) => {
   const wallet = useAppSelector((state) => state.wallet);
@@ -22,7 +23,7 @@ const Private = ({ children }: Props) => {
   );
 
   return (
-    <>
+    <Auth>
       {/* Initial wallet config */}
       {!initialized && <InitialConfigModal />}
 
@@ -38,7 +39,7 @@ const Private = ({ children }: Props) => {
           </Col>
         </Row>
       </Container>
-    </>
+    </Auth>
   );
 };
 
