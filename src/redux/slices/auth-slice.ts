@@ -12,6 +12,7 @@ const initialState: State = {
 export const authSlice = createSlice({
   name: "auth",
   initialState,
+
   reducers: {
     setUserSession(state, action: PayloadAction<User>) {
       state.user = action.payload;

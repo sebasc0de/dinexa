@@ -1,4 +1,4 @@
-import { createSpend } from "../../../redux/slices/spend-slice";
+import { createSpend } from "../../../redux/thunks/spend";
 import { Spend } from "../../../types";
 import { substractMoneyOfWallet } from "../../wallet/application/ReduxService";
 import store from "../../../store";

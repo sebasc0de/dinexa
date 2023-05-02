@@ -8,7 +8,7 @@ export const SupabaseRepository = (): Repository => {
 };
 
 const create = async (values: Spend) => {
-  const { data, error } = await supabase.from("money_movements").insert(values);
+  const { data, error } = await supabase.from("spends").insert(values);
 
   if (!error) toast("Spend has been created");
 
@@ -16,7 +16,7 @@ const create = async (values: Spend) => {
 };
 
 const getAll = async () => {
-  const { data, error } = await supabase.from("money_movements").select("*");
+  const { data, error } = await supabase.from("spends").select("*");
   return data as Spend[];
 };
 
