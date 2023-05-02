@@ -5,17 +5,13 @@ import Form from "react-bootstrap/Form";
 // Project imports
 import { v4 as uuid } from "uuid";
 import { useField } from "../../hooks/useField";
-import { Repository } from "../../modules/spend/application/Repositories";
 
 // Redux
-import { useAppDispatch } from "../../redux/hooks";
 import { Spend } from "../../types";
 import { ToastContainer } from "react-toastify";
 import { create } from "../../modules/spend/application/ReduxService";
 
-function BasicExample({ repository }: { repository: Repository }) {
-  const dispatch = useAppDispatch();
-
+function BasicExample() {
   const { values, onChangeHandler } = useField<Spend>({
     category: "",
     id: uuid(),

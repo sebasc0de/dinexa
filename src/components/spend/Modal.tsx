@@ -3,15 +3,9 @@ import Button from "react-bootstrap/Button";
 import Form from "./Form";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-// Project imports
-import { SupabaseRepository } from "../../modules/spend/infraestructure/SupabaseRepository";
-
 function Example() {
   // Modal state
   const [show, setShow] = useState(false);
-
-  // Repository
-  const repository = SupabaseRepository();
 
   return (
     <>
@@ -31,7 +25,7 @@ function Example() {
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="simple-modal--body">
-          <Form repository={repository} />
+          <Form />
         </Offcanvas.Body>
       </Offcanvas>
     </>

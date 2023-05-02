@@ -1,5 +1,5 @@
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 function TotalTableItem({ total, type = "add" }: Props) {
   const STYLES = type === "add" ? "money gain" : "money spend";
@@ -7,9 +7,9 @@ function TotalTableItem({ total, type = "add" }: Props) {
   return (
     <OverlayTrigger
       placement="top"
-      overlay={<Tooltip id={`tooltip-top`}>You are saved this money</Tooltip>}
+      overlay={<Tooltip id={`tooltip-top`}>You are spended this money</Tooltip>}
     >
-      <span className={STYLES}>{total}</span>
+      <span className={STYLES}>${total}</span>
     </OverlayTrigger>
   );
 }
