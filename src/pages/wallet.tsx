@@ -43,14 +43,14 @@ const Wallet = () => {
         <Col className="box-1">
           <EarningCardOne
             Icon={MdAttachMoney}
-            earning={""}
+            earning={"---"}
             title="Earning today"
           />
         </Col>
         <Col className="box-1">
           <EarningCardOne
             Icon={TbMoneybag}
-            earning={""}
+            earning={"---"}
             title="Spended today"
           />
         </Col>

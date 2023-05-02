@@ -4,21 +4,23 @@ import {
 } from "../../../redux/slices/wallet-slice";
 import store from "../../../store";
 
-// Redux store - Wallet
-const wallet = store.getState().wallet;
-
 export const addMoneyToWallet = async (total: number) => {
+  const money = store.getState().wallet.money;
   updateSavings(total);
 
-  store.dispatch(updateWalletMoney(wallet.money + total));
+  store.dispatch(updateWalletMoney(money + total));
 };
 
 export const substractMoneyOfWallet = async (total: number) => {
-  store.dispatch(updateWalletMoney(wallet.money - total));
+  const money = store.getState().wallet.money;
+
+  const substract = money - total;
+
+  store.dispatch(updateWalletMoney(substract));
 };
 
 export const updateSavings = async (transactionAmount: number) => {
-  const savingPercentage = wallet.settings.savingPercentage;
+  const savingPercentage = store.getState().wallet.settings.savingPercentage;
 
   const result = (transactionAmount * savingPercentage) / 100;
 
