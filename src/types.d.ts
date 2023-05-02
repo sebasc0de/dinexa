@@ -11,6 +11,15 @@ export interface SpendCategory {
   desc?: string;
 }
 
+// Earning interfaces
+
+export interface Earning {
+  id?: string;
+  name: string;
+  total: number;
+}
+
+// Post interfaces
 export interface Post {
   id: string;
   title: string;
@@ -83,9 +92,4 @@ export interface WalletSettings {
   secureMonthlyIncome: number;
   savingPercentage: number;
   costLivingAverage: number;
-}
-
-export interface WalletOperation {
-  total: number;
-  type: "add" | "extract";
 }

@@ -1,17 +1,16 @@
 // Component imports
-import { Col, Row } from "react-bootstrap";
 import Layout from "../components/layouts/Private";
 import Modal from "../components/spend/Modal";
-import Table from "../components/UI/Table";
 import SimpleTitleTwo from "../components/UI/Titles/SimpleTitleTwo";
+import Table from "../components/earning/Table";
 
-const Spends = () => {
+const Earnings = () => {
   return (
     <Layout>
-      <SimpleTitleTwo title="Money spends" Component={Modal} />
+      <SimpleTitleTwo title="Money earnings" Component={Modal} />
       <Table />
     </Layout>
   );
 };
 
-export default Spends;
+export default Earnings;

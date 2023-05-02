@@ -2,20 +2,20 @@ import {
   updateWalletMoney,
   updateWalletSavings,
 } from "../../../redux/slices/wallet-slice";
-import { WalletOperation } from "../../../types";
 import store from "../../../store";
 
 // Redux store - Wallet
 const wallet = store.getState().wallet;
 
-export const updateWallet = async ({ total, type }: WalletOperation) => {
-  if (type === "extract")
-    store.dispatch(updateWalletMoney(wallet.money - total));
-
+export const addMoneyToWallet = async (total: number) => {
   // Update total savings
   updateSavings(total);
 
   store.dispatch(updateWalletMoney(wallet.money + total));
+};
+
+export const substractMoneyOfWallet = async (total: number) => {
+  store.dispatch(updateWalletMoney(wallet.money - total));
 };
 
 export const updateSavings = async (transactionAmount: number) => {
