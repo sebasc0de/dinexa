@@ -8,7 +8,6 @@ import store from "../../../store";
 const wallet = store.getState().wallet;
 
 export const addMoneyToWallet = async (total: number) => {
-  // Update total savings
   updateSavings(total);
 
   store.dispatch(updateWalletMoney(wallet.money + total));

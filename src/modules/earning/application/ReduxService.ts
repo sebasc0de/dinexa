@@ -3,12 +3,8 @@ import { Earning } from "../../../types";
 import { addMoneyToWallet } from "../../wallet/application/ReduxService";
 import store from "../../../store";
 
-export const create = (earning: Earning) => {
-  addMoneyToWallet(earning.total);
+export const create = async (earning: Earning) => {
+  addMoneyToWallet(Number(earning.total));
 
   store.dispatch(createEarning(earning));
-};
-
-export const getAll = () => {
-  return store.getState().earnings;
 };

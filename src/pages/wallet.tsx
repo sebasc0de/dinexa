@@ -8,8 +8,13 @@ import Layout from "../components/layouts/Private";
 
 // Icons
 import { TbMoneybag, TbPigMoney } from "react-icons/tb";
+import { MdAttachMoney } from "react-icons/md";
 import { IoWalletOutline } from "react-icons/io5";
+
+// Redux
 import { useAppSelector } from "../redux/hooks";
+
+// Utils
 import { priceParser } from "../utils/priceParser";
 
 const Wallet = () => {
@@ -23,7 +28,7 @@ const Wallet = () => {
       <Row className="flex-column flex-md-row gap-1 ">
         <Col className="box-1">
           <EarningCardOne
-            Icon={TbMoneybag}
+            Icon={TbPigMoney}
             earning={totalSavings}
             title="Total savings"
           />
@@ -37,8 +42,15 @@ const Wallet = () => {
         </Col>
         <Col className="box-1">
           <EarningCardOne
-            Icon={TbPigMoney}
-            earning={money}
+            Icon={MdAttachMoney}
+            earning={""}
+            title="Earning today"
+          />
+        </Col>
+        <Col className="box-1">
+          <EarningCardOne
+            Icon={TbMoneybag}
+            earning={""}
             title="Spended today"
           />
         </Col>

@@ -9,7 +9,7 @@ import MessageNotFoundOne from "../UI/Messages/MessageNotFoundOne";
 import { HiOutlineInformationCircle } from "react-icons/hi";
 
 function BasicExample() {
-  const { data } = useAppSelector((state) => state.spends);
+  const { data } = useAppSelector((state) => state.earnings);
 
   if (data.length < 1)
     return (
