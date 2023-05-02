@@ -79,6 +79,7 @@ export interface UserMetadata {}
 // Wallet
 
 export interface Wallet extends WalletData {
+  initialized: boolean;
   settings: WalletSettings;
 }
 

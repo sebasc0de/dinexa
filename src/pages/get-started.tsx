@@ -4,10 +4,17 @@ import { Row } from "react-bootstrap";
 import Layout from "../components/layouts/Private";
 import MessageTwo from "../components/UI/Messages/MessageTwo";
 import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
+import { useAppSelector } from "../redux/hooks";
+import InitialConfigModal from "../components/wallet/InitialConfigModal";
 
 const GetStarted = () => {
+  const initialized = useAppSelector((state) => state.wallet.initialized);
+
   return (
     <Layout>
+      {/* Initial wallet config */}
+      {!initialized && <InitialConfigModal />}
+
       <SimpleTitleOne
         title="Get started"
         desc="User's Guide Dinexa recommendations"

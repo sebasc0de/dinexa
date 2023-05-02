@@ -29,9 +29,6 @@ function BasicExample() {
     // Create spend in redux store
 
     // Update wallet
-
-    // Repository
-    // const create = await CreateMoneyMovement(repository, inputValue);
   };
 
   return (

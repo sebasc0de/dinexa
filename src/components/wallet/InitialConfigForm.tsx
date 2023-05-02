@@ -60,7 +60,7 @@ function InitialConfigForm({ onStepComplete }: Props) {
         />
       </Form.Group>
 
-      <Button type="submit" className="w-100 mt-3 dinexa-button">
+      <Button type="submit" className="w-100 dinexa-button">
         Save changes
       </Button>
     </Form>

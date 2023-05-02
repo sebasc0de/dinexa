@@ -14,6 +14,9 @@ function InitialConfigModal() {
       backdrop="static"
       keyboard={false}
     >
+      <Modal.Header closeButton>
+        <Modal.Title className="subtitle">Before start...</Modal.Title>
+      </Modal.Header>
       <Modal.Body>
         {step === 1 ? (
           <WalletInitialMessage onStepComplete={() => setStep(2)} />

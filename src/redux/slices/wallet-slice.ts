@@ -4,6 +4,7 @@ import { Wallet, WalletData, WalletSettings } from "../../types";
 const initialState: Wallet = {
   money: 0,
   totalSavings: 0,
+  initialized: false,
   settings: {
     costLivingAverage: 0,
     minMoneyAlert: 0,
@@ -16,6 +17,7 @@ export const walletSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
+    // For change
     setSettings(state, action: PayloadAction<WalletSettings>) {
       const { minMoneyAlert, secureMonthlyIncome, savingPercentage } =
         action.payload;
@@ -25,9 +27,11 @@ export const walletSlice = createSlice({
       state.settings.savingPercentage = Number(savingPercentage);
     },
 
+    // For change
     setWalletData(state, action: PayloadAction<WalletData>) {
       state.money = Number(action.payload.money);
       state.totalSavings = Number(action.payload.totalSavings);
+      state.initialized = true;
     },
 
     updateWalletMoney(state, action: PayloadAction<number>) {
