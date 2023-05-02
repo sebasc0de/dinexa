@@ -5,19 +5,14 @@ import Form from "react-bootstrap/Form";
 // Project imports
 import { v4 as uuid } from "uuid";
 import { useField } from "../../hooks/useField";
-import { Repository } from "../../modules/spend/application/Repositories";
 
 // Redux
-import { useAppDispatch } from "../../redux/hooks";
-import { Spend } from "../../types";
+import { Earning } from "../../types";
 import { ToastContainer } from "react-toastify";
-import { create } from "../../modules/spend/application/ReduxService";
+import { create } from "../../modules/earning/application/ReduxService";
 
-function BasicExample({ repository }: { repository: Repository }) {
-  const dispatch = useAppDispatch();
-
-  const { values, onChangeHandler } = useField<Spend>({
-    category: "",
+function BasicExample() {
+  const { values, onChangeHandler } = useField<Earning>({
     id: uuid(),
     name: "",
     total: 0,
@@ -33,9 +28,6 @@ function BasicExample({ repository }: { repository: Repository }) {
     // Create spend in redux store
 
     // Update wallet
-
-    // Repository
-    // const create = await CreateMoneyMovement(repository, inputValue);
   };
 
   return (
@@ -64,27 +56,12 @@ function BasicExample({ repository }: { repository: Repository }) {
         />
       </Form.Group>
 
-      {/* Category */}
-      <Form.Label>Category:</Form.Label>
-      <Form.Select
-        onChange={onChangeHandler}
-        className="mb-3"
-        autoComplete="off"
-        name="category"
-        aria-label="Default select example"
-      >
-        <option>Select category</option>
-        <option value="food">Food</option>
-        <option value="videogames">Videogames</option>
-        <option value="streaming">Streaming</option>
-      </Form.Select>
-
       <Button
         style={{ borderRadius: "50px" }}
         className="dinexa-button"
         type="submit"
       >
-        Save spend
+        Save earning
       </Button>
     </Form>
   );

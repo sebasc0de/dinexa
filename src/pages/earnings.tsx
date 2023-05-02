@@ -1,6 +1,6 @@
 // Component imports
 import Layout from "../components/layouts/Private";
-import Modal from "../components/spend/Modal";
+import Modal from "../components/earning/Modal";
 import SimpleTitleTwo from "../components/UI/Titles/SimpleTitleTwo";
 import Table from "../components/earning/Table";
 

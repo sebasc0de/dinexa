@@ -2,7 +2,7 @@ import Table from "react-bootstrap/Table";
 
 // Redux
 import { useAppSelector } from "../../redux/hooks";
-import TotalTableItem from "./TotalTableItem";
+import TotalTableItem from "../UI/TotalTableItem";
 import MessageNotFoundOne from "../UI/Messages/MessageNotFoundOne";
 
 // Icons
@@ -36,7 +36,7 @@ function BasicExample() {
               <td className="desc">{item.name}</td>
               <td className="desc">{item.category}</td>
               <td>
-                <TotalTableItem total={item.total} />
+                <TotalTableItem type="substract" total={item.total} />
               </td>
             </tr>
           );

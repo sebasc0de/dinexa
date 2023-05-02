@@ -16,7 +16,7 @@ function Example() {
   return (
     <>
       <Button className="dinexa-button" onClick={() => setShow(true)}>
-        New spend
+        New earning
       </Button>
 
       <Offcanvas
@@ -27,7 +27,7 @@ function Example() {
       >
         <Offcanvas.Header closeButton className="simple-modal--header">
           <Offcanvas.Title className="title--2">
-            Create a custom spend
+            Create a new earning
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="simple-modal--body">
