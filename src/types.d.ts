@@ -6,6 +6,7 @@ export interface Spend {
 }
 
 export interface SpendCategory {
+  id: string;
   title: string;
   img: string;
   desc?: string;

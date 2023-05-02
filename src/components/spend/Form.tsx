@@ -1,15 +1,22 @@
 import { SyntheticEvent } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Categories from "./CategoriesSelector";
 
 // Project imports
 import { v4 as uuid } from "uuid";
 import { useField } from "../../hooks/useField";
 
+// Spend categories
+import { SupabaseRepository } from "../../modules/spend_category/infraestructure/SupabaseRepository";
+
 // Redux
 import { Spend } from "../../types";
 import { ToastContainer } from "react-toastify";
 import { create } from "../../modules/spend/application/ReduxService";
+
+// Spend categories repository
+const repository = SupabaseRepository();
 
 function BasicExample() {
   const { values, onChangeHandler } = useField<Spend>({
@@ -57,20 +64,8 @@ function BasicExample() {
         />
       </Form.Group>
 
-      {/* Category */}
-      <Form.Label>Category:</Form.Label>
-      <Form.Select
-        onChange={onChangeHandler}
-        className="mb-3"
-        autoComplete="off"
-        name="category"
-        aria-label="Default select example"
-      >
-        <option>Select category</option>
-        <option value="food">Food</option>
-        <option value="videogames">Videogames</option>
-        <option value="streaming">Streaming</option>
-      </Form.Select>
+      {/* Spend categories */}
+      <Categories repository={repository} onChangeHandler={onChangeHandler} />
 
       <Button
         style={{ borderRadius: "50px" }}

@@ -24,7 +24,6 @@ export const updateSavings = async (transactionAmount: number) => {
 // Substract money of wallet per operation
 export const substractMoneyOfWallet = async (total: number) => {
   const money = store.getState().wallet.money;
-
   const substract = money - total;
 
   store.dispatch(updateWalletMoney(substract));
