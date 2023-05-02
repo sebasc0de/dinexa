@@ -3,6 +3,7 @@ import { TbMoneybag } from "react-icons/tb";
 import { RiWalletLine } from "react-icons/ri";
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import { IoSettingsOutline } from "react-icons/io5";
+import { MdAttachMoney } from "react-icons/md";
 import { NavLink } from "../../components/UI/Sidebars/SidebarOne";
 
 export const data: NavLink[] = [
@@ -10,6 +11,11 @@ export const data: NavLink[] = [
     Icon: AiOutlineThunderbolt,
     route: "/get-started",
     text: "start",
+  },
+  {
+    Icon: MdAttachMoney,
+    route: "/earnings",
+    text: "earnings",
   },
   {
     Icon: TbMoneybag,

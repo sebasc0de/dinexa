@@ -36,7 +36,7 @@ function BasicExample() {
               <td className="desc">{item.name}</td>
               <td className="desc">{item.category}</td>
               <td>
-                <TotalTableItem />
+                <TotalTableItem total={item.total} />
               </td>
             </tr>
           );

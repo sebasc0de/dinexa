@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import { supabase } from "../../../lib/supabase";
 import { Spend } from "../../../types";
-import { Repository } from "../application/Repository";
+import { Repository } from "../application/Repositories";
 
 export const SupabaseRepository = (): Repository => {
   return { create, getAll };

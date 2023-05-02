@@ -5,13 +5,13 @@ import Form from "react-bootstrap/Form";
 // Project imports
 import { v4 as uuid } from "uuid";
 import { useField } from "../../hooks/useField";
-import { Repository } from "../../modules/spend/application/Repository";
+import { Repository } from "../../modules/spend/application/Repositories";
 
 // Redux
-import { createSpend } from "../../redux/slices/spend-slice";
 import { useAppDispatch } from "../../redux/hooks";
 import { Spend } from "../../types";
 import { ToastContainer } from "react-toastify";
+import { create } from "../../modules/spend/application/ReduxService";
 
 function BasicExample({ repository }: { repository: Repository }) {
   const dispatch = useAppDispatch();
@@ -26,10 +26,16 @@ function BasicExample({ repository }: { repository: Repository }) {
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    // Repository implementation
-    // const create = await CreateMoneyMovement(repository, inputValue);
+    create(values);
 
-    dispatch(createSpend(values));
+    // Validate
+
+    // Create spend in redux store
+
+    // Update wallet
+
+    // Repository
+    // const create = await CreateMoneyMovement(repository, inputValue);
   };
 
   return (

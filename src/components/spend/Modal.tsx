@@ -7,16 +7,15 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { SupabaseRepository } from "../../modules/spend/infraestructure/SupabaseRepository";
 
 function Example() {
+  // Modal state
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  // Repository
   const repository = SupabaseRepository();
 
   return (
     <>
-      <Button className="dinexa-button" onClick={handleShow}>
+      <Button className="dinexa-button" onClick={() => setShow(true)}>
         New spend
       </Button>
 
@@ -24,7 +23,7 @@ function Example() {
         backdropClassName="simple-modal"
         placement="end"
         show={show}
-        onHide={handleClose}
+        onHide={() => setShow(false)}
       >
         <Offcanvas.Header closeButton className="simple-modal--header">
           <Offcanvas.Title className="title--2">

@@ -84,3 +84,8 @@ export interface WalletSettings {
   savingPercentage: number;
   costLivingAverage: number;
 }
+
+export interface WalletOperation {
+  total: number;
+  type: "add" | "extract";
+}

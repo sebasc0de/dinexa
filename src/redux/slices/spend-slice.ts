@@ -10,7 +10,7 @@ const initialState: SpendState = {
 };
 
 export const spendSlice = createSlice({
-  name: "counter",
+  name: "spend",
   initialState,
   reducers: {
     createSpend(state, action: PayloadAction<Spend>) {
