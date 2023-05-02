@@ -12,7 +12,6 @@ export interface SpendCategory {
 }
 
 // Earning interfaces
-
 export interface Earning {
   id?: string;
   name: string;
