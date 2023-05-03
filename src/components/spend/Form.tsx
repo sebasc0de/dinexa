@@ -12,7 +12,6 @@ import { SupabaseRepository } from "../../modules/spend_category/infraestructure
 
 // Redux
 import { Spend } from "../../types";
-import { ToastContainer } from "react-toastify";
 import { create } from "../../modules/spend/application/ReduxService";
 
 // Spend categories repository
@@ -38,8 +37,6 @@ function BasicExample({ user_id }: { user_id: string }) {
 
   return (
     <Form className="dinexa-form" onSubmit={(e) => onSubmitHandler(e)}>
-      <ToastContainer toastClassName="cofi-toast" position="bottom-left" />
-
       {/* Name */}
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name:</Form.Label>
