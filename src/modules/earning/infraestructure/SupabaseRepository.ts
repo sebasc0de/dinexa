@@ -1,14 +1,14 @@
 import { toast } from "react-toastify";
 import { supabase } from "../../../lib/supabase";
-import { Spend } from "../../../types";
+import { Earning } from "../../../types";
 import { Repository } from "../application/Repositories";
 
 export const SupabaseRepository = (): Repository => {
   return { create, getAll };
 };
 
-const create = async (values: Spend) => {
-  const { data, error } = await supabase.from("money_movements").insert(values);
+const create = async (values: Earning) => {
+  const { data, error } = await supabase.from("earnings").insert(values);
 
   if (!error) toast("Spend has been created");
 
@@ -16,8 +16,8 @@ const create = async (values: Spend) => {
 };
 
 const getAll = async () => {
-  const { data, error } = await supabase.from("money_movements").select("*");
-  return data as Spend[];
+  const { data, error } = await supabase.from("earnings").select("*");
+  return data as Earning[];
 };
 
 export default SupabaseRepository;

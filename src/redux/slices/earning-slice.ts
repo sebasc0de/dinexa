@@ -13,12 +13,12 @@ export const earningSlice = createSlice({
   name: "earning",
   initialState,
   reducers: {
-    createEarning(state, action: PayloadAction<Earning>) {
+    setEarning(state, action: PayloadAction<Earning>) {
       state.data.push(action.payload);
     },
   },
 });
 
-export const { createEarning } = earningSlice.actions;
+export const { setEarning } = earningSlice.actions;
 
 export default earningSlice.reducer;

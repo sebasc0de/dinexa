@@ -1,6 +1,6 @@
-import { Spend } from "../../../types";
+import { Earning, Spend } from "../../../types";
 
 export interface Repository {
-  create: (data: Spend) => Promise<boolean>;
-  getAll: () => Promise<Spend[]>;
+  create: (data: Earning) => Promise<boolean>;
+  getAll: () => Promise<Earning[]>;
 }

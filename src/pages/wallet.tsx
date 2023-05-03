@@ -44,7 +44,7 @@ const Wallet = () => {
           <EarningCardOne
             Icon={MdAttachMoney}
             earning={"---"}
-            title="Earning today"
+            title="Earned today"
           />
         </Col>
         <Col className="box-1">

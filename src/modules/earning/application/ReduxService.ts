@@ -1,7 +1,10 @@
-import { createEarning } from "../../../redux/slices/earning-slice";
-import { Earning } from "../../../types";
-import { addMoneyToWallet } from "../../wallet/application/ReduxService";
+// Redux
 import store from "../../../store";
+import { createEarning } from "../../../redux/thunks/earning";
+import { addMoneyToWallet } from "../../wallet/application/ReduxService";
+
+// Types
+import { Earning } from "../../../types";
 
 export const create = async (earning: Earning) => {
   addMoneyToWallet(Number(earning.total));

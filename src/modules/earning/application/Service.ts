@@ -1,7 +1,7 @@
-import { Spend } from "../../../types";
+import { Earning } from "../../../types";
 import { Repository } from "./Repositories";
 
-export const create = async (repository: Repository, spend: Spend) => {
+export const create = async (repository: Repository, spend: Earning) => {
   return repository.create(spend);
 };
 

@@ -5,20 +5,24 @@ import {
 import store from "../../../store";
 
 // Add money to wallet
-export const addMoneyToWallet = async (total: number) => {
-  const money = store.getState().wallet.money;
-  updateSavings(total);
+export const addMoneyToWallet = (total: number) => {
+  const moneyInWallet = store.getState().wallet.money;
+  const savings = updateSavings(total);
 
-  store.dispatch(updateWalletMoney(money + total));
+  const wallet = moneyInWallet + total;
+
+  store.dispatch(updateWalletMoney(wallet - savings));
 };
 
 // Update totalSavings
-export const updateSavings = async (transactionAmount: number) => {
+export const updateSavings = (transactionAmount: number) => {
   const savingPercentage = store.getState().wallet.settings.savingPercentage;
 
   const result = (transactionAmount * savingPercentage) / 100;
 
   store.dispatch(updateWalletSavings(result));
+
+  return result;
 };
 
 // Substract money of wallet per operation
