@@ -4,16 +4,19 @@ import {
 } from "../../../redux/slices/wallet-slice";
 import store from "../../../store";
 
-// Add money to wallet
 export const addMoneyToWallet = (total: number, savings?: number) => {
+  // Get money in the wallet
   const moneyInWallet = store.getState().wallet.money;
 
-  const wallet = moneyInWallet + total;
+  // Money in wallet + earning total
+  const walletWithEarningTotal = moneyInWallet + total;
 
-  store.dispatch(updateWalletMoney(wallet - total));
+  if (savings)
+    return store.dispatch(updateWalletMoney(walletWithEarningTotal - savings));
+
+  if (!savings) return store.dispatch(updateWalletMoney(moneyInWallet + total));
 };
 
-// Update totalSavings
 export const updateSavings = (transactionAmount: number) => {
   const savingPercentage = store.getState().wallet.settings.savingPercentage;
 

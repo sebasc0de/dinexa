@@ -7,7 +7,11 @@ export const parseEarningWithSavings = (
   if (savings >= 5) {
     const { total, ...rest } = earning;
 
-    return { total: total - savings, ...rest };
+    const parsedEarning = { total: total - savings, ...rest };
+
+    console.log(parsedEarning);
+
+    return parsedEarning;
   }
 
   return earning;

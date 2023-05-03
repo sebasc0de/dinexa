@@ -17,8 +17,11 @@ export const create = async (earning: Earning) => {
   // Parse earning with savings
   const earningWithSavings = parseEarningWithSavings(savings, earning);
 
+  // Parse earning total to number
+  const total = Number(earning.total);
+
   // Add money to wallet
-  addMoneyToWallet(earning.total, savings);
+  addMoneyToWallet(total, savings);
 
   store.dispatch(createEarning(earningWithSavings));
 };
