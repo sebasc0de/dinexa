@@ -11,11 +11,12 @@ import { Earning } from "../../types";
 import { ToastContainer } from "react-toastify";
 import { create } from "../../modules/earning/application/ReduxService";
 
-function BasicExample() {
+function BasicExample({ user_id }: { user_id: string }) {
   const { values, onChangeHandler } = useField<Earning>({
     id: uuid(),
     name: "",
     total: 0,
+    user_id,
   });
 
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
@@ -24,10 +25,6 @@ function BasicExample() {
     create(values);
 
     // Validate
-
-    // Create spend in redux store
-
-    // Update wallet
   };
 
   return (

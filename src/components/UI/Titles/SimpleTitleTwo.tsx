@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 const SimpleTitleTwo = ({ title, Component }: Props) => {

@@ -3,6 +3,7 @@ export interface Spend {
   name: string;
   total: number;
   category: string;
+  user_id: string;
 }
 
 export interface SpendCategory {
@@ -17,6 +18,7 @@ export interface Earning {
   id?: string;
   name: string;
   total: number;
+  user_id: string;
 }
 
 // Post interfaces

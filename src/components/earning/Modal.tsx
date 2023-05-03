@@ -2,8 +2,11 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "./Form";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { useAppSelector } from "../../redux/hooks";
 
 function Example() {
+  const { user } = useAppSelector((state) => state.auth);
+
   // Modal state
   const [show, setShow] = useState(false);
 
@@ -25,7 +28,7 @@ function Example() {
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="simple-modal--body">
-          <Form />
+          {user && <Form user_id={user.id} />}
         </Offcanvas.Body>
       </Offcanvas>
     </>
