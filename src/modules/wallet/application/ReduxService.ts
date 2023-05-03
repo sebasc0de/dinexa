@@ -5,13 +5,12 @@ import {
 import store from "../../../store";
 
 // Add money to wallet
-export const addMoneyToWallet = (total: number) => {
+export const addMoneyToWallet = (total: number, savings?: number) => {
   const moneyInWallet = store.getState().wallet.money;
-  const savings = updateSavings(total);
 
   const wallet = moneyInWallet + total;
 
-  store.dispatch(updateWalletMoney(wallet - savings));
+  store.dispatch(updateWalletMoney(wallet - total));
 };
 
 // Update totalSavings

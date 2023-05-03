@@ -1,13 +1,24 @@
 // Redux
 import store from "../../../store";
 import { createEarning } from "../../../redux/thunks/earning";
-import { addMoneyToWallet } from "../../wallet/application/ReduxService";
+import {
+  addMoneyToWallet,
+  updateSavings,
+} from "../../wallet/application/ReduxService";
 
 // Types
 import { Earning } from "../../../types";
+import { parseEarningWithSavings } from "../domain/parseEarningWithSavings";
 
 export const create = async (earning: Earning) => {
-  addMoneyToWallet(Number(earning.total));
+  // Update total savings
+  const savings = updateSavings(earning.total);
 
-  store.dispatch(createEarning(earning));
+  // Parse earning with savings
+  const earningWithSavings = parseEarningWithSavings(savings, earning);
+
+  // Add money to wallet
+  addMoneyToWallet(earning.total, savings);
+
+  store.dispatch(createEarning(earningWithSavings));
 };
