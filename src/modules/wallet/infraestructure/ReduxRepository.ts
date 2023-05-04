@@ -1,8 +1,20 @@
+// Redux
+import store from "../../../store";
 import {
   updateWalletMoney,
   updateWalletSavings,
 } from "../../../redux/slices/wallet-slice";
-import store from "../../../store";
+
+// Interfaces
+import { Repository } from "../application/Repository";
+
+export const ReduxRepository = (): Repository => {
+  return {
+    addMoneyToWallet,
+    updateSavings,
+    substractMoneyOfWallet,
+  };
+};
 
 export const addMoneyToWallet = (total: number, savings?: number) => {
   // Get money in the wallet
@@ -27,8 +39,7 @@ export const updateSavings = (transactionAmount: number) => {
   return result;
 };
 
-// Substract money of wallet per operation
-export const substractMoneyOfWallet = async (total: number) => {
+export const substractMoneyOfWallet = (total: number) => {
   const money = store.getState().wallet.money;
   const substract = money - total;
 

@@ -9,9 +9,14 @@ import { useField } from "../../hooks/useField";
 // Redux
 import { Earning } from "../../types";
 import { ToastContainer } from "react-toastify";
-import { create } from "../../modules/earning/application/ReduxService";
+
+// Earnings
+import { create } from "../../modules/earning/application/Service";
+import ReduxRepository from "../../modules/earning/infraestructure/ReduxRepository";
 
 function BasicExample({ user_id }: { user_id: string }) {
+  const repository = ReduxRepository();
+
   const { values, onChangeHandler } = useField<Earning>({
     id: uuid(),
     name: "",
@@ -22,7 +27,7 @@ function BasicExample({ user_id }: { user_id: string }) {
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    create(values);
+    create(repository, values);
 
     // Validate
   };

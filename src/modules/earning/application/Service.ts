@@ -1,5 +1,5 @@
 import { Earning } from "../../../types";
-import { Repository } from "./Repositories";
+import { Repository } from "./Repository";
 
 export const create = async (repository: Repository, spend: Earning) => {
   return repository.create(spend);

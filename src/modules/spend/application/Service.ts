@@ -1,5 +1,5 @@
 import { Spend } from "../../../types";
-import { Repository } from "./Repositories";
+import { Repository } from "./Repository";
 
 export const create = async (repository: Repository, spend: Spend) => {
   return repository.create(spend);

@@ -12,7 +12,7 @@ import { SupabaseRepository } from "../../modules/spend_category/infraestructure
 
 // Redux
 import { Spend } from "../../types";
-import { create } from "../../modules/spend/application/ReduxService";
+import { create } from "../../modules/spend/infraestructure/ReduxRepository";
 
 // Spend categories repository
 const repository = SupabaseRepository();
