@@ -5,18 +5,27 @@ import Form from "react-bootstrap/Form";
 // Project imports
 import { v4 as uuid } from "uuid";
 import { useField } from "../../hooks/useField";
-
-// Redux
-import { Earning } from "../../types";
 import { ToastContainer } from "react-toastify";
 
-// Earnings
-import { create } from "../../modules/earning/application/Service";
-import ReduxRepository from "../../modules/earning/infraestructure/ReduxRepository";
+// Types
+import { Earning } from "../../types";
+
+// Redux
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { setWalletData } from "../../redux/slices/wallet-slice";
+import { createEarning } from "../../redux/thunks/earning";
+
+// Domain
+import { returnEarningWithOutSavings } from "../../modules/earning/domain/returnEarningWithOutSavings";
+import { calculateTransactionSavings } from "../../modules/wallet/domain/calculateTransactionSavings";
 
 function BasicExample({ user_id }: { user_id: string }) {
-  const repository = ReduxRepository();
+  // Redux
+  const { money, totalSavings } = useAppSelector((state) => state.wallet);
+  const { savingPercentage } = useAppSelector((state) => state.wallet.settings);
+  const dispatch = useAppDispatch();
 
+  // UseField hook
   const { values, onChangeHandler } = useField<Earning>({
     id: uuid(),
     name: "",
@@ -27,9 +36,24 @@ function BasicExample({ user_id }: { user_id: string }) {
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    create(repository, values);
+    // Validate form
 
-    // Validate
+    // Calculate transaction savings
+    const savings = calculateTransactionSavings(values.total, savingPercentage);
+
+    // Parse earning with savings
+    const moneyWithoutEarnings = returnEarningWithOutSavings(savings, values);
+
+    // Update wallet - Dispatch action
+    dispatch(
+      setWalletData({
+        money: money + moneyWithoutEarnings.total,
+        totalSavings: totalSavings + savings,
+      })
+    );
+
+    // Create new Earning - Dispatch action
+    dispatch(createEarning(moneyWithoutEarnings));
   };
 
   return (

@@ -1,6 +1,6 @@
 import { Earning } from "../../../types";
 
-export const parseEarningWithSavings = (
+export const returnEarningWithOutSavings = (
   savings: number,
   earning: Earning
 ): Earning => {
@@ -8,8 +8,6 @@ export const parseEarningWithSavings = (
     const { total, ...rest } = earning;
 
     const parsedEarning = { total: total - savings, ...rest };
-
-    console.log(parsedEarning);
 
     return parsedEarning;
   }
