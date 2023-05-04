@@ -17,7 +17,6 @@ export const walletSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    // For change
     setSettings(state, action: PayloadAction<WalletSettings>) {
       const { minMoneyAlert, secureMonthlyIncome, savingPercentage } =
         action.payload;
@@ -27,7 +26,6 @@ export const walletSlice = createSlice({
       state.settings.savingPercentage = Number(savingPercentage);
     },
 
-    // For change
     setWalletData(state, action: PayloadAction<WalletData>) {
       state.money = Number(action.payload.money);
       state.totalSavings = Number(action.payload.totalSavings);
