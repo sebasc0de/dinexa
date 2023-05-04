@@ -10,14 +10,22 @@ import { useField } from "../../hooks/useField";
 // Spend categories
 import { SupabaseRepository } from "../../modules/spend_category/infraestructure/SupabaseRepository";
 
-// Redux
+// Types
 import { Spend } from "../../types";
-import { create } from "../../modules/spend/infraestructure/ReduxRepository";
 
-// Spend categories repository
-const repository = SupabaseRepository();
+// Redux
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { createSpend } from "../../redux/thunks/spend";
+import { checkIfWalletHaveMoney } from "../../modules/wallet/domain/checkIfWalletHaveMoney";
 
 function BasicExample({ user_id }: { user_id: string }) {
+  // Dispatch
+  const { money } = useAppSelector((state) => state.wallet);
+  const dispatch = useAppDispatch();
+
+  // Spend categories repository
+  const repository = SupabaseRepository();
+
   // Form hook
   const { values, onChangeHandler } = useField<Spend>({
     category: "",
@@ -30,9 +38,13 @@ function BasicExample({ user_id }: { user_id: string }) {
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    create(values);
+    // Check if wallet have money
+    const checkWallet = checkIfWalletHaveMoney(values.total, money);
 
-    // Validate
+    // Set spend in redux store - Dispatch action
+    if (checkWallet) {
+      dispatch(createSpend(values));
+    }
   };
 
   return (
