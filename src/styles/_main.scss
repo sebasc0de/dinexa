@@ -13,6 +13,24 @@ a {
   text-decoration: none;
 }
 
+form {
+  label {
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  select,
+  input {
+    font-size: 0.875rem;
+    border: none;
+    background: $background-color;
+
+    &:focus {
+      border: 1px solid $action-color;
+    }
+  }
+}
+
 .logo {
   color: $action-color;
   font-weight: 900;

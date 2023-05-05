@@ -1,19 +1,5 @@
 @use "../variables";
 
-.dinexa-form {
-  label {
-    font-weight: 700;
-    font-size: 0.875rem;
-  }
-
-  select,
-  input {
-    font-size: 0.875rem;
-    border: none;
-    background: $background-color;
-  }
-}
-
 .wallet-form {
   padding: 0.425rem;
 
@@ -37,6 +23,9 @@
       width: 38%;
       font-size: 0.8rem;
       border-radius: 10px;
+      &:focus {
+        border: 1px solid $action-color;
+      }
     }
   }
 }

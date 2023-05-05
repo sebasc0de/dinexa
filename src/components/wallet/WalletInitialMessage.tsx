@@ -4,8 +4,8 @@ const WalletInitialMessage = ({ onStepComplete }: Props) => {
   return (
     <MessageOne
       title="Before start..."
-      subtitle="Set up your wallet with your money and total savings before start."
-      imgUrl="gifs/Configuration.gif"
+      subtitle="Set up your wallet by adding your current funds before getting started."
+      imgUrl="gifs/Money.gif"
       imgSize={300}
       buttonText="Start now"
       buttonAction={onStepComplete}

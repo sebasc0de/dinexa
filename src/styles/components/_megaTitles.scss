@@ -56,6 +56,16 @@
   }
 }
 
+// Mega title three
+.megaTitleThree {
+  .box-icon {
+    border-radius: 50px;
+    background: $action-color;
+    color: white;
+    padding: 0.625rem;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .megaTitleTwo {
     text-align: left;

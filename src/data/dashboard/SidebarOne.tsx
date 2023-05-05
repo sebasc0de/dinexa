@@ -22,11 +22,11 @@ export const data: NavLink[] = [
     route: "/spends",
     text: "spends",
   },
-  {
-    Icon: RiWalletLine,
-    route: "/wallet",
-    text: "wallet",
-  },
+  // {
+  //   Icon: RiWalletLine,
+  //   route: "/wallet",
+  //   text: "wallet",
+  // },
   // {
   //   Icon: IoSettingsOutline,
   //   route: "/settings",

@@ -14,9 +14,11 @@ const MessageOne = ({
         <Image src={imgUrl} height={imgSize} width={imgSize} alt="" />
         <h3 className="text-center title--2">{title}</h3>
         <p className="desc text-center text-lg">{subtitle}</p>
-        <Button onClick={buttonAction} className="dinexa-button mt-3">
-          {buttonText}
-        </Button>
+        {buttonAction && (
+          <Button onClick={buttonAction} className="dinexa-button mt-3">
+            {buttonText}
+          </Button>
+        )}
       </Row>
     </Container>
   );
@@ -27,8 +29,8 @@ interface Props {
   subtitle: string;
   imgUrl: string;
   imgSize?: number;
-  buttonText: string;
-  buttonAction: () => void;
+  buttonText?: string;
+  buttonAction?: () => void;
 }
 
 export default MessageOne;

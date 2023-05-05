@@ -23,8 +23,6 @@ function SettingsForm() {
 
   const onSubmitHandler = (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
-
-    console.log("my values", values);
   };
 
   useEffect(() => {
