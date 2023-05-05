@@ -16,6 +16,7 @@ export const createSpend = createAsyncThunk(
   async (newSpend: Spend, thunkApi) => {
     const createNewSpend = await create(repository, newSpend);
 
+    // Update spend in store
     thunkApi.dispatch(setSpend(newSpend));
   }
 );

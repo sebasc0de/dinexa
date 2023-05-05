@@ -1,15 +1,11 @@
 import { Button } from "react-bootstrap";
-import { SyntheticEvent } from "react";
-import { useField } from "../../hooks/useField";
+import { SyntheticEvent, useState } from "react";
 import Form from "react-bootstrap/Form";
 import InformativeToolTip from "../UI/Tooltips/Informative";
 
-// Interfaces
-import { WalletData } from "../../types";
-
 // Redux
 import { useAppDispatch } from "../../redux/hooks";
-import { setWalletData } from "../../redux/slices/wallet-slice";
+import { setWalletMoney } from "../../redux/slices/wallet-slice";
 import MegaTitleThree from "../UI/Titles/MegaTitleThree";
 
 // Icons
@@ -19,16 +15,13 @@ function InitialConfigForm({ onStepComplete }: Props) {
   // Redux
   const dispatch = useAppDispatch();
 
-  // Form hook
-  const { values, onChangeHandler } = useField<WalletData>({
-    totalSavings: 0,
-    money: 0,
-  });
+  // Form state
+  const [money, setMoney] = useState(0);
 
   const onSubmitHandler = (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    dispatch(setWalletData(values));
+    dispatch(setWalletMoney(money));
     onStepComplete();
   };
 
@@ -49,7 +42,7 @@ function InitialConfigForm({ onStepComplete }: Props) {
           </Form.Label>
           <Form.Control
             name="money"
-            onChange={onChangeHandler}
+            onChange={(e) => setMoney(Number(e.target.value))}
             type="number"
             min={0}
           />

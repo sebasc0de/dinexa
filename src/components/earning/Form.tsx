@@ -12,7 +12,7 @@ import { Earning } from "../../types";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { setWalletData } from "../../redux/slices/wallet-slice";
+import { setWalletMoney } from "../../redux/slices/wallet-slice";
 import { createEarning } from "../../redux/thunks/earning";
 
 // Domain
@@ -46,7 +46,7 @@ function BasicExample({ user_id }: { user_id: string }) {
 
     // Update wallet - Dispatch action
     dispatch(
-      setWalletData({
+      setWalletMoney({
         money: money + moneyWithoutEarnings.total,
         totalSavings: totalSavings + savings,
       })

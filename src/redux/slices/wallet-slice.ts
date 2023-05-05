@@ -26,14 +26,13 @@ export const walletSlice = createSlice({
       state.settings.savingPercentage = Number(savingPercentage);
     },
 
-    setWalletData(state, action: PayloadAction<WalletData>) {
-      state.money = Number(action.payload.money);
-      state.totalSavings = Number(action.payload.totalSavings);
+    setWalletMoney(state, action: PayloadAction<number>) {
+      state.money = Number(action.payload);
       state.initialized = true;
     },
   },
 });
 
-export const { setSettings, setWalletData } = walletSlice.actions;
+export const { setSettings, setWalletMoney } = walletSlice.actions;
 
 export default walletSlice.reducer;

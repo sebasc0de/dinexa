@@ -16,7 +16,11 @@ import { Spend } from "../../types";
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { createSpend } from "../../redux/thunks/spend";
+import { updateMoneyInWallet } from "../../redux/thunks/wallet";
+
+// Domain layer
 import { checkIfWalletHaveMoney } from "../../modules/wallet/domain/checkIfWalletHaveMoney";
+import { substractMoneyOfWallet } from "../../modules/wallet/domain/substractMoneyOfWallet";
 
 function BasicExample({ user_id }: { user_id: string }) {
   // Dispatch
@@ -44,6 +48,10 @@ function BasicExample({ user_id }: { user_id: string }) {
     // Set spend in redux store - Dispatch action
     if (checkWallet) {
       dispatch(createSpend(values));
+
+      // Update wallet money
+      const moneyInWallet = substractMoneyOfWallet(values.total, money);
+      dispatch(updateMoneyInWallet(moneyInWallet));
     }
   };
 
