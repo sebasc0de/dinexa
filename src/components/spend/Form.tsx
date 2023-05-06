@@ -51,7 +51,7 @@ function BasicExample({ user_id }: { user_id: string }) {
 
       // Update wallet money
       const moneyInWallet = substractMoneyOfWallet(values.total, money);
-      dispatch(updateMoneyInWallet(moneyInWallet));
+      dispatch(updateMoneyInWallet({ money: moneyInWallet, user_id }));
     }
   };
 

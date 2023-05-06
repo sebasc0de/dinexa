@@ -41,7 +41,6 @@ function LoginForm({ repository }: { repository: Repository }) {
         router.push("get-started");
       }
     } catch (e) {
-      console.log(e);
     } finally {
       setLoading(false);
     }

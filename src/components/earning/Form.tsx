@@ -13,11 +13,7 @@ import { Earning } from "../../types";
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { setWalletMoney } from "../../redux/slices/wallet-slice";
-import { createEarning } from "../../redux/thunks/earning";
-
-// Domain
-import { returnEarningWithOutSavings } from "../../modules/earning/domain/returnEarningWithOutSavings";
-import { calculateTransactionSavings } from "../../modules/wallet/domain/calculateTransactionSavings";
+import { setEarning } from "../../redux/slices/earning-slice";
 
 function BasicExample({ user_id }: { user_id: string }) {
   // Redux
@@ -38,22 +34,11 @@ function BasicExample({ user_id }: { user_id: string }) {
 
     // Validate form
 
-    // Calculate transaction savings
-    const savings = calculateTransactionSavings(values.total, savingPercentage);
-
-    // Parse earning with savings
-    const moneyWithoutEarnings = returnEarningWithOutSavings(savings, values);
-
     // Update wallet - Dispatch action
-    dispatch(
-      setWalletMoney({
-        money: money + moneyWithoutEarnings.total,
-        totalSavings: totalSavings + savings,
-      })
-    );
+    dispatch(setWalletMoney(values.total));
 
     // Create new Earning - Dispatch action
-    dispatch(createEarning(moneyWithoutEarnings));
+    dispatch(setEarning(values));
   };
 
   return (

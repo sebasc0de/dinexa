@@ -3,6 +3,9 @@ import { SyntheticEvent, useState } from "react";
 import Form from "react-bootstrap/Form";
 import InformativeToolTip from "../UI/Tooltips/Informative";
 
+// Services
+import { updateWallet } from "../../modules/wallet/application/Service";
+
 // Redux
 import { useAppDispatch } from "../../redux/hooks";
 import { setWalletMoney } from "../../redux/slices/wallet-slice";
@@ -10,19 +13,24 @@ import MegaTitleThree from "../UI/Titles/MegaTitleThree";
 
 // Icons
 import { AiFillAccountBook } from "react-icons/ai";
+import { Repository } from "../../modules/wallet/application/Repository";
 
-function InitialConfigForm({ onStepComplete }: Props) {
+function InitialConfigForm({ repository, user_id, onStepComplete }: Props) {
   // Redux
   const dispatch = useAppDispatch();
 
   // Form state
   const [money, setMoney] = useState(0);
 
-  const onSubmitHandler = (e: SyntheticEvent<EventTarget>) => {
+  const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    dispatch(setWalletMoney(money));
-    onStepComplete();
+    const updateMoneyInWallet = await updateWallet(repository, money, user_id);
+
+    if (updateMoneyInWallet) {
+      dispatch(setWalletMoney(money));
+      onStepComplete();
+    }
   };
 
   return (
@@ -56,6 +64,8 @@ function InitialConfigForm({ onStepComplete }: Props) {
 }
 
 interface Props {
+  repository: Repository;
+  user_id: string;
   onStepComplete: () => void;
 }
 
