@@ -2,15 +2,16 @@ import InitialConfigForm from "./InitialConfigForm";
 import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
 import WalletInitialMessage from "./WalletInitialMessage";
+
+// Infraestructure
+import repository from "../../modules/wallet/infraestructure/SupabaseRepository";
+
+// Redux
 import { useAppSelector } from "../../redux/hooks";
-import SupabaseRepository from "../../modules/wallet/infraestructure/SupabaseRepository";
 
 function InitialConfigModal() {
   // User
   const { user } = useAppSelector((state) => state.auth);
-
-  // Repository
-  const repository = SupabaseRepository();
 
   // Modal states
   const [showModal, setShowModal] = useState(true);
