@@ -25,7 +25,13 @@ const create = async (values: Spend) => {
 
 const getAll = async () => {
   try {
-    const { data, error } = await supabase.from("spends").select("*");
+    const { data, error } = await supabase.from("spends").select(`
+      name,
+      id,
+      total,
+      created_at,
+      category(title)
+    `);
     return data as Spend[];
   } catch (e) {
     return [];

@@ -2,11 +2,12 @@ import Table from "react-bootstrap/Table";
 
 // Redux
 import { useAppSelector } from "../../redux/hooks";
-import TotalTableItem from "./TotalTableItem";
 import MessageNotFoundOne from "../UI/Messages/MessageNotFoundOne";
 
 // Icons
 import { HiOutlineInformationCircle } from "react-icons/hi";
+import { dateFormatter } from "../../utils/dateFormatter";
+import TotalTableItem from "../UI/TotalTableItem";
 
 function BasicExample() {
   const { data } = useAppSelector((state) => state.earnings);
@@ -22,19 +23,26 @@ function BasicExample() {
     <Table className="spend-table" responsive bordered>
       <thead>
         <tr>
-          <th className="subtitle">#</th>
           <th className="subtitle">Name</th>
+          <th className="subtitle">Date</th>
           <th className="subtitle">Total</th>
         </tr>
       </thead>
       <tbody>
         {data.map((item) => {
+          const date = dateFormatter(item.created_at);
+
           return (
             <tr key={item.id}>
-              <td className="subtitle">{item.id}</td>
-              <td className="desc">{item.name}</td>
+              <td className="subtitle">{item.name}</td>
+              <td className="desc">{date}</td>
+
               <td>
-                <TotalTableItem total={item.total} />
+                <TotalTableItem
+                  message="This money has been added to your wallet."
+                  type="add"
+                  total={item.total}
+                />
               </td>
             </tr>
           );

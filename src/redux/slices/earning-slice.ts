@@ -18,6 +18,7 @@ export const earningSlice = createSlice({
     },
 
     loadEarnings(state, action: PayloadAction<Earning[]>) {
+      console.log("my earnings from redux", action.payload);
       state.data = action.payload;
     },
   },

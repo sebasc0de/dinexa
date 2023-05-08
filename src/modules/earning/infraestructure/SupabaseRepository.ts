@@ -29,6 +29,7 @@ const create = async (values: Earning) => {
 const getAll = async () => {
   try {
     const { data, error } = await supabase.from("earnings").select("*");
+
     return data as Earning[];
   } catch (e) {
     return [];
