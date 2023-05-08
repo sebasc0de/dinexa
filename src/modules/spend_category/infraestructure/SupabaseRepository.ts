@@ -7,8 +7,12 @@ export const SupabaseRepository = (): Repository => {
 };
 
 const getAll = async () => {
-  const { data, error } = await supabase.from("spend_categories").select("*");
-  return data as SpendCategory[];
+  try {
+    const { data, error } = await supabase.from("spend_categories").select("*");
+    return data as SpendCategory[];
+  } catch (e) {
+    return [];
+  }
 };
 
 const repository = SupabaseRepository();

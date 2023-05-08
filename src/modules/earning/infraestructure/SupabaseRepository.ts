@@ -1,6 +1,10 @@
 import { toast } from "react-toastify";
 import { supabase } from "../../../lib/supabase";
+
+// Types
 import { Earning } from "../../../types";
+
+// Application layer
 import { Repository } from "../application/Repository";
 
 export const SupabaseRepository = (): Repository => {
@@ -8,16 +12,27 @@ export const SupabaseRepository = (): Repository => {
 };
 
 const create = async (values: Earning) => {
-  const { data, error } = await supabase.from("earnings").insert(values);
+  try {
+    const { data, error } = await supabase.from("earnings").insert(values);
 
-  if (!error) toast("Spend has been created");
+    if (!error) {
+      toast("Spend has been created");
+      return false;
+    }
 
-  return true;
+    return true;
+  } catch (e) {
+    return false;
+  }
 };
 
 const getAll = async () => {
-  const { data, error } = await supabase.from("earnings").select("*");
-  return data as Earning[];
+  try {
+    const { data, error } = await supabase.from("earnings").select("*");
+    return data as Earning[];
+  } catch (e) {
+    return [];
+  }
 };
 
 const repository = SupabaseRepository();
