@@ -20,4 +20,6 @@ const getAll = async () => {
   return data as Earning[];
 };
 
-export default SupabaseRepository;
+const repository = SupabaseRepository();
+
+export default repository;

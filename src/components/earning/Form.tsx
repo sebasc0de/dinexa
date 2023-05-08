@@ -10,15 +10,19 @@ import { ToastContainer } from "react-toastify";
 // Types
 import { Earning } from "../../types";
 
+// Application layer
+import { Repository as EarningRepository } from "../../modules/earning/application/Repository";
+import { Repository as WalletRepository } from "../../modules/wallet/application/Repository";
+import { updateWallet } from "../../modules/wallet/application/Service";
+import { create } from "../../modules/earning/application/Service";
+
 // Redux
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useAppDispatch } from "../../redux/hooks";
 import { setWalletMoney } from "../../redux/slices/wallet-slice";
 import { setEarning } from "../../redux/slices/earning-slice";
 
-function BasicExample({ user_id }: { user_id: string }) {
+function BasicExample({ user_id, earningRepository, walletRepository }: Props) {
   // Redux
-  const { money, totalSavings } = useAppSelector((state) => state.wallet);
-  const { savingPercentage } = useAppSelector((state) => state.wallet.settings);
   const dispatch = useAppDispatch();
 
   // UseField hook
@@ -34,11 +38,21 @@ function BasicExample({ user_id }: { user_id: string }) {
 
     // Validate form
 
-    // Update wallet - Dispatch action
-    dispatch(setWalletMoney(values.total));
+    // Update earning on database - Service
+    const createEarning = await create(earningRepository, values);
 
     // Create new Earning - Dispatch action
-    dispatch(setEarning(values));
+    createEarning && dispatch(setEarning(values));
+
+    // Update wallet on database - Service
+    const updateMoneyInWallet = await updateWallet(
+      walletRepository,
+      values.total,
+      user_id
+    );
+
+    // Update wallet in redux store
+    updateMoneyInWallet && dispatch(setWalletMoney(values.total));
   };
 
   return (
@@ -76,6 +90,12 @@ function BasicExample({ user_id }: { user_id: string }) {
       </Button>
     </Form>
   );
+}
+
+interface Props {
+  walletRepository: WalletRepository;
+  earningRepository: EarningRepository;
+  user_id: string;
 }
 
 export default BasicExample;
