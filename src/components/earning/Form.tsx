@@ -17,13 +17,17 @@ import { updateWallet } from "../../modules/wallet/application/Service";
 import { create } from "../../modules/earning/application/Service";
 
 // Redux
-import { useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { setWalletMoney } from "../../redux/slices/wallet-slice";
 import { setEarning } from "../../redux/slices/earning-slice";
+import { addMoneyToWallet } from "../../modules/wallet/domain/addMoneyToWallet";
 
 function BasicExample({ user_id, earningRepository, walletRepository }: Props) {
   // Redux
   const dispatch = useAppDispatch();
+
+  // Money in wallet
+  const { money } = useAppSelector((state) => state.wallet);
 
   // UseField hook
   const { values, onChangeHandler } = useField<Earning>({
@@ -44,15 +48,18 @@ function BasicExample({ user_id, earningRepository, walletRepository }: Props) {
     // Create new Earning - Dispatch action
     createEarning && dispatch(setEarning(values));
 
+    // New money in wallet
+    const moneyInWallet = addMoneyToWallet(values.total, money);
+
     // Update wallet on database - Service
     const updateMoneyInWallet = await updateWallet(
       walletRepository,
-      values.total,
+      moneyInWallet,
       user_id
     );
 
     // Update wallet in redux store
-    updateMoneyInWallet && dispatch(setWalletMoney(values.total));
+    updateMoneyInWallet && dispatch(setWalletMoney(moneyInWallet));
   };
 
   return (
