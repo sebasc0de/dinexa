@@ -13,12 +13,14 @@ import store, { persistor } from "../store";
 // React imports
 import type { AppProps } from "next/app";
 import { Suspense } from "react";
+import { Initializer } from "../components/Initializer";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <Suspense fallback="Loading translate">
+          <Initializer />
           <Component {...pageProps} />
         </Suspense>
       </PersistGate>

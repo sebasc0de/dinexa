@@ -1,14 +1,27 @@
+import { useEffect } from "react";
 import { Row } from "react-bootstrap";
 
 // Component imports
 import Layout from "../components/layouts/Private";
 import MessageTwo from "../components/UI/Messages/MessageTwo";
 import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
-import { useAppSelector } from "../redux/hooks";
 import InitialConfigModal from "../components/wallet/InitialConfigModal";
 
+// Redux
+import { useAppSelector } from "../redux/hooks";
+import { initializeWallet } from "../redux/slices/wallet-slice";
+import { useDispatch } from "react-redux";
+
 const GetStarted = () => {
-  const initialized = useAppSelector((state) => state.wallet.initialized);
+  // Initialize state
+  const { initialized, money } = useAppSelector((state) => state.wallet);
+
+  // Dispatch
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    money > 0 && dispatch(initializeWallet());
+  }, [dispatch, money]);
 
   return (
     <Layout>

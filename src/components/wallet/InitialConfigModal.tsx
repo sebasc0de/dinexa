@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
 import WalletInitialMessage from "./WalletInitialMessage";
 
-// Infraestructure
+// Infraestructure layer
 import repository from "../../modules/wallet/infraestructure/SupabaseRepository";
 
 // Redux

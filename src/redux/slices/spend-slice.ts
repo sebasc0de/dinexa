@@ -16,9 +16,13 @@ export const spendSlice = createSlice({
     setSpend(state, action: PayloadAction<Spend>) {
       state.data.push(action.payload);
     },
+
+    loadSpends(state, action: PayloadAction<Spend[]>) {
+      state.data = action.payload;
+    },
   },
 });
 
-export const { setSpend } = spendSlice.actions;
+export const { setSpend, loadSpends } = spendSlice.actions;
 
 export default spendSlice.reducer;

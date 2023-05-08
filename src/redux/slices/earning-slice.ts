@@ -16,9 +16,13 @@ export const earningSlice = createSlice({
     setEarning(state, action: PayloadAction<Earning>) {
       state.data.push(action.payload);
     },
+
+    loadEarnings(state, action: PayloadAction<Earning[]>) {
+      state.data = action.payload;
+    },
   },
 });
 
-export const { setEarning } = earningSlice.actions;
+export const { setEarning, loadEarnings } = earningSlice.actions;
 
 export default earningSlice.reducer;
