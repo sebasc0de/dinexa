@@ -7,28 +7,31 @@ import Categories from "./CategoriesSelector";
 import { v4 as uuid } from "uuid";
 import { useField } from "../../hooks/useField";
 
-// Spend categories
-import { SupabaseRepository } from "../../modules/spend_category/infraestructure/SupabaseRepository";
-
 // Types
 import { Spend } from "../../types";
 
-// Redux
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { createSpend } from "../../redux/thunks/spend";
-import { updateMoneyInWallet } from "../../redux/thunks/wallet";
+// Infraestructure layer
+import spendCategoriesRepository from "../../modules/spend_category/infraestructure/SupabaseRepository";
+
+// Application layer
+import { updateWallet } from "../../modules/wallet/application/Service";
+import { create } from "../../modules/spend/application/Service";
+import { Repository as SpendRepository } from "../../modules/spend/application/Repository";
+import { Repository as WalletRepository } from "../../modules/wallet/application/Repository";
 
 // Domain layer
 import { checkIfWalletHaveMoney } from "../../modules/wallet/domain/checkIfWalletHaveMoney";
 import { substractMoneyOfWallet } from "../../modules/wallet/domain/substractMoneyOfWallet";
 
-function BasicExample({ user_id }: { user_id: string }) {
+// Redux
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { setSpend } from "../../redux/slices/spend-slice";
+import { setWalletMoney } from "../../redux/slices/wallet-slice";
+
+function BasicExample({ user_id, spendRepository, walletRepository }: Props) {
   // Dispatch
   const { money } = useAppSelector((state) => state.wallet);
   const dispatch = useAppDispatch();
-
-  // Spend categories repository
-  const repository = SupabaseRepository();
 
   // Form hook
   const { values, onChangeHandler } = useField<Spend>({
@@ -45,13 +48,25 @@ function BasicExample({ user_id }: { user_id: string }) {
     // Check if wallet have money
     const checkWallet = checkIfWalletHaveMoney(values.total, money);
 
-    // Set spend in redux store - Dispatch action
     if (checkWallet) {
-      dispatch(createSpend(values));
+      // Create spend in database - Service
+      const createSpend = await create(spendRepository, values);
 
-      // Update wallet money
+      // Create spend in redux store
+      createSpend && dispatch(setSpend(values));
+
+      // Substract money of wallet
       const moneyInWallet = substractMoneyOfWallet(values.total, money);
-      dispatch(updateMoneyInWallet({ money: moneyInWallet, user_id }));
+
+      // Update money in database - Service
+      const updateMoneyInWallet = await updateWallet(
+        walletRepository,
+        moneyInWallet,
+        user_id
+      );
+
+      // Update wallet in redux store
+      updateMoneyInWallet && dispatch(setWalletMoney(moneyInWallet));
     }
   };
 
@@ -80,7 +95,10 @@ function BasicExample({ user_id }: { user_id: string }) {
       </Form.Group>
 
       {/* Spend categories */}
-      <Categories repository={repository} onChangeHandler={onChangeHandler} />
+      <Categories
+        repository={spendCategoriesRepository}
+        onChangeHandler={onChangeHandler}
+      />
 
       <Button
         style={{ borderRadius: "50px" }}
@@ -91,6 +109,12 @@ function BasicExample({ user_id }: { user_id: string }) {
       </Button>
     </Form>
   );
+}
+
+interface Props {
+  user_id: string;
+  spendRepository: SpendRepository;
+  walletRepository: WalletRepository;
 }
 
 export default BasicExample;

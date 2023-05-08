@@ -20,4 +20,6 @@ const getAll = async () => {
   return data as Spend[];
 };
 
-export default SupabaseRepository;
+const repository = SupabaseRepository();
+
+export default repository;

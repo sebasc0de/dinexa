@@ -2,6 +2,12 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "./Form";
 import Offcanvas from "react-bootstrap/Offcanvas";
+
+// Infraestructure layer
+import spendRepository from "../../modules/spend/infraestructure/SupabaseRepository";
+import walletRepository from "../../modules/wallet/infraestructure/SupabaseRepository";
+
+// Redux
 import { useAppSelector } from "../../redux/hooks";
 
 function Example() {
@@ -28,7 +34,13 @@ function Example() {
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="simple-modal--body">
-          {user && <Form user_id={user.id} />}
+          {user && (
+            <Form
+              walletRepository={walletRepository}
+              spendRepository={spendRepository}
+              user_id={user.id}
+            />
+          )}
         </Offcanvas.Body>
       </Offcanvas>
     </>

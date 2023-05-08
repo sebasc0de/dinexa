@@ -20,4 +20,6 @@ const updateMoneyInWallet = async (money: number, user_id: string) => {
   }
 };
 
-export default SupabaseRepository;
+const repository = SupabaseRepository();
+
+export default repository;

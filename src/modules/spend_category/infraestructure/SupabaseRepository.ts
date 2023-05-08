@@ -11,4 +11,6 @@ const getAll = async () => {
   return data as SpendCategory[];
 };
 
-export default SupabaseRepository;
+const repository = SupabaseRepository();
+
+export default repository;
