@@ -28,28 +28,28 @@ const Wallet = () => {
       <Row className="flex-column flex-md-row gap-1 ">
         <Col className="box-1">
           <EarningCardOne
-            Icon={TbPigMoney}
+            Icon={<TbPigMoney />}
             earning={totalSavings}
             title="Total savings"
           />
         </Col>
         <Col className="box-1">
           <EarningCardOne
-            Icon={IoWalletOutline}
+            Icon={<IoWalletOutline />}
             earning={money}
             title="Wallet"
           />
         </Col>
         <Col className="box-1">
           <EarningCardOne
-            Icon={MdAttachMoney}
+            Icon={<MdAttachMoney />}
             earning={"---"}
             title="Earned today"
           />
         </Col>
         <Col className="box-1">
           <EarningCardOne
-            Icon={TbMoneybag}
+            Icon={<TbMoneybag />}
             earning={"---"}
             title="Spended today"
           />
