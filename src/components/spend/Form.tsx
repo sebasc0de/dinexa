@@ -104,6 +104,8 @@ function BasicExample({
           autoComplete="off"
           onChange={onChangeHandler}
           type="number"
+          min={0}
+          value={values.total}
         />
       </Form.Group>
 
