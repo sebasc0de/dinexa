@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import AuthButtons from "../../../widgets/Header/AuthButtons";
 import Wallet from "../../../widgets/Header/Wallet";
+import DashboardMobileNav from "../Navigations/DashboardMobileNav";
 
 function BasicExample() {
   return (

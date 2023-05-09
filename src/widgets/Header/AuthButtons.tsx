@@ -8,10 +8,7 @@ const AuthButtons = () => {
   if (user) return null;
   return (
     <div>
-      <Link
-        href="/login"
-        className="d-none d-lg-inline-block secondary-button mx-4"
-      >
+      <Link href="/login" className="d-lg-inline-block secondary-button mx-4">
         Login
       </Link>
       <Link href="/create-account">
