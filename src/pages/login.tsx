@@ -1,14 +1,15 @@
+// Components
 import { Col, Container, Row } from "react-bootstrap";
-import { SupabaseRepository } from "../modules/auth/infraestructure/SupabaseRepository";
 import { ToastContainer } from "react-toastify";
+import BackArrow from "../components/UI/BackArrow";
 import LoginForm from "../components/auth/LoginForm";
 import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
 import SliderTwo from "../components/UI/Sliders/SliderTwo";
-import BackArrow from "../components/UI/BackArrow";
+
+// Infraestructure layer
+import repository from "../modules/auth/infraestructure/SupabaseRepository";
 
 const login = () => {
-  const repository = SupabaseRepository();
-
   return (
     <Container fluid>
       <ToastContainer

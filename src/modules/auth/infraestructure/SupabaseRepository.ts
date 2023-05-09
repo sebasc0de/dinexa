@@ -7,7 +7,7 @@ import { AuthLoginData, AuthRegisterData } from "../../../types";
 import { Repository } from "../application/Repository";
 import { User } from "@supabase/supabase-js";
 
-export const SupabaseRepository = (): Repository => {
+const SupabaseRepository = (): Repository => {
   return {
     loginUser,
     createUser,
@@ -48,3 +48,7 @@ const getUser = async () => {
     toast(error.message);
   } catch (e) {}
 };
+
+const repository = SupabaseRepository();
+
+export default repository;

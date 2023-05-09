@@ -1,9 +1,13 @@
+// Components
 import { Col, Container, Row } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
-import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
-import RegisterForm from "../components/auth/RegisterForm";
-import SliderOne from "../components/UI/Sliders/SliderOne";
 import BackArrow from "../components/UI/BackArrow";
+import RegisterForm from "../components/auth/RegisterForm";
+import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
+import SliderOne from "../components/UI/Sliders/SliderOne";
+
+// Infraestructure layer
+import repository from "../modules/auth/infraestructure/SupabaseRepository";
 
 const CreateAccount = () => {
   return (
@@ -28,7 +32,7 @@ const CreateAccount = () => {
             title="Register"
             desc="Login into Dinexa with your account"
           />
-          <RegisterForm />
+          <RegisterForm repository={repository} />
         </Col>
         <Col
           className="d-flex flex-column justify-content-end py-3 p-md-5 bg-primary"

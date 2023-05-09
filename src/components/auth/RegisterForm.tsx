@@ -1,25 +1,31 @@
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
+import { HaveAccountButton } from "./HaveAccountButton";
+import { useField } from "../../hooks/useField";
+import { useRouter } from "next/router";
+import ButtonWithLoader from "../UI/Buttons/ButtonWithLoader";
 import Form from "react-bootstrap/Form";
 
-// Auth imports
+// Types
 import { AuthRegisterData } from "../../types";
+
+// Application layer
 import { create } from "../../modules/auth/application/Service";
-import { SupabaseRepository } from "../../modules/auth/infraestructure/SupabaseRepository";
-import { useField } from "../../hooks/useField";
+import { Repository } from "../../modules/auth/application/Repository";
 
 // Redux
 import { useAppDispatch } from "../../redux/hooks";
 import { setUserSession } from "../../redux/slices/auth-slice";
-import { HaveAccountButton } from "./HaveAccountButton";
-import ButtonWithLoader from "../UI/Buttons/ButtonWithLoader";
-import { useRouter } from "next/router";
+import { ensurePasswordIsValid } from "../../modules/auth/domain/ensurePasswordIsValid";
 
-// Supabase repository
-const repository = SupabaseRepository();
-
-function RegisterForm() {
+function RegisterForm({ repository }: Props) {
   // Button loading state
   const [loading, setLoading] = useState(false);
+
+  // Password match
+  const [error, setError] = useState({
+    state: false,
+    msg: "",
+  });
 
   // Redux dispatch
   const dispatch = useAppDispatch();
@@ -36,22 +42,38 @@ function RegisterForm() {
 
   const submitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
-    setLoading(true);
 
-    try {
-      const createUser = await create(repository, values);
+    if (error) {
+      // Loading state in true
+      setLoading(true);
 
-      if (createUser) {
+      try {
+        const createUser = await create(repository, values);
+
+        if (createUser) {
+          setLoading(false);
+          dispatch(setUserSession(createUser));
+          router.push("/get-started");
+        }
+      } catch (e) {
+      } finally {
         setLoading(false);
-        dispatch(setUserSession(createUser));
-        router.push("/get-started");
       }
-    } catch (e) {
-      console.log(e);
-    } finally {
-      setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const ensurePassword = ensurePasswordIsValid(
+      values.password,
+      values.confirmPassword
+    );
+
+    // If password does not valid
+    if (!ensurePassword.isValid)
+      setError({ state: ensurePassword.isValid, msg: ensurePassword.message });
+
+    if (ensurePassword.isValid) return setError({ msg: "", state: false });
+  }, [values]);
 
   return (
     <Form onSubmit={submitHandler} className="dinexa-form">
@@ -76,6 +98,9 @@ function RegisterForm() {
           onChange={onChangeHandler}
           type="password"
         />
+
+        {/* Password confirmation message */}
+        <small className="text-danger d-block mt-1">{error.msg}</small>
       </Form.Group>
 
       <ButtonWithLoader loading={loading} className="w-100" type="submit">
@@ -85,6 +110,10 @@ function RegisterForm() {
       <HaveAccountButton />
     </Form>
   );
+}
+
+interface Props {
+  repository: Repository;
 }
 
 export default RegisterForm;
