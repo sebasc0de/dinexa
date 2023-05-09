@@ -26,7 +26,12 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { setSpend } from "../../redux/slices/spend-slice";
 import { setWalletMoney } from "../../redux/slices/wallet-slice";
 
-function BasicExample({ user_id, spendRepository, walletRepository }: Props) {
+function BasicExample({
+  user_id,
+  spendRepository,
+  walletRepository,
+  onComplete,
+}: Props) {
   // Dispatch
   const { money } = useAppSelector((state) => state.wallet);
   const dispatch = useAppDispatch();
@@ -66,6 +71,8 @@ function BasicExample({ user_id, spendRepository, walletRepository }: Props) {
 
       // Update wallet in redux store
       updateMoneyInWallet && dispatch(setWalletMoney(moneyInWallet));
+
+      onComplete && onComplete();
     }
   };
 
@@ -111,6 +118,7 @@ interface Props {
   user_id: string;
   spendRepository: SpendRepository;
   walletRepository: WalletRepository;
+  onComplete?: () => void;
 }
 
 export default BasicExample;

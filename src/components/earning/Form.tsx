@@ -21,8 +21,14 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { setWalletMoney } from "../../redux/slices/wallet-slice";
 import { setEarning } from "../../redux/slices/earning-slice";
 import { addMoneyToWallet } from "../../modules/wallet/domain/addMoneyToWallet";
+import { returnDate } from "../../utils/returnDate";
 
-function BasicExample({ user_id, earningRepository, walletRepository }: Props) {
+function BasicExample({
+  user_id,
+  earningRepository,
+  walletRepository,
+  onComplete,
+}: Props) {
   // Redux
   const dispatch = useAppDispatch();
 
@@ -35,6 +41,7 @@ function BasicExample({ user_id, earningRepository, walletRepository }: Props) {
     name: "",
     total: 0,
     user_id,
+    created_at: returnDate(true),
   });
 
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
@@ -60,6 +67,9 @@ function BasicExample({ user_id, earningRepository, walletRepository }: Props) {
 
     // Update wallet in redux store
     updateMoneyInWallet && dispatch(setWalletMoney(moneyInWallet));
+
+    // On complete form action
+    onComplete && onComplete();
   };
 
   return (
@@ -103,6 +113,7 @@ interface Props {
   walletRepository: WalletRepository;
   earningRepository: EarningRepository;
   user_id: string;
+  onComplete?: () => void;
 }
 
 export default BasicExample;

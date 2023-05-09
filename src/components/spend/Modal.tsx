@@ -39,6 +39,7 @@ function Example() {
               walletRepository={walletRepository}
               spendRepository={spendRepository}
               user_id={user.id}
+              onComplete={() => setShow(false)}
             />
           )}
         </Offcanvas.Body>
