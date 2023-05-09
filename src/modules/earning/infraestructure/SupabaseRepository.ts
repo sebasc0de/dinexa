@@ -20,7 +20,11 @@ const create = async (values: Earning) => {
       return false;
     }
 
-    toast("The cash inflow was successfully registered");
+    toast("The cash inflow was successfully registered", {
+      progressStyle: {
+        background: "#007aff",
+      },
+    });
 
     return true;
   } catch (e) {

@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 // Project imports
 import { v4 as uuid } from "uuid";
 import { useField } from "../../hooks/useField";
-import { ToastContainer } from "react-toastify";
 
 // Types
 import { Earning } from "../../types";
@@ -74,8 +73,6 @@ function BasicExample({
 
   return (
     <Form className="dinexa-form" onSubmit={(e) => onSubmitHandler(e)}>
-      <ToastContainer toastClassName="cofi-toast" position="bottom-left" />
-
       {/* Name */}
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name:</Form.Label>
