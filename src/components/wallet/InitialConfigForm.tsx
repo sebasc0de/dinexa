@@ -12,7 +12,7 @@ import { setWalletMoney } from "../../redux/slices/wallet-slice";
 import MegaTitleThree from "../UI/Titles/MegaTitleThree";
 
 // Icons
-import { AiFillAccountBook } from "react-icons/ai";
+import { IoWalletOutline } from "react-icons/io5";
 import { Repository } from "../../modules/wallet/application/Repository";
 
 function InitialConfigForm({ repository, user_id, onStepComplete }: Props) {
@@ -38,7 +38,7 @@ function InitialConfigForm({ repository, user_id, onStepComplete }: Props) {
       <MegaTitleThree
         title="Add money to wallet"
         desc="Description here"
-        Icon={AiFillAccountBook}
+        Icon={IoWalletOutline}
       />
 
       <Form onSubmit={onSubmitHandler}>

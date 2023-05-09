@@ -6,12 +6,10 @@ import Categories from "./CategoriesSelector";
 // Project imports
 import { v4 as uuid } from "uuid";
 import { useField } from "../../hooks/useField";
+import { returnDate } from "../../utils/returnDate";
 
 // Types
 import { Spend } from "../../types";
-
-// Infraestructure layer
-import spendCategoriesRepository from "../../modules/spend_category/infraestructure/SupabaseRepository";
 
 // Application layer
 import { updateWallet } from "../../modules/wallet/application/Service";
@@ -35,8 +33,9 @@ function BasicExample({ user_id, spendRepository, walletRepository }: Props) {
 
   // Form hook
   const { values, onChangeHandler } = useField<Spend>({
-    category: "",
     id: uuid(),
+    created_at: returnDate(true),
+    category: "",
     name: "",
     total: 0,
     user_id,
@@ -95,10 +94,7 @@ function BasicExample({ user_id, spendRepository, walletRepository }: Props) {
       </Form.Group>
 
       {/* Spend categories */}
-      <Categories
-        repository={spendCategoriesRepository}
-        onChangeHandler={onChangeHandler}
-      />
+      <Categories onChangeHandler={onChangeHandler} />
 
       <Button
         style={{ borderRadius: "50px" }}

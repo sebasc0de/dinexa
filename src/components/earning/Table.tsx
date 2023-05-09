@@ -6,7 +6,7 @@ import MessageNotFoundOne from "../UI/Messages/MessageNotFoundOne";
 
 // Icons
 import { HiOutlineInformationCircle } from "react-icons/hi";
-import { dateFormatter } from "../../utils/dateFormatter";
+import { dateFormatter } from "../../utils/returnDate";
 import TotalTableItem from "../UI/TotalTableItem";
 
 function BasicExample() {
@@ -30,7 +30,7 @@ function BasicExample() {
       </thead>
       <tbody>
         {data.map((item) => {
-          const date = dateFormatter(item.created_at);
+          const date = dateFormatter(item.created_at, true);
 
           return (
             <tr key={item.id}>

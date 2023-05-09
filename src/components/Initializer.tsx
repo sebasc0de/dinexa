@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 // Slices
 import { loadEarnings } from "../redux/slices/earning-slice";
 import { loadSpends } from "../redux/slices/spend-slice";
-import { setWalletMoney } from "../redux/slices/wallet-slice";
+import { setWalletMoney, initializeWallet } from "../redux/slices/wallet-slice";
 
 // Infraestructure layer
 import walletRepository from "../modules/wallet/infraestructure/SupabaseRepository";
@@ -32,6 +32,9 @@ export const Initializer = () => {
     dispatch(loadSpends(spends));
     dispatch(loadEarnings(earnings));
     dispatch(setWalletMoney(walletMoney));
+
+    // Initialize wallet
+    if (walletMoney > 0) dispatch(initializeWallet());
   };
 
   useEffect(() => {

@@ -11,6 +11,7 @@ export function useField<T>(initialState: T) {
 
   const onChangeHandler = (event: ChangeEvent<FormControlElement>) => {
     const target = event.target as HTMLInputElement;
+
     setInputValue((prev) => ({
       ...prev,
       [target.name]: target.value,

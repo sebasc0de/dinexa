@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Form from "react-bootstrap/Form";
 
+// Categories
+import SpendCategories from "../../data/spend/categories";
+
 // Spend category
-import { getAll } from "../../modules/spend_category/application/Service";
-import { Repository } from "../../modules/spend_category/application/Repository";
 import { SpendCategory } from "../../types";
 
-function BasicExample({ onChangeHandler, repository }: Props) {
-  const [categories, setCategories] = useState<SpendCategory[]>([]);
-
-  useEffect(() => {
-    getAll(repository).then(setCategories);
-  }, []);
+function BasicExample({ onChangeHandler }: Props) {
+  const [categories, setCategories] =
+    useState<SpendCategory[]>(SpendCategories);
 
   return (
     <>
@@ -23,11 +21,13 @@ function BasicExample({ onChangeHandler, repository }: Props) {
         name="category"
         aria-label="Default select example"
       >
-        {categories.map((item) => (
-          <option key={item.id} value={item.id}>
-            {item.title}
-          </option>
-        ))}
+        {categories.map((item) => {
+          return (
+            <option key={item.id} value={item.title}>
+              {item.title}
+            </option>
+          );
+        })}
       </Form.Select>
     </>
   );
@@ -35,7 +35,6 @@ function BasicExample({ onChangeHandler, repository }: Props) {
 
 interface Props {
   onChangeHandler: (e: any) => void;
-  repository: Repository;
 }
 
 export default BasicExample;

@@ -7,7 +7,7 @@ import MessageNotFoundOne from "../UI/Messages/MessageNotFoundOne";
 
 // Icons
 import { HiOutlineInformationCircle } from "react-icons/hi";
-import { dateFormatter } from "../../utils/dateFormatter";
+import { dateFormatter } from "../../utils/returnDate";
 
 function BasicExample() {
   const { data } = useAppSelector((state) => state.spends);
@@ -31,13 +31,13 @@ function BasicExample() {
       </thead>
       <tbody>
         {data.map((item) => {
-          const date = dateFormatter(item.created_at);
+          const date = dateFormatter(item.created_at, true);
 
           return (
             <tr key={item.id}>
               <td className="subtitle">{item.name}</td>
               <td className="desc">{date}</td>
-              <td className="desc">{item.category.title}</td>
+              <Category id={item.category_id} />
               <td>
                 <TotalTableItem
                   message="This money has been subtracted from your wallet."
@@ -52,5 +52,9 @@ function BasicExample() {
     </Table>
   );
 }
+
+const Category = ({ id }: { id: number }) => {
+  return <td className="desc">dsaa</td>;
+};
 
 export default BasicExample;

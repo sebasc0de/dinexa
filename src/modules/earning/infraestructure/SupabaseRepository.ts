@@ -15,10 +15,12 @@ const create = async (values: Earning) => {
   try {
     const { data, error } = await supabase.from("earnings").insert(values);
 
-    if (!error) {
-      toast("Spend has been created");
+    if (error) {
+      toast("There has been an error registering this money");
       return false;
     }
+
+    toast("The cash inflow was successfully registered");
 
     return true;
   } catch (e) {

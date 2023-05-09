@@ -15,7 +15,12 @@ const create = async (values: Spend) => {
   try {
     const { data, error } = await supabase.from("spends").insert(values);
 
-    if (!error) toast("Spend has been created");
+    if (!error)
+      toast("Spend has been created", {
+        progressStyle: {
+          background: "#007aff",
+        },
+      });
 
     return true;
   } catch (e) {
@@ -25,13 +30,7 @@ const create = async (values: Spend) => {
 
 const getAll = async () => {
   try {
-    const { data, error } = await supabase.from("spends").select(`
-      name,
-      id,
-      total,
-      created_at,
-      category(title)
-    `);
+    const { data, error } = await supabase.from("spends").select("*");
     return data as Spend[];
   } catch (e) {
     return [];

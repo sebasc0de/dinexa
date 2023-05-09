@@ -14,9 +14,6 @@ const Spends = () => {
         autoClose={10000}
         bodyClassName="cofi-toast"
         position="top-center"
-        progressStyle={{
-          background: "red",
-        }}
       />
       <SimpleTitleTwo title="Money spends" Component={Modal} />
       <Table />

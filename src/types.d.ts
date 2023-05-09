@@ -1,9 +1,16 @@
 export interface Spend {
-  id?: string;
+  id: string;
   name: string;
   total: number;
   created_at: string;
-  category: SpendCategory;
+  category: string;
+  user_id: string;
+}
+
+export interface SpendFormData {
+  name: string;
+  total: number;
+  category: string;
   user_id: string;
 }
 
@@ -16,9 +23,9 @@ export interface SpendCategory {
 
 // Earning interfaces
 export interface Earning {
-  id?: string;
+  readonly id: string;
   name: string;
-  created_at: string;
+  readonly created_at: string;
   total: number;
   user_id: string;
 }

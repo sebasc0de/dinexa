@@ -18,7 +18,6 @@ export const spendSlice = createSlice({
     },
 
     loadSpends(state, action: PayloadAction<Spend[]>) {
-      console.log("my spends from redux", action.payload);
       state.data = action.payload;
     },
   },
