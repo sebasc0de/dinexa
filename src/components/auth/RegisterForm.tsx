@@ -43,7 +43,15 @@ function RegisterForm({ repository }: Props) {
   const submitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    if (error) {
+    // Validate password
+    const ensurePassword = ensurePasswordIsValid(
+      values.password,
+      values.confirmPassword
+    );
+
+    setError({ state: ensurePassword.isValid, msg: ensurePassword.message });
+
+    if (ensurePassword.isValid) {
       // Loading state in true
       setLoading(true);
 
@@ -61,19 +69,6 @@ function RegisterForm({ repository }: Props) {
       }
     }
   };
-
-  useEffect(() => {
-    const ensurePassword = ensurePasswordIsValid(
-      values.password,
-      values.confirmPassword
-    );
-
-    // If password does not valid
-    if (!ensurePassword.isValid)
-      setError({ state: ensurePassword.isValid, msg: ensurePassword.message });
-
-    if (ensurePassword.isValid) return setError({ msg: "", state: false });
-  }, [values]);
 
   return (
     <Form onSubmit={submitHandler} className="dinexa-form">
