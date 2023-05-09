@@ -96,7 +96,7 @@ function BasicExample({
           name="total"
           autoComplete="off"
           onChange={onChangeHandler}
-          type="text"
+          type="number"
         />
       </Form.Group>
 
