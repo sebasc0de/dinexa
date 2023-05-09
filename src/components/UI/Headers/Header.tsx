@@ -1,8 +1,8 @@
-import { Button } from "react-bootstrap";
 import { Logo } from "../Logo";
 import Container from "react-bootstrap/Container";
-import Link from "next/link";
 import Navbar from "react-bootstrap/Navbar";
+import AuthButtons from "../../../widgets/Header/AuthButtons";
+import Wallet from "../../../widgets/Header/Wallet";
 
 function BasicExample() {
   return (
@@ -12,17 +12,12 @@ function BasicExample() {
           <Navbar.Brand href="#home">
             <Logo />
           </Navbar.Brand>
-          <div>
-            <Link
-              href="/login"
-              className="d-none d-lg-inline-block secondary-button mx-4"
-            >
-              Login
-            </Link>
-            <Link href="/create-account">
-              <Button className="dinexa-button">Start now</Button>
-            </Link>
-          </div>
+
+          {/* Wallet */}
+          <Wallet />
+
+          {/* Auth buttons */}
+          <AuthButtons />
         </Navbar>
       </Container>
     </header>
