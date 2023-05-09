@@ -1,4 +1,4 @@
-import { SyntheticEvent } from "react";
+import { SyntheticEvent, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
@@ -21,6 +21,8 @@ import { setWalletMoney } from "../../redux/slices/wallet-slice";
 import { setEarning } from "../../redux/slices/earning-slice";
 import { addMoneyToWallet } from "../../modules/wallet/domain/addMoneyToWallet";
 import { returnDate } from "../../utils/returnDate";
+import { ensureEarningIsValid } from "../../modules/earning/domain/EnsureEarningIsValid";
+import { Alert } from "react-bootstrap";
 
 function BasicExample({
   user_id,
@@ -43,32 +45,35 @@ function BasicExample({
     created_at: returnDate(true),
   });
 
+  // Error message
+  const [error, setError] = useState({ state: false, msg: "" });
+
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
     // Validate form
+    const { isValid, message } = ensureEarningIsValid(values);
 
-    // Update earning on database - Service
-    const createEarning = await create(earningRepository, values);
+    setError({ state: isValid, msg: message });
 
-    // Create new Earning - Dispatch action
-    createEarning && dispatch(setEarning(values));
+    // Dispatch redux and service
+    if (isValid) {
+      const createEarning = await create(earningRepository, values);
 
-    // New money in wallet
-    const moneyInWallet = addMoneyToWallet(values.total, money);
+      createEarning && dispatch(setEarning(values));
 
-    // Update wallet on database - Service
-    const updateMoneyInWallet = await updateWallet(
-      walletRepository,
-      moneyInWallet,
-      user_id
-    );
+      const moneyInWallet = addMoneyToWallet(values.total, money);
 
-    // Update wallet in redux store
-    updateMoneyInWallet && dispatch(setWalletMoney(moneyInWallet));
+      const updateMoneyInWallet = await updateWallet(
+        walletRepository,
+        moneyInWallet,
+        user_id
+      );
 
-    // On complete form action
-    onComplete && onComplete();
+      updateMoneyInWallet && dispatch(setWalletMoney(moneyInWallet));
+
+      onComplete && onComplete();
+    }
   };
 
   return (
@@ -92,6 +97,8 @@ function BasicExample({
           autoComplete="off"
           onChange={onChangeHandler}
           type="number"
+          value={values.total}
+          min={0}
         />
       </Form.Group>
 
@@ -102,6 +109,10 @@ function BasicExample({
       >
         Save earning
       </Button>
+
+      {error.msg.length > 1 && (
+        <Alert variant="danger text-sm mt-3">{error.msg}</Alert>
+      )}
     </Form>
   );
 }

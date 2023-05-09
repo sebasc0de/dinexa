@@ -105,3 +105,9 @@ export interface WalletSettings {
   savingPercentage: number;
   costLivingAverage: number;
 }
+
+// Validation result
+export interface ValidationResult {
+  isValid: boolean;
+  message: string;
+}

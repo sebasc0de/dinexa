@@ -1,7 +1,4 @@
-interface ValidationResult {
-  isValid: boolean;
-  message: string;
-}
+import { ValidationResult } from "../../../types";
 
 export const ensurePasswordIsValid = (
   password: string,
