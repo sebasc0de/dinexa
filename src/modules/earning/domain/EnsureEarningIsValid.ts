@@ -2,7 +2,7 @@ import { Earning, ValidationResult } from "../../../types";
 
 const validResult = {
   isValid: true,
-  message: "",
+  msg: "",
 };
 
 export const ensureEarningIsValid = (earning: Earning): ValidationResult => {
@@ -19,22 +19,22 @@ export const ensureEarningIsValid = (earning: Earning): ValidationResult => {
 
 const checkIfNameDoNotEmpty = (name: string): ValidationResult => {
   if (name.length <= 5)
-    return { isValid: false, message: "Name must be 5 characters or more" };
+    return { isValid: false, msg: "Name must be 5 characters or more" };
 
   return validResult;
 };
 
 const checkTotalIsValid = (total: number): ValidationResult => {
   if (isNaN(total))
-    return { isValid: false, message: "The total must be a number" };
+    return { isValid: false, msg: "The total must be a number" };
 
   if (total === undefined || total === null)
-    return { isValid: false, message: "You must enter an amount of money" };
+    return { isValid: false, msg: "You must enter an amount of money" };
 
   if (total === 0)
     return {
       isValid: false,
-      message: "The amount of your profit cannot be zero.",
+      msg: "The amount of your profit cannot be zero.",
     };
 
   return validResult;

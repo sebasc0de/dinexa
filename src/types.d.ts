@@ -109,5 +109,5 @@ export interface WalletSettings {
 // Validation result
 export interface ValidationResult {
   isValid: boolean;
-  message: string;
+  msg: string;
 }

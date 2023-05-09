@@ -1,7 +1,8 @@
-import { SyntheticEvent } from "react";
+import { SyntheticEvent, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Categories from "./CategoriesSelector";
+import { Alert } from "react-bootstrap";
 
 // Project imports
 import { v4 as uuid } from "uuid";
@@ -20,6 +21,7 @@ import { Repository as WalletRepository } from "../../modules/wallet/application
 // Domain layer
 import { checkIfWalletHaveMoney } from "../../modules/wallet/domain/checkIfWalletHaveMoney";
 import { substractMoneyOfWallet } from "../../modules/wallet/domain/substractMoneyOfWallet";
+import { ensureSpendIsValid } from "../../modules/spend/domain/EnsureSpendIsValid";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
@@ -36,6 +38,9 @@ function BasicExample({
   const { money } = useAppSelector((state) => state.wallet);
   const dispatch = useAppDispatch();
 
+  // Error state
+  const [error, setError] = useState({ state: false, msg: "" });
+
   // Form hook
   const { values, onChangeHandler } = useField<Spend>({
     id: uuid(),
@@ -49,30 +54,32 @@ function BasicExample({
   const onSubmitHandler = async (e: SyntheticEvent<EventTarget>) => {
     e.preventDefault();
 
-    // Check if wallet have money
-    const checkWallet = checkIfWalletHaveMoney(values.total, money);
+    // Validation
+    const { isValid, msg } = ensureSpendIsValid(values);
 
-    if (checkWallet) {
-      // Create spend in database - Service
-      const createSpend = await create(spendRepository, values);
+    setError({ state: isValid, msg });
 
-      // Create spend in redux store
-      createSpend && dispatch(setSpend(values));
+    // Dispatch and service actions
+    if (isValid) {
+      const checkWallet = checkIfWalletHaveMoney(values.total, money);
 
-      // Substract money of wallet
-      const moneyInWallet = substractMoneyOfWallet(values.total, money);
+      if (checkWallet) {
+        const createSpend = await create(spendRepository, values);
 
-      // Update money in database - Service
-      const updateMoneyInWallet = await updateWallet(
-        walletRepository,
-        moneyInWallet,
-        user_id
-      );
+        createSpend && dispatch(setSpend(values));
 
-      // Update wallet in redux store
-      updateMoneyInWallet && dispatch(setWalletMoney(moneyInWallet));
+        const moneyInWallet = substractMoneyOfWallet(values.total, money);
 
-      onComplete && onComplete();
+        const updateMoneyInWallet = await updateWallet(
+          walletRepository,
+          moneyInWallet,
+          user_id
+        );
+
+        updateMoneyInWallet && dispatch(setWalletMoney(moneyInWallet));
+
+        onComplete && onComplete();
+      }
     }
   };
 
@@ -110,6 +117,12 @@ function BasicExample({
       >
         Save spend
       </Button>
+
+      {error.msg.length > 1 && (
+        <Alert variant="danger" className="text-sm mt-3">
+          {error.msg}
+        </Alert>
+      )}
     </Form>
   );
 }

@@ -44,14 +44,14 @@ function RegisterForm({ repository }: Props) {
     e.preventDefault();
 
     // Validate password
-    const ensurePassword = ensurePasswordIsValid(
+    const { isValid, msg } = ensurePasswordIsValid(
       values.password,
       values.confirmPassword
     );
 
-    setError({ state: ensurePassword.isValid, msg: ensurePassword.message });
+    setError({ state: isValid, msg });
 
-    if (ensurePassword.isValid) {
+    if (isValid) {
       // Loading state in true
       setLoading(true);
 

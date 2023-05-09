@@ -52,9 +52,9 @@ function BasicExample({
     e.preventDefault();
 
     // Validate form
-    const { isValid, message } = ensureEarningIsValid(values);
+    const { isValid, msg } = ensureEarningIsValid(values);
 
-    setError({ state: isValid, msg: message });
+    setError({ state: isValid, msg });
 
     // Dispatch redux and service
     if (isValid) {
