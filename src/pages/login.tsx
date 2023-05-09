@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
 import BackArrow from "../components/UI/BackArrow";
 import LoginForm from "../components/auth/LoginForm";
-import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
+import SimpleTitleOne from "../components/UI/Titles/SimpleTitleOne";
 import SliderTwo from "../components/UI/Sliders/SliderTwo";
 
 // Infraestructure layer

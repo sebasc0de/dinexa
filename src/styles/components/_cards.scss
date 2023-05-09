@@ -22,7 +22,7 @@
   }
 }
 
-// Earning cards
+// Earning card one
 .earningCardOne {
   padding: 1rem;
   display: flex;
@@ -40,6 +40,34 @@
     display: block;
     margin-bottom: 0.225rem;
     font-size: 0.625rem;
+    text-transform: uppercase;
+  }
+
+  .earning {
+    font-weight: 800;
+    position: relative;
+  }
+}
+
+// Earning card two
+.earningCardTwo {
+  display: flex;
+  gap: 0.825rem;
+  align-items: center;
+
+  svg {
+    color: white;
+    background: $action-color;
+    border-radius: 30px;
+    padding: 0.425rem;
+  }
+
+  .pre-title {
+    color: $text-color;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 0.225rem;
+    font-size: 0.585rem;
     text-transform: uppercase;
   }
 

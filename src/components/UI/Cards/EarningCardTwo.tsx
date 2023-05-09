@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
 
-const EarningCardOne = ({ title, earning, Icon }: Props) => {
+const EarningCardTwo = ({ title, earning, Icon }: Props) => {
   return (
-    <div className="earningCardOne">
+    <div className="earningCardTwo">
       {Icon}
       <div>
         <span className="pre-title">{title}</span>
-        <h4 className="earning">{earning}</h4>
+        <h5 className="earning">{earning}</h5>
       </div>
     </div>
   );
@@ -18,4 +18,4 @@ interface Props {
   Icon: ReactNode;
 }
 
-export default EarningCardOne;
+export default EarningCardTwo;

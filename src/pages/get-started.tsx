@@ -3,7 +3,7 @@ import { Row } from "react-bootstrap";
 // Component imports
 import Layout from "../components/layouts/Private";
 import MessageTwo from "../components/UI/Messages/MessageTwo";
-import SimpleTitleOne from "../components/UI/Titles/SimpleTitle";
+import SimpleTitleOne from "../components/UI/Titles/SimpleTitleOne";
 import InitialConfigModal from "../components/wallet/InitialConfigModal";
 
 // Redux

@@ -3,6 +3,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import { useAppSelector } from "../../redux/hooks";
 import { priceParser } from "../../utils/priceParser";
+import WalletResume from "./WalletResume";
 
 const popover = (
   <Popover id="popover-basic">
@@ -20,7 +21,17 @@ const MoneyWallet = () => {
   const moneyWallet = priceParser(money);
 
   return (
-    <OverlayTrigger trigger="click" placement="bottom" overlay={<p>das</p>}>
+    <OverlayTrigger
+      trigger="click"
+      placement="bottom"
+      overlay={
+        <Popover className="popOverOne" id={`popover-positioned-bottom`}>
+          <Popover.Body>
+            <WalletResume />
+          </Popover.Body>
+        </Popover>
+      }
+    >
       <Button className="money-wallet">Your wallet {moneyWallet}</Button>
     </OverlayTrigger>
   );
