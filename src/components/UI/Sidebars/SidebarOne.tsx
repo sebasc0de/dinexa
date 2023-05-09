@@ -9,7 +9,10 @@ const SidebarOne = ({ navData }: Props) => {
 
   return (
     <div className="sidebarOne d-none d-md-block">
-      <Nav defaultActiveKey="/dashboard" className="flex-column gap-5 p-4">
+      <Nav
+        defaultActiveKey="/dashboard"
+        className="verticalNavigation flex-column gap-5 p-4"
+      >
         {navData.map((item, i) => {
           const NAV_ACTIVE = item.route === route && "active";
           const Icon = item.Icon;

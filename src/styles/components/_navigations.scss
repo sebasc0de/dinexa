@@ -1,0 +1,22 @@
+.verticalNavigation {
+  .nav-link {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.125rem;
+    align-items: center;
+    color: $text-secondary-color;
+    font-weight: 700;
+
+    &:hover {
+      color: $action-color;
+    }
+
+    svg {
+      transform: scale(125%);
+    }
+  }
+
+  .nav-link.active {
+    color: $action-color;
+  }
+}
